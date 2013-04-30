@@ -1,0 +1,140 @@
+	When the particle is at constant motion in the channel the equations of motion give us
+	\begin{equation}
+	\left[
+	\begin{array}{c}
+	  x_n	 \\
+	 	  v_{x,n} \\ 
+	  y_n	 \\
+	  v_{y,n} 
+	\end{array} 
+	\right]
+	 =
+	 \begin{bmatrix}
+	  x_{n-1} & + v_{x,n-1} \\
+	  v_{x,n-1}       & ...		 \\
+	  y_{n-1} &+v_{y,n-1}  \\
+	  v_{y,n-1}       &		\\
+	 \end{bmatrix}
+	+
+	\left[
+	\begin{array}{c}
+	0 \\
+	c_{xn} \\
+	0 \\
+	c_{yn}
+	\end{array}
+	\right]
+	%	x_n \right] = \left[ x_{n-1}+ v_{n+1} \right]\\
+	%	v_{xn}
+		y_n
+		v_{yn}
+	\end{equation}
+	
+	We can rewrite this in matrix form as
+	
+	\begin{equation}
+	\left[
+	 \begin{array}{c}
+	 x_{n} \\
+	 v_{x,n}\\
+	 y_{n}\\
+	 v_{y,n}
+	 \end{array}
+	 \right]
+	 =
+	 \begin{bmatrix}
+	  1 & 	\Delta t & 	0 & 	0 \\
+	  0 & 	1 & 	0 & 		0 \\
+	  0 & 	0 & 	1 & \Delta t  \\
+	  0 & 	0 & 	0 & 		1 \\
+	 \end{bmatrix}
+	 \cdot
+	 \left[
+	 \begin{array}{c}
+	 x_{n-1} \\
+	 v_{x,n-1}\\
+	 y_{n-1}\\
+	 v_{y,n-1}
+	 \end{array}
+	\right]
+	 +
+	 \begin{bmatrix}
+	   0 & 	0 & 	0 & 	0 \\
+	   0 & 	1 &		0 & 	0 \\
+	   0 & 	0 & 	0 &    	0 \\
+	   0 & 	0 & 	0 & 	1 \\
+	  \end{bmatrix}
+	  \cdot
+	  \begin{array}{c}
+	  0 \\
+	  c_{x,n-1} \\
+	  0 \\
+	  c_{y,n-1}
+	  \end{array}
+	\end{equation}
+	
+	Now if we want to transform this to the measured data we have to simply multiply by a constant pixel-to-meter constant, which has been meassured to be around $1/940=1.06\cdot 10^{-3}$
+	
+	\begin{equation}
+	Q = 
+	 \begin{bmatrix}
+	  0 & 	0 & 	0 & 	0 \\
+	   0 & 	1 &		0 & 	0 \\
+	   0 & 	0 & 	0 &    	0 \\
+	   0 & 	0 & 	0 & 	1 \\
+	  \end{bmatrix}
+	\end{equation}
+	
+	Which we can easily re-write as a Kalman filter 
+	\begin{equation}
+	\hat{\mathbf{x}}_{n} = \mathbf{A}_n\mathbf{x_{n-1}} + \mathbf{B}_n \mathbf{u}_n + \mathbf{w}_n
+	\end{equation}
+	\begin{equation}
+	\hat{\mathbf{P}}_n = \mathbf{F}_n \mathbf{P}_{n-1} \mathbf{F}^{T}_{n} + \mathbf{Q}_n
+	\end{equation}
+	with 
+	\begin{eqnarray}
+	\mathbf{x}_n &= 
+	\left[
+	x_n 
+	v_{x,n} 
+	y_n 
+	v_{y,n}
+	\right]^T \\
+	\mathbf{A} &= 
+	\begin{bmatrix}
+	  1 & 	\Delta t & 	0 & 	0 \\
+	  0 & 	1 & 	0 & 		0 \\
+	  0 & 	0 & 	1 & \Delta t  \\
+	  0 & 	0 & 	0 & 		1 \\
+	\end{bmatrix} \\
+	\mathbf{B}_n &= 
+	 \begin{bmatrix}
+	   0 & 	0 & 	0 & 	0 \\
+	   0 & 	1 &		0 & 	0 \\
+	   0 & 	0 & 	0 &    	0 \\
+	   0 & 	0 & 	0 & 	1 \\
+	  \end{bmatrix}
+	\\
+	\mathbf{u}_n &=
+	\left[
+	  \begin{array}{c}
+	  0 \\
+	  c_{x,n-1} \\
+	  0 \\
+	  c_{y,n-1}
+	  \end{array}
+	  \right] 
+	\end{eqnarray}
+	
+	and we add the update part as
+	\begin{eqnarray}
+	&\mathbf{K}_n = \hat{\mathbf{P}}_n \mathbf{H}^T_n(\mathbf{H}_n \hat{\mathbf{P}}_n \mathbf{H}^T_n	) \\
+	&\mathbf{x_n} = \hat{\mathbf{x}}_n + \mathbf{K}_n(\mathbf{y} - \mathbf{H}_n\hat{\mathbf{x}}_n) \\
+	&\mathbf{P}   = (\mathbf{I} - \mathbf{K}_n\mathbf{H}_n)\hat{\mathbf{P}}_n
+	\end{eqnarray}
+	
+	
+	
+	
+	
