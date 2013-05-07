@@ -5,6 +5,7 @@
 \title{}
 \author{}
 \usepackage{amsmath}
+\usepackage{float}
 
 \begin{document}
 \maketitle
@@ -22,6 +23,7 @@ The main improvements have been to replace the particles as well as automating t
 
 \section{Background}
 The dynamics of particles in flow has been studied for many years, with early contributions from Einstein in his 1905 paper "Something something Einstein paper"\cite{EinsteinsPaper}, continued by Whatever his name is Jeffrey in 1922 and many since. Jeffrey derived analytically explicit solutions for the motions of triaxial particles in a shear flow called 'Jeffrey Orbits' (see section \ref{theory}) which have been used in various theoretical developments. However there is rather limited experimental evidence that such orbits actually exist \cite{IReallyWantACiteHere}. Previous work by Einarsson\cite{EinarssonsPaper} et al did not satisfactorally show this, presumably because of assymetric particles, possible thermal noise and inaccurate tracking. This thesis has used particles with better symmetry and bla bla bla
+
 
 \section{Experimental Setup}
 In order to study the dynamics of particles, a channel made from PDMS and bonded onto a glass slide. A fluid containing the traxial glass particles that can be seen in fig re REF HERE is pumped at a constant rate through the channel using a INSERT THE PUMP NAME HERE. To observe the particles, the channel is placed upon a confocal microscope connected to a INSERT CAMERA MODEL HERE. The channel is then moved using a INSERT STEP ENINE NAME HERE controlled from a computer. A mroe detailed description of the setup can be seen in figure REF to SETUP IMAGE THAT I MAKE
@@ -86,7 +88,7 @@ Secondly we recursively check all pixels neighbouring an edge
 
 MATH?
 
- if they are higher than some threshold value $T_low$. if they are, they are also considered part of the edge. This is repeated until no more pixels are added. An image illustrating this process can be seen in figure FIG. The benefit of the Canny edge detection over the simpler Sobel is that it is much easier to detect cohesive objects that vary in intensity without getting a lot of other noise in the iamge. The only real drawback of the Canny Edge detection is the computation time, and thus the implementation from the Open Computer Vision (OCV) was used, as this is a heavily optimized routine written in C++ with real time uses in mind. Thanks to this the computing for the Canny Edge of a 260x260 Image takes about X ms and thus is of little importance in the overall time per frame.
+ if they are higher than some threshold value $T_low$. if they are, they are also considered part of the edge. This is repeated until no more pixels are added. An image illustrating this process can be seen in figure FIG. The benefit of the Canny edge detection over the simpler Sobel is that it is much easier to detect cohesive objects that vary in intensity without getting a lot of other noise in the image. The only real drawback of the Canny Edge detection is the computation time, and thus the implementation from the Open Computer Vision (OCV) was used, as this is a heavily optimized routine written in C++ with real time uses in mind. Thanks to this the computing for the Canny Edge of a 260x260 Image takes about X ms and thus is of little importance in the overall time per frame.
 
 After noise reduction the Canny Edge Detection is used to find the most significant edges in the image. 
 
@@ -117,20 +119,30 @@ where I am not really sure I should do this now that I have so few particles, bu
 \section{Stabilizing the tracking}
 Once a state estimation has been made, we want to adjust the speed of the step engine to, as best as possible, match that of the particle. This is done by looking both the position and velocity of the particle and going through the conditional statements shown in figure CONDITIONAL CORRECTION VECTOR. 
 
-The goal is to limit the amount of corrections made, as changing the velocity is rather time intensive as discussed in TIME CONSIDERATIONS, as well as keeping the particle stable. There is also no point in trying to completely eliminate movement
+The goal is to limit the amount of corrections made, as changing the velocity is rather time intensive as discussed in section \ref{sec:time considerations}, as well as keeping the particle stable. There is also no point in trying to completely eliminate movement
 % % About how to choose the correction vector and communicate with the step engine
 
-\section{Time Considerations}
-A higher FPS will allow the particle detection to be better, improve the position saving and allow the particle tracking to be more stable as well. So maximizing the FPS, ie reducing the computational time of each task, is a clear goal for a good automated tracking. A list of the different tasks and their average execution times can be seen in REFERENCE A TABLE OF THAT STUFF HERE
+\section{Time Considerations}\label{sec:time considerations}
+A higher FPS will allow the particle detection to be better, improve the position saving and allow the particle tracking to be more stable as well. So maximizing the FPS, ie reducing the computational time of each task, is a clear goal for a good automated tracking. A list of the different tasks and their average execution times can be seen in table \ref{tab:benchmarks}
 
-We can clearly see that the limitors of our FPS are three routines: The screen capture routine, the change velocity routine and finally the save position routine. The first and last are unavoidable and must be done every frame by definition if we are interested in knowing the particles position as well as possible. This means we simply want to use the velocity correction as little as possible. Since the time constraint is in the communication with the step engine, there is not any optimization to be done here, at least not within the scope is this thesis. 
+\begin{table}[H]
+ \begin{tabular}{l | c | c } 
+ Task  			&  Average time & Std deviation \\
+ Capture screen & 1000 			& 200 \\
+ Find edges 	& 200			& 20 \\
+ \end{tabular}\label{tab:benchmarks}
+\end{table}
+
+We can clearly see that FPS is limited primarily by three routines: The screen capture routine, the change velocity routine and finally the save position routine. The first and last are unavoidable and must be done every frame by definition if we are interested in knowing the particles position as well as possible. This means we simply want to use the velocity correction as little as possible. Since the time constraint is in the communication with the step engine, there is not any optimization to be done here, at least not within the scope is this thesis. 
 
 
 \chapter{Experimental Setup}
 
+
 \chapter{Results}
 % LOLOLOLOLOLOL
 \chapter{Discussion}
+
 % % STUFF I SHOULD CITE % %
 %http://ncds.technion.ac.il/userfiles/publications/jfm97ygr_ellipsoid.pdf
 
