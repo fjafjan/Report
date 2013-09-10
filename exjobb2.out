@@ -1,0 +1,23 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{subsection.1.0.1}{Background}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.1}{Background}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Experimental Setup}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.2.1}{The particles}{section.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.2.2}{Sodium Metatungstate}{section.1.2}% 6
+\BOOKMARK [0][-]{chapter.2}{Theory}{}% 7
+\BOOKMARK [1][-]{section.2.1}{Fluid Dynamics}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.1.1}{Reynold's Number}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.2}{Stokes Drag and Stokes law}{section.2.1}% 10
+\BOOKMARK [1][-]{section.2.2}{Jeffrey Orbits}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Kalman filter}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Automated Tracking}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Noise Reduction}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{Canny Edge Detection}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.3}{Contour detection and selection}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.4}{Kalman Filter}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.5}{Stabilizing the tracking}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.6}{Time Considerations}{chapter.3}% 19
+\BOOKMARK [0][-]{chapter.4}{Experimental Setup}{}% 20
+\BOOKMARK [0][-]{chapter.5}{Results}{}% 21
+\BOOKMARK [0][-]{chapter.6}{Discussion}{}% 22
+\BOOKMARK [0][-]{appendix.A}{Raw data}{}% 23

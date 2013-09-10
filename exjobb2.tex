@@ -6,6 +6,10 @@
 \author{}
 \usepackage{amsmath}
 \usepackage{float}
+\usepackage{hyperref} 
+\usepackage{graphicx}
+
+\usepackage[space]{grffile}
 
 \begin{document}
 \maketitle
@@ -15,15 +19,10 @@
 \end{abstract}
 
 \chapter{Introduction}
-The goal of this thesis is to study and better understand the dynamics of particles in flows, and is a continuation of two previous masters theses \cite{AntonExjobb}\cite{JonasExjobb}. The experimental setup is a microfluidic channel where the rotational dynamics of microrods are captured using a camera connected to a confocal microscope. 
-
-The focus of this thesis is on improving the experimental setup both in terms of the quality of results as well as the efficiency and ease of gathering such results.
-
-The main improvements have been to replace the particles as well as automating the tracking of particles and the flow direction in the channel.
+\include{introduction}
 
 \section{Background}
-The dynamics of particles in flow has been studied for many years, with early contributions from Einstein in his 1905 paper "Something something Einstein paper"\cite{EinsteinsPaper}, continued by Whatever his name is Jeffrey in 1922 and many since. Jeffrey derived analytically explicit solutions for the motions of triaxial particles in a shear flow called 'Jeffrey Orbits' (see section \ref{theory}) which have been used in various theoretical developments. However there is rather limited experimental evidence that such orbits actually exist \cite{IReallyWantACiteHere}. Previous work by Einarsson\cite{EinarssonsPaper} et al did not satisfactorally show this, presumably because of assymetric particles, possible thermal noise and inaccurate tracking. This thesis has used particles with better symmetry and bla bla bla
-
+	
 
 \section{Experimental Setup}
 In order to study the dynamics of particles, a channel made from PDMS and bonded onto a glass slide. A fluid containing the traxial glass particles that can be seen in fig re REF HERE is pumped at a constant rate through the channel using a INSERT THE PUMP NAME HERE. To observe the particles, the channel is placed upon a confocal microscope connected to a INSERT CAMERA MODEL HERE. The channel is then moved using a INSERT STEP ENINE NAME HERE controlled from a computer. A mroe detailed description of the setup can be seen in figure REF to SETUP IMAGE THAT I MAKE
@@ -46,8 +45,53 @@ In order to study the dynamics of particles, a channel made from PDMS and bonded
 	
 \subsection{Sodium Metatungstate}
 I guess we use sodium meta tungstate. But does this really need a whole section? Seems like overdoing it... but what %else have I done v_v
+THE EQUATION FOR MODIFYING VISCOCITY
+
+\begin{equation}
+\rho_{a} = 	\frac {m_{a}}{V_{a}} =
+				\frac{V_{b}\rho_{b} + V_{mix}\rho_{mix}}{V_b + V_{mix}} 
+\end{equation}
+So if we want to find $V_{mix}$ we get
+\begin{equation}
+V_{mix} = \frac{ V_{b}(\rho_{b} - \rho_{a})}{\rho_{a} - \rho_{mix}} 
+\end{equation}
+
+
 
 \chapter{Theory}
+In order to better understand the results and discussions in this thesis some rather basic results in fluid dynamics, image analysis and other fields need to be discussed. It is however not the focus of this thesis and as such I will try to be as brief as possible, and an experienced reader can safely skip to the next chapter.
+
+
+\section{Fluid Dynamics}
+In order to understand the limitations and behaviours of the experiment we need to know about a few key concepts in fluid dynamics.
+\subsection{Reynold's Number}
+The Reynolds number (Re) is a dimensionless number describing the ratio of intertial forces to viscous forces in a flow. This is not a very strict definition, but suffices to explain that the Reynolds number can be used to characterize the so called flow regime of a system. 
+
+There are two major types of flows, Laminar flow and turbulent flow, sometimes also talking about transitional flow being the region between the two but it is not of great importance to this thesis. 
+
+Laminar flow. nonturbulent streamline flow in parallel layers. There are no cross currents perpendicular to the direction of the flow, which in this experiment is relatively straight forward. An example of a laminar flow profile can be seen in figure \ref{fig:laminar_flow} as well as turbulent flow. Essentially laminar flow is the regime where the viscous forces are larger than the intertial forces.
+
+\begin{figure}\label{fig:laminar_flow}
+\includegraphics{Images/laminarFlow.png}
+\end{figure}
+
+Turbulent flow is characterized by violent, unsteady and unpredictable flow. This is the regime where the intertial forces are larger than the viscous forces.
+
+The Reynolds number is the primary tool used to describe the regime of a flow, and while there is no clear number at which a flow stops being laminar but the value usually used is that the flow is laminar if $Re << 1$
+\subsection{Stokes Drag and Stokes law}
+Stokes Law:
+\begin{equation}
+v_s = \frac{2}{9} \frac{\delta \rho}{\mu} g R^2
+\end{equation}
+
+$\delta \rho$ = 0.01 ... 0.001
+
+$\mu = 8*10^-3$
+
+$g = 9.82$
+
+$R = 5 - 35 \cdot 10^-6$
+
 
 \section{Jeffrey Orbits}
 
@@ -113,6 +157,8 @@ w_{thin}\left(\frac{ n}{d_{max}^2}\right)^2
 where $w_{thin}$ is a weighting constant, $n$ is the number of pixels in the contour and $d_{max}$ is the longest distance between two pixels in the 
 where I am not really sure I should do this now that I have so few particles, but I do it none the less!
 
+
+
 \section{Kalman Filter}
 \input{Kalman.tex}
 
@@ -145,5 +191,19 @@ We can clearly see that FPS is limited primarily by three routines: The screen c
 
 % % STUFF I SHOULD CITE % %
 %http://ncds.technion.ac.il/userfiles/publications/jfm97ygr_ellipsoid.pdf
+\appendix
+\chapter{Raw data}
 
+%\section{$\mathbf{\lambda}$ of about 6}
+%These are the particles with a $\lambda = 6 \pm 0.5$
+%\input{lambdaSix.tex}
+%
+%\section{$\mathbf{\lambda}$ of about 6}
+%These are the particles with a $\lambda = 7 \pm 0.5$
+%\input{lambdaSeven.tex}
+%
+%\section{Other particles}
+%\input{others.tex}
+\bibliography{bibliography}
+\bibliographystyle{plain}
 \end{document}          
