@@ -1,0 +1,37 @@
+\chapter{Modelling of electrokinetic flow}\label{sec:res}
+In this chapter, results of modelling of electrokinetic flow using the
+previously described lattice-Boltzmann method are presented. The
+choice of systems is done with focus on those where the
+Poisson-Boltzmann approach is not applicable. First simple 1D systems
+in channels are considered, then more complicated systems in 2D. All
+results presented here are for systems in steady state. The liquid
+used in the modelling is a KCl solution defined by the parameters in
+tab. \ref{tab:res:param}.
+
+\begin{table}
+  \caption{Physical parameters of the KCl ion solution that is modelled
+    in this chapter. Parameters are from \cite{dongquing-ren-book}. }
+\begin{center}
+    \begin{tabular}{ | r | l |}
+    \hline
+    Relative permittivity, $\ep_r$ & 80\\
+    Mean ionic conentration, $\cnil$ & $10^{-4}$ mol/m$^3$\\
+    Conductivity, $\sigma_c$ & 1.5 mS/m\\
+    Temperature, T & 293 K\\
+    kinematic viscosity, $\nu$ & 1.0 $\mu$m$^2$/s\\
+    Diffusion coefficient, $D_+ = D_{-}$ & $ 10^{-10}$ m$^2$/s\\
+    \hline
+    \end{tabular}
+\end{center}    
+\label{tab:res:param}
+\end{table}
+
+\input{res/res_channel}
+
+\input{res/res_electrovis}
+
+\input{res/res_electroosmos}
+
+\input{res/res_hetro}
+
+\input{res/res_square}

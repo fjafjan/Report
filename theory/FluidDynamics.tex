@@ -1,0 +1,56 @@
+
+In order to understand the motivations, limitations and behaviour of the experiment we need to know about a few key concepts in fluid dynamics.
+
+\subsection{Navier Stokes}
+
+
+\subsection{Reynold's Number}
+The Reynolds number (Re) is a dimensionless number describing the ratio of inertial forces to viscous forces in a flow. This is not a very strict definition, but suffices to explain that the Reynolds number can be used to characterize the so called flow regime of a system. 
+
+The two major flow regimes are Laminar flow, where viscous forces dominate over inertial forces, and the turbulent regime where inertial forces dominate. The area where neither is significantly larger is referred to as transitional flow, which may show either chaotic of laminar behaviour. 
+
+A rough characterization of laminar and chaotic flow can be seen in figure \ref{fig:laminar_flow}
+
+\begin{figure}\label{fig:laminar_flow}
+\includegraphics{Images/laminarFlow.png}
+\end{figure}
+
+The Reynolds number (Re) is defined as \cite{introfluid}
+
+\begin{equation}\label{eq:reynolds}
+Re = \frac{U L \rho}{\mu}
+\end{equation}
+
+where $U$ is the characteristic velocity, $L$ is the characteristic length, $\rho$ is the density and $\mu$ is the dynamic viscosity. 
+
+As the Reynolds number is a ratio, a flow is predicted to be laminar if $Re << 1$ which is the primary concern in this thesis.
+
+\subsection{Stokes Drag and Stokes's law}
+The drag force exerted by a fluid on a spherical particle for $Re << 1$ is found using the so called Stokes's law \cite{introfluid2}
+
+\begin{equation}
+F_D = 6\pi \mu R v
+\end{equation}
+and equating this with the gravitational force acting on the sphere
+
+\begin{equation}
+F_G = (\rho_p - rho_l) g\cdot \frac{4\pi R^3}{3}
+\end{equation}
+
+the velocity of a steadily sinking sphere is found to be 
+
+\begin{equation}\label{eq:fallingSphere}
+v_s = \frac{2}{9} \frac{\Delta \rho}{\mu} g R^2
+\end{equation}
+
+% % Remove this when feeling in a more removy mood
+In order to approximate the falling velocity of our particles we can make use of Stokes law which describes the drag force on an object in laminar flow, and more specifically in the case of a sphere, 
+where $\Delta\rho$ is the difference in density between the sphere and the liquid, $g$ is the specific gravity, $\mu$ is the dynamic viscosity and $R$ is the radius of the sphere.  
+
+
+% % Ignore these sections for now as they are not needed
+
+\subsection{Shear}
+
+\subsection{P\'{e}clet Number}
+The p\'{}clet number describes the ratio of thermal noise to other stuff. I really don't know anything about the piclet number.

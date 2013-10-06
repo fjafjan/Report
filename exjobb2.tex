@@ -8,8 +8,9 @@
 \usepackage{float}
 \usepackage{hyperref} 
 \usepackage{graphicx}
-
+\usepackage{url}
 \usepackage[space]{grffile}
+\usepackage{units}
 
 \begin{document}
 \maketitle
@@ -18,103 +19,62 @@
 
 \end{abstract}
 
-\chapter{Introduction}
 \include{introduction}
-
-\section{Background}
-	
-
-\section{Experimental Setup}
-In order to study the dynamics of particles, a channel made from PDMS and bonded onto a glass slide. A fluid containing the traxial glass particles that can be seen in fig re REF HERE is pumped at a constant rate through the channel using a INSERT THE PUMP NAME HERE. To observe the particles, the channel is placed upon a confocal microscope connected to a INSERT CAMERA MODEL HERE. The channel is then moved using a INSERT STEP ENINE NAME HERE controlled from a computer. A mroe detailed description of the setup can be seen in figure REF to SETUP IMAGE THAT I MAKE
-
-\subsection{The particles}
-	Previously the particles used in the experiment were polymeric made by swirling an apoxy solution in a vortex. This produces rod like particles of different lengths, but very often included noticeable defects such as being bent, small lumps etc. 
-	To improve results glass particles from Nippon Glass company in Japan were brought in. As they are mainly manufactured to serve as spacing rods in LCD screens they have a very well determined width but then broken at varying lengths. These breaking points are the only real visible point of imperfection of the rods.
-	The specification of length and width can be seen in figure \ref{fig:rod_lengths}
-	
-	While the glass rods are far more regular in terms of size and shape, they do have on major problem. The density of the glass is 2.57 $g/cm^3$, significantly higher than water which has a density of around ENSITY OF WATER at 20 degrees C and glycerol which has a density of DENSITY OF GLYCEROL. And so the particles will sink very quickly in any mix of water and glycerol.
-	
-	The solution is to use Sodium Metatungstate, water soluble mineral which gives the resulting mix a maximum density of around DENSITY OF SOMT which is more than sufficient to keep the particles suspended. It is however not without its own issues which will be discussed in the discussion portion of the thesis. 
-	
-	
-	First the viscosity of the mix is significantly lower than the glycerol and water mix used previously (a 1:4 mix of glycerol and water was commonly used) which means the system is more sensitive to noise. 
-	Second the density of the solution changes when the water mixed in evaporates. As the ratio of water to mineral is relatively high, clearly more than 1:1 by weight, a small percentage of water evaporating will result in significant change in density
-	
-	
-	
-	
-\subsection{Sodium Metatungstate}
-I guess we use sodium meta tungstate. But does this really need a whole section? Seems like overdoing it... but what %else have I done v_v
-THE EQUATION FOR MODIFYING VISCOCITY
-
-\begin{equation}
-\rho_{a} = 	\frac {m_{a}}{V_{a}} =
-				\frac{V_{b}\rho_{b} + V_{mix}\rho_{mix}}{V_b + V_{mix}} 
-\end{equation}
-So if we want to find $V_{mix}$ we get
-\begin{equation}
-V_{mix} = \frac{ V_{b}(\rho_{b} - \rho_{a})}{\rho_{a} - \rho_{mix}} 
-\end{equation}
-
 
 
 \chapter{Theory}
-In order to better understand the results and discussions in this thesis some rather basic results in fluid dynamics, image analysis and other fields need to be discussed. It is however not the focus of this thesis and as such I will try to be as brief as possible, and an experienced reader can safely skip to the next chapter.
-
+\include{theory/introduction}
 
 \section{Fluid Dynamics}
-In order to understand the limitations and behaviours of the experiment we need to know about a few key concepts in fluid dynamics.
-\subsection{Reynold's Number}
-The Reynolds number (Re) is a dimensionless number describing the ratio of intertial forces to viscous forces in a flow. This is not a very strict definition, but suffices to explain that the Reynolds number can be used to characterize the so called flow regime of a system. 
-
-There are two major types of flows, Laminar flow and turbulent flow, sometimes also talking about transitional flow being the region between the two but it is not of great importance to this thesis. 
-
-Laminar flow. nonturbulent streamline flow in parallel layers. There are no cross currents perpendicular to the direction of the flow, which in this experiment is relatively straight forward. An example of a laminar flow profile can be seen in figure \ref{fig:laminar_flow} as well as turbulent flow. Essentially laminar flow is the regime where the viscous forces are larger than the intertial forces.
-
-\begin{figure}\label{fig:laminar_flow}
-\includegraphics{Images/laminarFlow.png}
-\end{figure}
-
-Turbulent flow is characterized by violent, unsteady and unpredictable flow. This is the regime where the intertial forces are larger than the viscous forces.
-
-The Reynolds number is the primary tool used to describe the regime of a flow, and while there is no clear number at which a flow stops being laminar but the value usually used is that the flow is laminar if $Re << 1$
-\subsection{Stokes Drag and Stokes law}
-Stokes Law:
-\begin{equation}
-v_s = \frac{2}{9} \frac{\delta \rho}{\mu} g R^2
-\end{equation}
-
-$\delta \rho$ = 0.01 ... 0.001
-
-$\mu = 8*10^-3$
-
-$g = 9.82$
-
-$R = 5 - 35 \cdot 10^-6$
-
+\include{theory/FluidDynamics}
 
 \section{Jeffrey Orbits}
-
+\include{theory/JeffreyOrbits}
+% Not quite sure how far in depth I should go here
 \section{Kalman filter}
 % Should I even have this section?
-\chapter{Automated Tracking}
+
+\chapter{Method}
+
+\section{Experimental Setup}
+\include{experimentalsetup/experimentalsetup}
+
+% This should not be a chapter but a section of the experimental setup. Maybe a section of 
+% that should be improvements and I can include the Automated tracking can be part of that
+% I should also ask Dag if it's reasonable to include a section of attempted improvements, as
+% a guideline to anyone who tris to replicate the experiment both about what can be done (for inspiration)
+% but then as a caution that while you may try this it did not work for us
+
 TODO:
 READ UP ON THE EFFICIENCY OF THE CANNY EDGE DETECTION
 TAKE AN IMAGE OF THE STATIC NOISE REDUCTION (DOES IT ACTUALLY WORK?!)
 GET AN IMAGE OF BEFORE AND AFTER SMOOTHING, PREFERABLY INCLUDE A CANNY EDGE DETECTION OF BOTH 
-ADD ANTONS THESSIS TO BIBLIOGRAPHY
-WORK MORE ON KALMAN FILTER SECTION
-WRITE ABOUT THE TIME IT TAKES TO DO VARIOUS STUFFS
+WRITE ABOUT THE TIME IT TAKES TO DO VARIOUS STUFFS (IS THIS NEEDED?)
+GET MORE SOURCES IN THE THEORY SECTION
+IN PARTICULAR:
+Looking up reynolds number sources, "creeping motion" might be a relevant term
+Add our measured visc and add it to citations, maybe add Dag how to cite that?
 
-\section{Noise Reduction}
+
+JEFFREY ORBIT STUFF:
+Make a picture illustrating the various angles
+Have a picture of some jeffrey orbits
+
+EXPERIMENTAL SETUP STUFF:
+Include images of the particles
+Include the distribution of lengths, either meassured or from nippon
+Add the citation for Nippon glass
+
+
+
+\subsection{Noise Reduction}
 The first step in tracking a particle is to correctly identify it in the image given. To do this we want to eliminate as much noise from the image as we can. The first type of noise we will eliminate is static noise, this is noise present in every image and results from dirt or scratches on the lens of the camera or microscope. 
 The easiest solution to such noise would of course be to clean the instruments, but despite numerous attempts of carefully cleaning every surface a noticeable of static noise would always remain. 
 
 This means one must use algorithmic noise reduction methods to remove this noise. The method employed is a simple averaging that takes N pictures at different positions in the channel to generate an average image where any particular features of the channel would disappear and only the static noise remain. This can be seen in figure STATIC NOISE REDUCTION IMAGE,
 
-The second form of noise eliminated are objects of no interst, such as the lines in the PDMS channel, from the scratches made polishing the cast the channel is molded from. Or, possible dirt on the cover glass. To reduce this noise, the image is blurred with a gaussian blur filter of size 7 with $\sigma=1$. THE RESULTS OF SMOOTHING CAN BE SEEN IN ANOTHER IMAGE
 
-\section{Canny Edge Detection}
+\subsection{Canny Edge Detection}
 The Canny Edge invented by John Canny in his 2011 paper the canny of cane \cite{Canny}detection is generally considered the most advanced and best performing edge detection of the simple filter functions. 
 Without going in to the finer details, given an image matrix $\mathbf{I}$ where each value corresponds to the light intensity $i_{x,y}$of that pixel at index $x,y$ the Canny edge detector will try to find the cohesive pixels $E = \{e_1, e_2... e_n\}$ where there is a noticeable change in intensity. In other words, what we call an "edge" an image. 
 
