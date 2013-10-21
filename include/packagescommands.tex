@@ -14,7 +14,6 @@
 \usepackage{multirow}
 \usepackage{array}
 \usepackage[font=footnotesize,format=plain,labelfont=bf,up]{caption}
-\usepackage{subfig}
 \usepackage{geometry}
 \usepackage{fancyhdr}
 \usepackage{fncychap}
@@ -25,9 +24,6 @@
 %\usepackage{algorithm2e}
 \usepackage{nomencl}
 %\usepackage[style=long,nonumberlist]{glossaries}
-
-
-
 
 \makenomenclature
 \renewcommand{\nomname}{List of Abbreviations}
@@ -48,6 +44,13 @@
 \fancyhead[R]{\slshape \leftmark}%
 \fancyfoot[C]{\thepage}%
 }
+
+% My own additions
+\usepackage{float}
+\usepackage{url}
+\usepackage{subcaption}
+
+
 
 \newcommand{\mail}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 \newcommand{\backgroundpic}[3]{%

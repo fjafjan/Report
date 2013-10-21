@@ -1,0 +1,113 @@
+% Chalmers title page
+\begin{titlepage}
+
+\mbox{}
+\vspace{50mm}
+%draft text
+%\begin{center} 
+%\textcolor{red}{
+%\framebox[1.1\width]{
+%\Huge{DRAFT}
+%\huge{\today}
+%}
+%}
+%\end{center}
+
+\AddToShipoutPicture{\backgroundpic{-4}{56.7}{include/frontpage}}
+\mbox{}
+\vfill
+\addtolength{\voffset}{2cm}
+\begin{flushleft}
+	{\noindent {\huge Modelling of electrokinetic flow using the
+            lattice-Boltzmann method} \\[0.3cm] \emph{\Large Thesis
+            for the degree of Master of Science} \\[.8cm]
+	
+	{\LARGE ANDREAS B\"{U}LLING}\\[.8cm]
+	
+	{\Large Department of Mathematical Sciences \\
+         \emph{Division of Mathematics} \\
+	\textsc{Chalmers University of Technology} \\
+	Gothenburg, Sweden 2012 \\
+	} 
+	}
+\end{flushleft}
+
+\end{titlepage}
+\ClearShipoutPicture
+% End Chalmers title page
+
+\pagestyle{empty}
+\newpage
+\clearpage
+\mbox{}
+
+%titlepage
+\input{include/titlepage}
+
+\input{include/imprint}
+\restoregeometry
+
+%abstract
+\newpage
+\clearpage
+\thispagestyle{empty}
+
+\noindent Modelling of electrokinetic flow using the lattice-Boltzmann
+method\\ 
+\emph{Thesis for the degree of Master of Science}\\ 
+ANDREAS B\"{U}LLING\\
+Department of Mathematical Sciences \\
+\emph{Division of Mathematics} \\
+\textsc{Chalmers University of Technology} 
+
+\vspace{20pt}
+
+\begin{abstract}
+The lattice-Boltzmann method is used to model flow in electrokinetic
+systems. A modelling approach based on the coupling of Navier-Stokes,
+Nernst-Planck and Poisson's equation of electrostatics is
+utilised. Three lattice-Boltzmann methods are formulated for the three
+equations respectively.
+
+The method is implemented in \texttt{C++} with the aim of being high
+performing. Topics as locality, instruction pipelines and parallel
+computing are considered. The implementation is tested for a number of
+classic examples with known solutions, e.g.  Taylor-Green vortex flow,
+an Helmholtz equation and an advection-diffusion situation. The
+computed solutions agree well with the analytic solutions.
+
+The physical systems modelled consists mainly of various charged
+channel flows of ionic solutions. Electrokinetic effects, such as
+electroosmosis and the electrovicous effect are studied. This is done
+in thin channels where the thickness of the electrical double layers
+is comparable to the channel dimension. The electroviscous effect is
+shown to slow the flow down and a local minimum is found in the
+velocity profile for thick enough double layers. Other more
+complicated systems are also studied; electroosmotic flow in a channel
+with heterogeneously charged walls and flow in a an array of charged
+squares.
+\end{abstract}
+
+\noindent \textbf{Keywords:} lattice-Boltzmann, electrokinetics,
+electrohydrodynamics, Nernst-Planck, Poisson-Boltzmann,
+high performance computing.
+
+\newpage
+\clearpage
+\mbox{}
+\newpage
+\clearpage
+\thispagestyle{empty}
+\section*{Acknowledgements}
+I would hereby like to express my gratitude to my supervisor Alexei
+Heintz. You did always have time for questions and discussions even
+during your spare time and on your vacation. Also the precise amount
+of guidance and the freedom given is very much appreciated. I am
+thankful for having been given the opportunity of working on a project
+where the fields of my interest from physics, mathematics and
+programming were all present.  \\[1cm]
+
+\hfill Andreas B\"{u}lling, G\"{o}teborg, \today
+\newpage
+\clearpage
+\mbox{}

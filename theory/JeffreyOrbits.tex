@@ -1,6 +1,7 @@
-The equations of motion for a triaxial ellipsoid particle was first found by Jeffrey \cite{Jeffrey} but the first dimensionless	 equation for the Euler Angles was found by Yarin et al. \cite{Yarin} to be
+The equations of motion for a triaxial ellipsoid particle was first found by Jeffrey \cite{Jeffrey} but the first dimensionless equation for the Euler Angles was found by Yarin et al. \cite{Yarin} to be
 
-\begin{subequations}
+
+\begin{subequations}\label{eq:jeffrey}
 \begin{align}
 \frac{d\theta}{dt} 	&= (g_2 \sin \psi + g_3 \cos \psi ) \sin \theta \\
 \frac{d\phi}{dt} 	&= \tfrac{1}{2} + g_3\sin \psi - g_2 \cos \psi\\
@@ -21,3 +22,16 @@ g_3 &= \frac{a_x^2 - a_y^2}{2(a_x^2 + a_y^2)}
 \end{align}
 \end{subequations}
 
+where the angles are defined as can be seen in figure \ref{fig:eulerangles}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{figures/eulerangles.png}
+\end{center}
+\caption{}
+\label{fig:eulerangles}
+\end{figure}
+
+
+%
+%w = (f(t_0 + 2*pi*k) = f(t_0))/	N_rotations
