@@ -8,18 +8,23 @@
 \BOOKMARK [2][-]{subsection.2.1.3}{Stokes Drag and Stokes's law}{section.2.1}% 8
 \BOOKMARK [2][-]{subsection.2.1.4}{Shear}{section.2.1}% 9
 \BOOKMARK [2][-]{subsection.2.1.5}{P\351clet Number}{section.2.1}% 10
-\BOOKMARK [1][-]{section.2.2}{Jeffrey Orbits}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.3}{Kalman filter}{chapter.2}% 12
-\BOOKMARK [0][-]{chapter.3}{Method}{}% 13
-\BOOKMARK [1][-]{section.3.1}{Experimental Setup}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.1.1}{Density matching}{section.3.1}% 15
-\BOOKMARK [1][-]{section.3.2}{Particle tracking}{chapter.3}% 16
-\BOOKMARK [2][-]{subsection.3.2.1}{Noise Reduction}{section.3.2}% 17
-\BOOKMARK [2][-]{subsection.3.2.2}{Canny Edge Detection}{section.3.2}% 18
-\BOOKMARK [2][-]{subsection.3.2.3}{Contour detection and selection}{section.3.2}% 19
-\BOOKMARK [2][-]{subsection.3.2.4}{Stabilizing the tracking}{section.3.2}% 20
-\BOOKMARK [2][-]{subsection.3.2.5}{Time Considerations}{section.3.2}% 21
-\BOOKMARK [1][-]{section.3.3}{Kalman Filter}{chapter.3}% 22
-\BOOKMARK [0][-]{chapter.4}{Results}{}% 23
-\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 24
-\BOOKMARK [0][-]{appendix.A}{Raw data}{}% 25
+\BOOKMARK [1][-]{section.2.2}{Euler Angles and our Coordinate System}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Jeffrey Orbits}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.4}{Kalman filter}{chapter.2}% 13
+\BOOKMARK [0][-]{chapter.3}{Method}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Experimental Setup}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.1.1}{Density matching}{section.3.1}% 16
+\BOOKMARK [1][-]{section.3.2}{Particle tracking}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.2.1}{Noise Reduction}{section.3.2}% 18
+\BOOKMARK [2][-]{subsection.3.2.2}{Canny Edge Detection}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.3}{Contour detection and selection}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.4}{Stabilizing the tracking}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.5}{Time Considerations}{section.3.2}% 22
+\BOOKMARK [1][-]{section.3.3}{Kalman Filter}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.4}{Data Analysis}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.4.1}{Particle identification}{section.3.4}% 25
+\BOOKMARK [2][-]{subsection.3.4.2}{Estimation of orientation}{section.3.4}% 26
+\BOOKMARK [2][-]{subsection.3.4.3}{Width compensation}{section.3.4}% 27
+\BOOKMARK [0][-]{chapter.4}{Results}{}% 28
+\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 29
+\BOOKMARK [0][-]{appendix.A}{Raw data}{}% 30

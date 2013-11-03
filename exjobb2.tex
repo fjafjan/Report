@@ -2,7 +2,7 @@
 
 % Packages and commands file
 \input{include/packagescommands}
-
+\usepackage{amsmath}
 % Settings (Metadata)
 \input{include/settings}
 
@@ -11,21 +11,14 @@
 
 
 
-% Title Page
-\title{}
-\author{Staffan Ankardal}
-
-
 \begin{document}
-\maketitle
+% Titlepage
+\input{titlepage.tex}
 
 % Abstract
-\begin{abstract}
-
-\end{abstract}
+\input{abstract.tex}
 
 % Table of contents
-\newpage
 \pagenumbering{roman}
 \setcounter{page}{1}
 \pagestyle{fancy}
@@ -49,12 +42,18 @@
 \section{Fluid Dynamics}
 \input{theory/FluidDynamics.tex}
 
+\section{Euler Angles and our Coordinate System}
+\input{theory/EulerAngles.tex}
+
 \section{Jeffrey Orbits}
 \input{theory/JeffreyOrbits.tex}
 % Not quite sure how far in depth I should go here
 \section{Kalman filter}
 % Should I even have this section?
 
+% Part 1: Improvements and automated tracking
+
+% Part 2: Measurements and Analysis
 \chapter{Method}
 
 \section{Experimental Setup}
@@ -77,14 +76,27 @@ IN PARTICULAR:
 Looking up reynolds number sources, "creeping motion" might be a relevant term
 Add our measured visc and add it to citations, maybe add Dag how to cite that?
 
+EULERANGLE STUFF:
+Find, add and cite a nice definition of the Euler Angles (that I think agree with our definition)
 
 JEFFREY ORBIT STUFF:
 Make a picture illustrating the various angles
-Have a picture of some jeffrey orbits
+Make the poincare map and some $n_z/n_x$ time series and include these
+
+DATA ANALYSIS STUFF:
+Add citation for Canny edge detection
+Add citation for ellipse fit
+Make graph of mode of lengths?
+Add cite to anton for a bunch of stuff since i am stealing. 
+
 
 EXPERIMENTAL SETUP STUFF:
 Include the distribution of lengths, either meassured or from nippon
+Make an image of the correction for width and !!!discuss it. !!!
 
+
+% % STUFF I SHOULD CITE % %
+%http://ncds.technion.ac.il/userfiles/publications/jfm97ygr_ellipsoid.pdf
 
 \section{Particle tracking}
 \input{method/particletracking.tex}
@@ -92,14 +104,14 @@ Include the distribution of lengths, either meassured or from nippon
 \section{Kalman Filter}
 \input{Kalman.tex}
 
+\section{Data Analysis}
+\input{method/dataanalysis.tex}
 
 \chapter{Results}
 \input{results/results.tex}
 % LOLOLOLOLOLOL
 \chapter{Discussion}
 
-% % STUFF I SHOULD CITE % %
-%http://ncds.technion.ac.il/userfiles/publications/jfm97ygr_ellipsoid.pdf
 \appendix
 \chapter{Raw data}
 
