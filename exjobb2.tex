@@ -52,9 +52,17 @@
 % Should I even have this section?
 
 % Part 1: Improvements and automated tracking
-
-% Part 2: Measurements and Analysis
 \chapter{Method}
+
+\part{Improvements of Experimental Setup}
+\input{improvements/problems.tex}
+\section{Improvements}
+\subsection{Particles and Channel}
+\input{improvements/particles.tex}
+
+\input{improvements/channel.tex}
+
+\subsection{Automated Tracking}
 
 \section{Experimental Setup}
 \input{method/experimentalsetup.tex}
@@ -82,6 +90,7 @@ Find, add and cite a nice definition of the Euler Angles (that I think agree wit
 JEFFREY ORBIT STUFF:
 Make a picture illustrating the various angles
 Make the poincare map and some $n_z/n_x$ time series and include these
+mention the aspect ratio and the importance is has
 
 DATA ANALYSIS STUFF:
 Add citation for Canny edge detection
@@ -94,6 +103,7 @@ EXPERIMENTAL SETUP STUFF:
 Include the distribution of lengths, either meassured or from nippon
 Make an image of the correction for width and !!!discuss it. !!!
 
+RESULT STUFF
 
 % % STUFF I SHOULD CITE % %
 %http://ncds.technion.ac.il/userfiles/publications/jfm97ygr_ellipsoid.pdf
@@ -104,10 +114,16 @@ Make an image of the correction for width and !!!discuss it. !!!
 \section{Kalman Filter}
 \input{Kalman.tex}
 
+% Part 2: Measurements and Analysis
+
 \section{Data Analysis}
 \input{method/dataanalysis.tex}
 
+\subsection{brushing}
+
 \chapter{Results}
+The meassurements in this section was done together with Alexander Laas.
+
 \input{results/results.tex}
 % LOLOLOLOLOLOL
 \chapter{Discussion}

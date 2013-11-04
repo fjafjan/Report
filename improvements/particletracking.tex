@@ -1,0 +1,70 @@
+\subsection{Noise Reduction}
+The first step in tracking a particle is to correctly identify it in the image given. To do this we want to eliminate as much noise from the image as we can. The first type of noise we will eliminate is static noise, this is noise present in every image and results from dirt or scratches on the lens of the camera or microscope. 
+The easiest solution to such noise would of course be to clean the instruments, but despite numerous attempts of carefully cleaning every surface a noticeable of static noise would always remain. 
+
+This means one must use algorithmic noise reduction methods to remove this noise. The method employed is a simple averaging that takes N pictures at different positions in the channel to generate an average image where any particular features of the channel would disappear and only the static noise remain. This can be seen in figure STATIC NOISE REDUCTION IMAGE,
+
+
+\subsection{Canny Edge Detection}
+The Canny Edge invented by John Canny in his 2011 paper the canny of cane detection is generally considered the most advanced and best performing edge detection of the simple filter functions. 
+Without going in to the finer details, given an image matrix $\mathbf{I}$ where each value corresponds to the light intensity $i_{x,y}$of that pixel at index $x,y$ the Canny edge detector will try to find the cohesive pixels $E = \{e_1, e_2... e_n\}$ where there is a noticeable change in intensity. In other words, what we call an "edge" an image. 
+
+This is accomplished in two steps. First a Sobel Filter edge image is computed by looking at the change in intensity at every pixel from 3 possible directions and averaging these. 
+
+S = MATHEMATICS OF SOBEL
+
+We then consider a Then, a pixel 
+
+$p_{x,y} \in E \text{if} S(x,y) > T_{high}$
+
+where $T_{high}$ is a predetermined threshold value. 
+
+Secondly we recursively check all pixels neighbouring an edge
+
+MATH?
+
+ if they are higher than some threshold value $T_low$. if they are, they are also considered part of the edge. This is repeated until no more pixels are added. An image illustrating this process can be seen in figure FIG. The benefit of the Canny edge detection over the simpler Sobel is that it is much easier to detect cohesive objects that vary in intensity without getting a lot of other noise in the image. The only real drawback of the Canny Edge detection is the computation time, and thus the implementation from the Open Computer Vision (OCV) was used, as this is a heavily optimized routine written in C++ with real time uses in mind. Thanks to this the computing for the Canny Edge of a 260x260 Image takes about X ms and thus is of little importance in the overall time per frame.
+
+After noise reduction the Canny Edge Detection is used to find the most significant edges in the image. 
+
+\subsection{Contour detection and selection}
+
+Once an edge image has been generated, the OCV package has another useful function, \texttt{Contours} which returns a list of every contiguous group of edge pixels. If we have chosen the threshold values to the edge detection correctly, this should include the particle or a good approximation of it. 
+
+In order to find the correct contour, a few techniques are used to find the correct contour.
+
+First particles whose total size is less than some minimum value, $ n_{min}$ or larger than some maximum value $n_{max}$ are ignored. Then the position $pP_i$ of each contour $C_i={p_1,p_2...p_n}$ is calculated as the average pixel position
+
+\[
+P_i = \sum_{j}^n p_j/n
+\]
+This position is compared to the expected position of the Kalman filter, which the very first frame is the middle position. 
+
+Finally a 'thinness value' is calculated according to eq \ref{eq:thinness}
+
+\begin{equation}\label{eq:thinness}
+w_{thin}\left(\frac{ n}{d_{max}^2}\right)^2
+\end{equation}. 
+where $w_{thin}$ is a weighting constant, $n$ is the number of pixels in the contour and $d_{max}$ is the longest distance between two pixels in the 
+where I am not really sure I should do this now that I have so few particles, but I do it none the less!
+
+\subsection{Stabilizing the tracking}
+Once a state estimation has been made, we want to adjust the speed of the step engine to, as best as possible, match that of the particle. This is done by looking both the position and velocity of the particle and going through the conditional statements shown in figure CONDITIONAL CORRECTION VECTOR. 
+
+The goal is to limit the amount of corrections made, as changing the velocity is rather time intensive as discussed in section \ref{sec:time considerations}, as well as keeping the particle stable. There is also no point in trying to completely eliminate movement
+% % About how to choose the correction vector and communicate with the step engine
+
+\subsection{Time Considerations}\label{sec:time considerations}
+A higher FPS will allow the particle detection to be better, improve the position saving and allow the particle tracking to be more stable as well. So maximizing the FPS, ie reducing the computational time of each task, is a clear goal for a good automated tracking. A list of the different tasks and their average execution times can be seen in table \ref{tab:benchmarks}
+
+\begin{table}[H]
+ \begin{tabular}{l | c | c } 
+ Task  			&  Average time & Std deviation \\
+ Capture screen & 1000 			& 200 \\
+ Find edges 	& 200			& 20 \\
+ \end{tabular}
+ \caption{}
+ \label{tab:benchmarks}
+\end{table}
+
+We can clearly see that FPS is limited primarily by three routines: The screen capture routine, the change velocity routine and finally the save position routine. The first and last are unavoidable and must be done every frame by definition if we are interested in knowing the particles position as well as possible. This means we simply want to use the velocity correction as little as possible. Since the time constraint is in the communication with the step engine, there is not any optimization to be done here, at least not within the scope is this thesis. 

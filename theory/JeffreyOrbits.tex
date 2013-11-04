@@ -22,11 +22,43 @@ g_3 &= \frac{a_x^2 - a_y^2}{2(a_x^2 + a_y^2)}
 \end{align}
 \end{subequations}
 
-where the angles are defined as can be seen in figure \ref{fig:eulerangles}
+where the angles are defined as can be seen in figure \ref{fig:eulerangles}. It should be noted that the Jeffrey orbits sometimes refer simply to solution for the symmetric case (as found by Jeffrey) but this leaves the asymmetric orbits unnamed, so in this thesis Jeffrey Orbits refer to the solutions for both symmetric and asymmetric particles.
 
+The orbits for different initial conditions can be plotted in a Poincaré map \cite{poincare} for $\phi = 0$. A few such maps can be seen in figure \ref{fig:poincaremaps}. A simplified explanation of the Poincare map is that a particle starting on some point on a line in the map will follow along that line the next time it intersects with the section, in our case when the particle has $\phi=0$. 
 
+For a particle with a small asymmetry there are essentially three classes of orbits.
 
+\begin{enumerate}
+\item Periodic. For larger $\left|\theta\right|$ there is little variation and the particle is largely periodic with fluctuations too small to measure.
+\item Quasi-periodic bent: For intermediate $\left|\theta\right|$ the amplitude of $\cos(\theta)$ changes noticeably but does not change sign.
+\item Quasi-periodic circular: For small $\left|\theta\right|$ the amplitude of $\cos(\theta)$ will change noticeably and change sign from positive to negative.
+\end{enumerate}
 
+These three different types of orbits are illustrated in \ref{fig:orbittypes} and also shows .
 
-%
-%w = (f(t_0 + 2*pi*k) = f(t_0))/	N_rotations
+\begin{figure}[H]
+\centering
+\begin{subfigure}[3a]{0.40\textwidth}
+\includegraphics[width=\textwidth]{figures/theory/map.pdf}
+\caption{}\label{fig:orbitmap}
+\end{subfigure}\hspace{1em}%
+\begin{subfigure}[3b]{0.40\textwidth}
+\includegraphics[width=\textwidth]{figures/theory/orbit.pdf}
+\caption{.}\label{fig:orbitparams}
+\end{subfigure}
+\caption{WRITE PARAMETERS HERE THEY ARE LAMBDA 7 EPSILON 5.}
+\label{fig:orbittypes}
+\end{figure}
+
+\subsection{Winding Number}
+The quasi-periodic orbits are also referred to as double-periodic. This is referring to the fact that the variations that are seen in figure \ref{fig:orbitparams} are periodic as well. The ratio between the two periods is referred to as the winding number $\omega$, or simply
+\begin{equation}\label{eq:winding}
+\omega = \frac{\theta_1}{\theta_2}.
+\end{equation}
+
+This can also be thought of as the number of steps travelled on the poincare map before coming back to where it 
+started, divided by the number of laps it takes. This number is the same for any point along a given orbit on the 
+poincare map but varies greatly for different orbits as well as for different asymmetries. The winding numbers for
+ orbits a slice along $\psi=0$ for $\epsilon=\{0.01, 0.05, 0.10\}$ can be seen in figure 
+ 
+ % Add the winding number figure.

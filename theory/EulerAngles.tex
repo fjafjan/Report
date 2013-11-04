@@ -1,8 +1,12 @@
-When describing rotating particles it is common to use the so called Euler Angles. These are defined 
+When describing rotating particles it is common to use the so called Euler Angles. A formal definition can be found at MathWorld \cite{eulerAngles} but for the purposes of this thesis we will describe it as a transformation from a coordinate system $\{x,y,z\}$ to \{x',y',z'\} in three steps
 
-DEFINITION OF EULER ANGLES
+\begin{itemize}
+\item Rotate the x-y plane $\phi$ about the z-axis.
+\item Denote the shifted x axis T and rotate the z-y' plane $\theta$ around this axis
+\item Rotate $\psi$ around the z' axis to obtain the final coordinate system
+\end{itemize}
 
-This is illustrated in figure \ref{fig:eulerangles} where each prim marks one more step of rotation to the coordinate system of
+This is illustrated in figure \ref{fig:eulerangles} where each prim marks one more step of rotation to the coordinate system. To make it clear how this relates to the experiment figure \ref{fig:eulerparticle} shows the euler angle rotations for a triaxial particle shown from a point of view similar to the of the experiment where the X-Z plane is the primary plane. 
 
 \begin{figure}
 \begin{center}
@@ -21,4 +25,4 @@ This is illustrated in figure \ref{fig:eulerangles} where each prim marks one mo
 \label{fig:eulerparticle}
 \end{figure}
 
-
+% Write something about the coordinate system here
