@@ -1,44 +1,43 @@
-\subsection{Noise Reduction}
-The first step in tracking a particle is to correctly identify it in the image given. To do this we want to eliminate as much noise from the image as we can. The first type of noise we will eliminate is static noise, this is noise present in every image and results from dirt or scratches on the lens of the camera or microscope. 
-The easiest solution to such noise would of course be to clean the instruments, but despite numerous attempts of carefully cleaning every surface a noticeable of static noise would always remain. 
+%GENERAL LAYOUT
+%
+%Why we want tracking 
+%
+%The differences between tracking and tracking
+%
+%The methods used
+%
+%The limitations
+%
+%1) Why we want tracking
 
-This means one must use algorithmic noise reduction methods to remove this noise. The method employed is a simple averaging that takes N pictures at different positions in the channel to generate an average image where any particular features of the channel would disappear and only the static noise remain. This can be seen in figure STATIC NOISE REDUCTION IMAGE,
+One of the most time consuming aspects as well as mentally draining is manually tracking a particle. Depending on the flow rate and the number of stretches and runs desired for a particle it can take several hours. Thus one of the primary targets for improvement as discussed by Johansson \cite{AntonThesis} was to try and make the camera tracking automatic. This would enable faster measurements as well as more measurements since it would reduce fatigue. 
 
+Such a tracking was implemented using Python and the external packages \texttt{OPENCV}, \texttt{NumPy}, \texttt{SciPy}, \texttt{ImageMagick} and \texttt{ctypes}. The goal of the tracking is relatively similar to the tracking described in \ref{sec:particleTracking} and more in detail in Johansson \cite{AntonThesis} however there are a few very important differences that produce unique problems. 
 
-\subsection{Canny Edge Detection}
-The Canny Edge invented by John Canny in his 2011 paper the canny of cane detection is generally considered the most advanced and best performing edge detection of the simple filter functions. 
-Without going in to the finer details, given an image matrix $\mathbf{I}$ where each value corresponds to the light intensity $i_{x,y}$of that pixel at index $x,y$ the Canny edge detector will try to find the cohesive pixels $E = \{e_1, e_2... e_n\}$ where there is a noticeable change in intensity. In other words, what we call an "edge" an image. 
+\subsection{Aquiring the image}
+The first step in this is to acquire the image from the micrscope in order to identify (and track) the particle. However the Leica DFC350 FX camera only works with the proprietary Leica software which means there is no easy way to get this image straight from the camera in real time. This meant we were forced to use the \texttt{ImageGrabber} package in \texttt{Python} and then isolate the camera image from the screen. This quite easy to do but takes ca 50ms per frame which would be unnecessary for an open source camera software. 
 
-This is accomplished in two steps. First a Sobel Filter edge image is computed by looking at the change in intensity at every pixel from 3 possible directions and averaging these. 
+\subsection{Removing noise}
+The first step is to reduce the static noise from the movie caused by dirt, scratches and other defects in the microscope and on the camera lens as can be seen in figure \ref{fig:origFrame}As the noise is static and everything else changes this is a simple matter of computing an average frame
 
-S = MATHEMATICS OF SOBEL
+\begin{equation}\label{eq:averageFrame}
+\bar{F} = \frac{\sum\limits_{n=1}^{N} F }{den}
+\end{equation}
 
-We then consider a Then, a pixel 
-
-$p_{x,y} \in E \text{if} S(x,y) > T_{high}$
-
-where $T_{high}$ is a predetermined threshold value. 
-
-Secondly we recursively check all pixels neighbouring an edge
-
-MATH?
-
- if they are higher than some threshold value $T_low$. if they are, they are also considered part of the edge. This is repeated until no more pixels are added. An image illustrating this process can be seen in figure FIG. The benefit of the Canny edge detection over the simpler Sobel is that it is much easier to detect cohesive objects that vary in intensity without getting a lot of other noise in the image. The only real drawback of the Canny Edge detection is the computation time, and thus the implementation from the Open Computer Vision (OCV) was used, as this is a heavily optimized routine written in C++ with real time uses in mind. Thanks to this the computing for the Canny Edge of a 260x260 Image takes about X ms and thus is of little importance in the overall time per frame.
-
-After noise reduction the Canny Edge Detection is used to find the most significant edges in the image. 
+an example of such an average frame can be seen in figure \ref{fig:averageFrame}. This is then removed from the camera frame and the result can be seen in figure \ref{fig:fixedFrame}. After this we apply a smoothing function and Canny edge detection \cite{Canny} and then fill the resulting edge. 
 
 \subsection{Contour detection and selection}
 
 Once an edge image has been generated, the OCV package has another useful function, \texttt{Contours} which returns a list of every contiguous group of edge pixels. If we have chosen the threshold values to the edge detection correctly, this should include the particle or a good approximation of it. 
 
-In order to find the correct contour, a few techniques are used to find the correct contour.
+In order to find the correct contour  a few techniques are used.
 
-First particles whose total size is less than some minimum value, $ n_{min}$ or larger than some maximum value $n_{max}$ are ignored. Then the position $pP_i$ of each contour $C_i={p_1,p_2...p_n}$ is calculated as the average pixel position
+First contours whose total size is less than some minimum value, $ n_{min}$ or larger than some maximum value $n_{max}$ are ignored. Then the position $P_i$ of each contour $C_i={p_1,p_2...p_n}$ is calculated as the average pixel position
 
 \[
 P_i = \sum_{j}^n p_j/n
 \]
-This position is compared to the expected position of the Kalman filter, which the very first frame is the middle position. 
+This position is compared to the expected position of the particle , which the very first frame is the middle position and thereafter is assumed to have constant speed. 
 
 Finally a 'thinness value' is calculated according to eq \ref{eq:thinness}
 
@@ -46,25 +45,30 @@ Finally a 'thinness value' is calculated according to eq \ref{eq:thinness}
 w_{thin}\left(\frac{ n}{d_{max}^2}\right)^2
 \end{equation}. 
 where $w_{thin}$ is a weighting constant, $n$ is the number of pixels in the contour and $d_{max}$ is the longest distance between two pixels in the 
-where I am not really sure I should do this now that I have so few particles, but I do it none the less!
+% Mostwhere I am not really sure I should do this now that I have so few particles, but I do it none the less!
 
-\subsection{Stabilizing the tracking}
-Once a state estimation has been made, we want to adjust the speed of the step engine to, as best as possible, match that of the particle. This is done by looking both the position and velocity of the particle and going through the conditional statements shown in figure CONDITIONAL CORRECTION VECTOR. 
+\subsection{Adjusting the Camera velocity}
+Once detected twice the particle will have some velocity relative to the camera $v_{rel}$ and a position $\mathbb{P}$. 
+If the velocity is larger than some threshold $v_{thresh}$ or the position is outside a center square in the image, $\mathbb{P} \not \in \mathbf{B}$ we want to adjust the velocity of the step engine. 
 
-The goal is to limit the amount of corrections made, as changing the velocity is rather time intensive as discussed in section \ref{sec:time considerations}, as well as keeping the particle stable. There is also no point in trying to completely eliminate movement
-% % About how to choose the correction vector and communicate with the step engine
+We then simply do a straight correction but with a damping factor to prevent a feedback loop. So our resulting velocity change 
+
+\begin{equation}
+V_c = v_{rel}\cdot \zeta
+\end{equation}
 
 \subsection{Time Considerations}\label{sec:time considerations}
-A higher FPS will allow the particle detection to be better, improve the position saving and allow the particle tracking to be more stable as well. So maximizing the FPS, ie reducing the computational time of each task, is a clear goal for a good automated tracking. A list of the different tasks and their average execution times can be seen in table \ref{tab:benchmarks}
+A higher frame rate will allow for greater predictive power and increase stability as the error between frames is reduces. So reducing computational time of each task is important for optimizing the tracking which also means knowing what tasks are the most demanding. A list of the different tasks and their average execution times can be seen in table \ref{tab:benchmarks}
 
 \begin{table}[H]
  \begin{tabular}{l | c | c } 
  Task  			&  Average time & Std deviation \\
  Capture screen & 1000 			& 200 \\
  Find edges 	& 200			& 20 \\
+ Change velocity& 400			& 50 \\
  \end{tabular}
  \caption{}
  \label{tab:benchmarks}
 \end{table}
 
-We can clearly see that FPS is limited primarily by three routines: The screen capture routine, the change velocity routine and finally the save position routine. The first and last are unavoidable and must be done every frame by definition if we are interested in knowing the particles position as well as possible. This means we simply want to use the velocity correction as little as possible. Since the time constraint is in the communication with the step engine, there is not any optimization to be done here, at least not within the scope is this thesis. 
+We see that the FPS is limited primarily by three routines: The screen capture routine, the change velocity routine and finally the save position routine. The first and last are unavoidable and must be done every frame by definition if we are interested in knowing the particles position as well as possible. This means we simply want to use the velocity correction as little as possible. Since the time constraint is in the communication with the step engine, there is not any optimization to be done here, at least not within the scope is this thesis. 

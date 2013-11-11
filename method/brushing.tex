@@ -1,0 +1,16 @@
+The tracking will typically have a few frames where either the particle is obstructed or is not detected correctly leading to spikes in the data. To make further theoretical analysis possible such points are removed manually. The basis for removal is simply a large discontinuity in the data, and while this could largely be eliminated with algorithmic means in particular for $n_x$ it's very difficult to write an algorithm that will satisfactory catch all possible edge cases. It's thus simpler to look at the analysis program and remove the points where the particle cannot be traced accurately due to noise. 
+
+An example of unbrushed and brushed data can be seen in figure \ref{fig:brushed} and all unbrushed data files will be available at \url{INSERT URL HERE}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[3a]{0.40\textwidth}
+\includegraphics[width=\textwidth]{figures/method/Brushing3.png}
+\caption{Tracking data before brushing.}\label{fig:prebrush}
+\end{subfigure}\hspace{1em}%
+\begin{subfigure}[3b]{0.40\textwidth}
+\includegraphics[width=\textwidth]{figures/method/Brushing4.png}
+\caption{tracking data after brushing.}\label{fig:postbrush}
+\end{subfigure} \\
+\caption{Shows a set of data before and after removing points where a significant amount of noise disturbed the tracking. } \label{fig:brushed}
+\end{figure}

@@ -1,4 +1,4 @@
-When describing rotating particles it is common to use the so called Euler Angles. A formal definition can be found at MathWorld \cite{eulerAngles} but for the purposes of this thesis we will describe it as a transformation from a coordinate system $\{x,y,z\}$ to \{x',y',z'\} in three steps
+When describing rotating particles it is common to use the so called Euler Angles. A formal definition can be found at MathWorld \cite{eulerAngles} but for the purposes of this thesis we will describe it as a transformation from our stationary coordinate system $\{x,y,z\}$ to the coordinate system attached to our particle \{x',y',z'\}. This transformation is done in three steps and using the intermediate axis T.
 
 \begin{itemize}
 \item Rotate the x-y plane $\phi$ about the z-axis.
@@ -6,18 +6,18 @@ When describing rotating particles it is common to use the so called Euler Angle
 \item Rotate $\psi$ around the z' axis to obtain the final coordinate system
 \end{itemize}
 
-This is illustrated in figure \ref{fig:eulerangles} where each prim marks one more step of rotation to the coordinate system. To make it clear how this relates to the experiment figure \ref{fig:eulerparticle} shows the euler angle rotations for a triaxial particle shown from a point of view similar to the of the experiment where the X-Z plane is the primary plane. 
+This is illustrated in figure \ref{fig:eulerangles} where each prim marks one more step of rotation to the coordinate system. To make it clear how this relates to the experiment figure \ref{fig:eulerparticle} shows the Euler angle rotations for a triaxial particle shown from a point of view similar to the of the experiment where the X-Z plane is the primary plane. This means we can describe the orientation of a particle using $\mathbf{E} = (\phi, \theta, \psi)$.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.7\textwidth]{figures/theory/eulerangles.png}
+\includegraphics[width=0.6\textwidth]{figures/theory/eulerangles.png}
 \end{center}
 \caption{The Euler angles illustrated using a series of coordinate rotations. This is the normal way of illustrating the Euler angles as it is how they are defined.}
 \label{fig:eulerangles}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{figures/theory/EulerParticle.pdf}
 \end{center}
@@ -25,4 +25,17 @@ This is illustrated in figure \ref{fig:eulerangles} where each prim marks one mo
 \label{fig:eulerparticle}
 \end{figure}
 
-% Write something about the coordinate system here
+% Write something about the coordinate system here?
+
+\subsection{Triaxial particles}
+Triaxial particles have, as the name suggests, three axis that are all distinct, compared to a sphere which has only one and an ellipse that has two. I will in this thesis refer to the lengths of these axes as $a_x, a_y, a_z$ corresponding to their lengths along those axes for $\mathbf{E} = (0,0,0)$. 
+
+% Where are we talking about this elsehwere?
+%When trying to estimate the orientation of the particle from a projection in the x-z plane we will also be interested in the normalized projection of the particle onto the x-z plane. This will be referred to as $\mathbf{n} = (n_x, n_y, n_z)$
+
+We are interested in the orientation of the particle
+
+%\begin{equation}
+%n(t) = (n_x(t), n_y(t), n_z(t))^\intercal.
+%\end{equation}
+

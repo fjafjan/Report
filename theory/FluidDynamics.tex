@@ -5,28 +5,26 @@ In order to understand the motivations, limitations and behaviour of the experim
 
 
 \subsection{Reynold's Number}
-The Reynolds number (Re) is a dimensionless number describing the ratio of inertial forces to viscous forces in a flow. This is not a very strict definition, but suffices to explain that the Reynolds number can be used to characterize the so called flow regime of a system. 
+The Reynolds number (Re) is a dimensionless number describing the ratio of inertial forces to viscous forces in a flow. For flow in a pipe it is defined as \cite{introfluid}
 
-The two major flow regimes are Laminar flow, where viscous forces dominate over inertial forces, and the turbulent regime where inertial forces dominate. The area where neither is significantly larger is referred to as transitional flow, which may show either chaotic of laminar behaviour. 
+\begin{equation}\label{eq:reynolds}
+Re = \frac{U L \rho}{\mu}
+\end{equation}
+where $U$ is the characteristic velocity of the flow, $L$ is the characteristic length, $\rho$ is the density and $\mu$ is the dynamic viscosity. This is used to estimate the 'regime' of the flow, of which there are two primary types. 
+\begin{enumerate}
+\item Laminar flow, where viscous forces dominate over inertial forces
+\item Turbulent regime where inertial forces dominate.
+\end{enumerate}
 
-A rough characterization of laminar and chaotic flow can be seen in figure \ref{fig:laminar_flow}
+As the Reynolds number is a ratio between the inertial forces and viscous forces we get more turbulent flow for larger Reynolds numbers, a simple visual characterization of the flow types can be seen in figure \ref{fig:laminar_flow}. For $operatorname{Re}\ll 1$ it is referred to as \emph{Stokes flow} and we can ignore intertial forces completely. This actually means that not only is the flow completely guaranteed to be laminar, but it is time reversible, meaning that reversing the flow any dynamics of the flow and particles in the flow will revert perfectly as well \cite{introfluid3}.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/theory/laminarFlow.pdf}
 \caption{This shows the principal difference between laminar and turbulent flow}
 \label{fig:laminar_flow}
 \end{figure}
 
-The Reynolds number (Re) is defined as \cite{introfluid}
-
-\begin{equation}\label{eq:reynolds}
-Re = \frac{U L \rho}{\mu}
-\end{equation}
-
-where $U$ is the characteristic velocity, $L$ is the characteristic length, $\rho$ is the density and $\mu$ is the dynamic viscosity. 
-
-As the Reynolds number is a ratio, a flow is predicted to be laminar if $Re << 1$ which is the primary concern in this thesis.
 
 \subsection{Stokes Drag and Stokes's law}
 The drag force $F_D$ exerted by a fluid on a spherical particle for $Re << 1$ is found using the so called Stokes's law \cite{introfluid2}
