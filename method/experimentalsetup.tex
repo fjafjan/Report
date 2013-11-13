@@ -1,24 +1,21 @@
-As the goal is to attempt to verify the Jeffrey equations in eq \ref{eq:jeffrey} we need an experimental setup with 
-particles and flow system that satisfy the conditions during which the Jeffrey equations apply. This means our particles 
-have to be buoyant, triaxially symmetric and the flow has to be Stokes flow. 
+In order to study the motion of the particles a liquid containing particles i pumped through a microfluidic channel. The channel is placed on a moveable stage on top of a microscope so that the particle can be tracked by moving the stage and thus the channel in order to keep the particle stationary above the microscope. A sketch of this setup can be seen in figure \ref{fig:channelsketch} and a photograph of the actual setup in figure \ref{fig:setuppicture}. 
 
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/method/setupsketch.png}
+\caption{Sketch of the set up}\label{fig:setupsketch}
+\end{figure}
 
-Thus two sets of glass particles from Nippon Glass, Japan\cite{Particles}, have been used. 
-They are cylindrical with a consistent width of \unit[3]{$\mu$m} and \unit[5]{$\mu$m} and varying length. Images taken 
-with a STEM microscope can be seen in figure \ref{fig:particlepictures}. 
-
-
-%While these particles seemingly satisfy the symmetry conditions they are made glass with a density of approximately 
-%\unit[2.57]{g/cm$^3$} at \unit[20]{C$^\circ$} which is significantly higher than that of water with a density of 
-%\unit[1]{g/cm$^3$} at \unit[20]{C$^\circ$} and glycerol with a density of \unit[1.5]{g/cm$^3$}. Thus to correct for the 
-%density and limit sinking or floating the water soluble Sodium metatungstate which at \unit[20]{C$^\circ$} has maximum 
-%density of \unit[2.94]{g/cm$^3$}. To increase the viscosity of the liquid around 8\% glycerol is added, resulting in a 
-%measured dynamic viscosity of \unit[$24\cdot 10^{-3}$]{Pa s}
-
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/method/ExperimentalOverview.jpg}
+\caption{Overview of the set up}\label{fig:setuppicture}
+\end{figure}
 
 
-% PIcture of the channel meassurements here 
+The microfluidic channel is \unit[40]{mm} long, \unit[2.5]{mm} wide and ca unit[150]{$\mu$m} deep. The channel is made from Polydimethylsiloxane (PDMS) and plasma bonded to a microscope slide, a more detailed description of the process can be found from the Caroline Workshop \cite{PDMS}. This material and procedure is chosen so that a particle that gets filled with dirt or breaks can cheaply and easily be replaced and because it's non reactive and highly transparent. A sketch of the channel can be seen in figure \ref{fig:channelsketch} and a photograph of an actual channel can be seen in figure \ref{fig:channelpicture}. 
+
 \begin{figure}[H]
 \centering
 \begin{subfigure}[b]{0.45\textwidth}
@@ -34,12 +31,32 @@ with a STEM microscope can be seen in figure \ref{fig:particlepictures}.
 \end{figure}
 
 
-This liquid with suspended particles is flowed through a channel of Polydimethylsiloxane (PDMS) \unit[4]{cm} long,
- \unit[2.5]{mm} wide and either \unit[200]{$\mu$m} and \unit[500]{$\mu$m}. The flow profile of such a channel was 
- calculated by Anton Johansson in his thesis\cite{AntonThesis} and can be seen in figure \ref{fig:flowprofile}. The 
- flow rate varies  between $2$ and \unitfrac[20]{$\mu$l}{m} or in SI units \unitfrac[$3.33\cdot 10^-10$]{m$^3$}{s} 
- which with a cross section of at least \unit[$5\cdot 10^-7$]{m$^2$}means a maximum flow speed of  
- \unitfrac[6.66]{mm}{s}.
+To find the maximum flow speed of the channel we need to know the flow profile and using the software used in Johansson \cite{AntonThesis} we get the flow profile that can be seen in figure \ref{fig:flowprofile}. Integrating the flow profile over the entire surface will give us an effective flow area. To find the maximum flow speed we can simply divide the flow rate by the effective flow radius.
+
+DO THIS SOME TIME SOON OKAY?
+
+
+
+
+
+%Thus two sets of glass particles from Nippon Glass, Japan\cite{Particles}, have been used. 
+%They are cylindrical with a consistent width of \unit[3]{$\mu$m} and \unit[5]{$\mu$m} and varying length. Images taken 
+%with a STEM microscope can be seen in figure \ref{fig:particlepictures}. 
+
+
+%While these particles seemingly satisfy the symmetry conditions they are made glass with a density of approximately 
+%\unit[2.57]{g/cm$^3$} at \unit[20]{C$^\circ$} which is significantly higher than that of water with a density of 
+%\unit[1]{g/cm$^3$} at \unit[20]{C$^\circ$} and glycerol with a density of \unit[1.5]{g/cm$^3$}. Thus to correct for the 
+%density and limit sinking or floating the water soluble Sodium metatungstate which at \unit[20]{C$^\circ$} has maximum 
+%density of \unit[2.94]{g/cm$^3$}. To increase the viscosity of the liquid around 8\% glycerol is added, resulting in a 
+%measured dynamic viscosity of \unit[$24\cdot 10^{-3}$]{Pa s}
+
+
+
+% PIcture of the channel meassurements here 
+
+
+
 
 % Picture of channel flow profile
 \begin{figure}[H]
@@ -52,7 +69,7 @@ This liquid with suspended particles is flowed through a channel of Polydimethyl
 
 
 To confirm that the flow is a creeping flow we can calculate the maximum Reynolds number using eq \ref{eq:reynolds} and 
-our maximum flow speed 
+our maximum flow speed. The ma
 
 \begin{equation}
 \operatorname{Re} = \frac{U L \rho}{\mu} 
@@ -60,24 +77,12 @@ our maximum flow speed
 \approx	 	1.6  \cdot 10^{-3} \ll 1
 \end{equation}
 
-This should satisfy the conditions of the Jeffrey equations. To track the particles the channel is put in a moveable stage on a confocal microscope. The entire setup can be seen in figure \ref{fig:experimentalsetup}
+This should satisfy the conditions of the Jeffrey equations. To track the particles the channel is put in a moveable stage on a confocal microscope. The entire setup can be seen in figure 
 
-\begin{figure}[H]
-\centering
-\begin{subfigure}[b]{0.45\textwidth}
-\includegraphics[width=0.9\textwidth]{figures/method/setupsketch.png}
-\caption{Sketch of the set up}\label{fig:setupsketch}
-\end{subfigure}
-\begin{subfigure}[b]{0.45\textwidth}
-\includegraphics[width=0.9\textwidth]{figures/method/ExperimentalOverview.jpg}
-\caption{Overview of the set up}\label{fig:setuppicture}
-\end{subfigure}
-\caption{}
-\label{fig:experimentalsetup}
-\end{figure}
+
 
 \subsection{List of equipment}
-The equipment used during the experiment is as follows
+ The equipment used during the experiment is as follows
 \begin{itemize}
 \item Leica DFC350 FX digital camera 
 \item Nikon Eclipse TE 300 microscope
@@ -86,14 +91,14 @@ The equipment used during the experiment is as follows
 \item CMA 4004 syringe pump
 \end{itemize}
 
-
-\subsection{Density matching}
-\begin{equation}
-\rho_{a} = 	\frac {m_{a}}{V_{a}} =
-				\frac{V_{b}\rho_{b} + V_{mix}\rho_{mix}}{V_b + V_{mix}} 
-\end{equation}
-So if we want to find $V_{mix}$ we get
-\begin{equation}
-V_{mix} = \frac{ V_{b}(\rho_{b} - \rho_{a})}{\rho_{a} - \rho_{mix}} 
-\end{equation}
-
+%
+%\subsection{Density matching}
+%\begin{equation}
+%\rho_{a} = 	\frac {m_{a}}{V_{a}} =
+%				\frac{V_{b}\rho_{b} + V_{mix}\rho_{mix}}{V_b + V_{mix}} 
+%\end{equation}
+%So if we want to find $V_{mix}$ we get
+%\begin{equation}
+%V_{mix} = \frac{ V_{b}(\rho_{b} - \rho_{a})}{\rho_{a} - \rho_{mix}} 
+%\end{equation}
+%

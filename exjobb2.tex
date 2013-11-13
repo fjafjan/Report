@@ -53,8 +53,10 @@
 
 \chapter{Method}
 \part{Improvements of Experimental Setup}
-\input{improvements/problems.tex}
+\section{Experimental Setup}
+\input{method/experimentalsetup.tex}
 \section{Improvements}
+\input{improvements/problems.tex}
 
 \subsection{Particles and Channel}
 \input{improvements/particles.tex}
@@ -64,9 +66,43 @@
 \subsection{Automated Tracking}
 \input{improvements/particletracking.tex}     
 
-\section{Experimental Setup}
-\input{method/experimentalsetup.tex}
 
+% Part 2: Measurements and Analysis
+\part{Measurements and Analysis}
+\section{Data Analysis}
+\input{method/dataanalysis.tex}
+
+\subsection{brushing}
+\input{method/brushing.tex}
+
+\subsection{Winding number estimation}
+\input{method/windingestimation.tex}
+
+\subsection{Matching to theoretical orbit}
+\input{method/matchorbit.tex}
+
+\chapter{Results}
+\input{results/results.tex}
+
+% LOLOLOLOLOLOL
+\chapter{Discussion}
+
+\appendix
+\chapter{Raw data}
+
+%\section{$\mathbf{\lambda}$ of about 6}
+%These are the particles with a $\lambda = 6 \pm 0.5$
+%\input{lambdaSix.tex}
+%
+%\section{$\mathbf{\lambda}$ of about 6}
+%These are the particles with a $\lambda = 7 \pm 0.5$
+%\input{lambdaSeven.tex}
+%
+%\section{Other particles}
+%\input{others.tex}
+\bibliography{bibliography}
+\bibliographystyle{plain}
+\end{document}     
 
 % This should not be a chapter but a section of the experimental setup. Maybe a section of 
 % that should be improvements and I can include the Automated tracking can be part of that
@@ -93,9 +129,6 @@
 %Include the distribution of lengths, either meassured or from nippon
 %Make an image of the correction for width and !!!discuss it. !!!
 
-	
-% % STUFF I SHOULD CITE % %
-%http://ncds.technion.ac.il/userfiles/publications/jfm97ygr_ellipsoid.pdf
 
 %\section{Particle tracking}
 %\input{method/particletracking.tex}
@@ -103,40 +136,3 @@
 %\section{Kalman Filter}
 %\input{Kalman.tex}
 
-% Part 2: Measurements and Analysis
-\part{Measurements and Analysis}
-\section{Data Analysis}
-\input{method/dataanalysis.tex}
-
-\subsection{brushing}
-\input{method/brushing.tex}
-
-\subsection{Winding number estimation}
-\input{method/windingestimation.tex}
-% next little note thing
-
-\subsection{Matching to theoretical orbit}
-
-
-\chapter{Results}
-\input{results/results.tex}
-
-% LOLOLOLOLOLOL
-\chapter{Discussion}
-
-\appendix
-\chapter{Raw data}
-
-%\section{$\mathbf{\lambda}$ of about 6}
-%These are the particles with a $\lambda = 6 \pm 0.5$
-%\input{lambdaSix.tex}
-%
-%\section{$\mathbf{\lambda}$ of about 6}
-%These are the particles with a $\lambda = 7 \pm 0.5$
-%\input{lambdaSeven.tex}
-%
-%\section{Other particles}
-%\input{others.tex}
-\bibliography{bibliography}
-\bibliographystyle{plain}
-\end{document}     

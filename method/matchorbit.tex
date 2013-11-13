@@ -1,0 +1,19 @@
+To find the best matching orbit from a poincare map we again utilize the $n_z$ peaks where $\phi = 0$ which we call $\mathbf{P_z}$ from figure \ref{fig:nzNx0}. $\mathbf{P_z}$ still is $N$ long but now we are concerned with simply matching them with the peaks from theoretical orbits as opposed to estimating a winding number.
+
+%To find the best matching theoretical orbit we calculate the least square distance of $\mathbf{P_z}$ against the theoretical peaks for $\epsilon \in [0.01, 0.02, ..., 0.1]$ and for $\cos(\theta) \in [-1,1]$ 
+%and for $\psi \in [-\frac{pi}{2},\frac{pi}{2}]$. 
+
+To find the best matching theoretical orbit we computed the least square distance for all orbits on all face maps with $\epsilon \in [0.01, 0.02, ..., 0.1]$. If we for each orbit denote our theoretical series of $n_z$ peaks $\mathbf{Q_z}(\theta, \epsilon)$ of length $M >> N$ we can assign a score function $S(\theta, \epsilon)$ as
+
+\begin{equation}
+S(\theta, \epsilon) = \left| \mathbf{P_z} - \mathbf{Q_z(\theta, \epsilon)} \right|^2
+\end{equation}
+
+However matching against different $\theta$ and $\epsilon$ is not enough to get small mean square distance as the phase of the time series might be different. It is safe to assume that $P_z$ will be at least half a period of the quasi period $\theta_2$ since otherwise we would have no reason to think there is quasi periodic behaviour and trying to match an orbit would be fairly pointless. If we denote $Q_z^{(i)}$ denote the series of peaks starting at i and  $P_z$ is at least half a period we can calculate the score for starting at a certain starting index $S(\theta, \epsilon, i)$
+
+\begin{equation}
+S(\theta, \epsilon, i) = \left| \mathbf{P_z} - \mathbf{Q_z^{(i)}} \right|^2.
+\end{equation}
+
+
+% Refer to some matched plots once I have added those. I THINK basically everythig should already be in the saved plots and data folder. 

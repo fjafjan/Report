@@ -5,10 +5,14 @@ Once a movie had been recorded we want to estimate the dynamics of the particle.
 The first step is to reduce the static noise from the movie caused by dirt, scratches and other defects in the microscope and on the camera lens as can be seen in figure \ref{fig:origFrame}As the noise is static and everything else changes this is a simple matter of computing an average frame
 
 \begin{equation}\label{eq:averageFrame}
-\bar{F} = \frac{\sum\limits_{n=1}^{N} F }{den}
+\bar{F} = \frac{\sum\limits_{n=1}^{N} F }{N}
 \end{equation}
 
-an example of such an average frame can be seen in figure \ref{fig:averageFrame}. This is then removed from the camera frame and the result can be seen in figure \ref{fig:fixedFrame}. After this we apply a smoothing function and Canny edge detection \cite{Canny} and then fill the resulting edge. The resulting pixels are then fit to an ellipse as described in \cite{AntonThesis, EllipseFit}. The filled contour and the fit ellipse can be seen in figure \ref{fig:edgeFrame}.
+an example of such an average frame can be seen in figure \ref{fig:averageFrame}. This is then removed from the camera 
+frame and the result can be seen in figure \ref{fig:fixedFrame}. After this we apply a smoothing function and Canny 
+edge detection \cite{Canny} and then fill the resulting edge. The resulting pixels are then fit to an ellipse as 
+described in \cite{AntonThesis, EllipseFit}. The filled contour and the fit ellipse can be seen in figure 
+\ref{fig:edgeFrame}.
 
 \begin{figure}[H]
 \centering
