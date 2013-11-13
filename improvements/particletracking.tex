@@ -18,17 +18,17 @@ Such a tracking was implemented using Python and the external packages \texttt{O
 The first step in this is to acquire the image from the micrscope in order to identify (and track) the particle. However the Leica DFC350 FX camera only works with the proprietary Leica software which means there is no easy way to get this image straight from the camera in real time. This meant we were forced to use the \texttt{ImageGrabber} package in \texttt{Python} and then isolate the camera image from the screen. This quite easy to do but takes ca 50ms per frame which would be unnecessary for an open source camera software. 
 
 \subsection{Removing noise}
-The first step is to reduce the static noise from the movie caused by dirt, scratches and other defects in the microscope and on the camera lens as can be seen in figure \ref{fig:origFrame}As the noise is static and everything else changes this is a simple matter of computing an average frame
+The first step is to reduce the static noise from the movie caused by dirt, scratches and other defects in the microscope and on the camera lens as can be seen in figure \ref{fig:origFrame}. As the noise is static and everything else changes this is a simple matter of computing an average frame
 
 \begin{equation}\label{eq:averageFrame}
-\bar{F} = \frac{\sum\limits_{n=1}^{N} F }{den}
+\bar{F} = \frac{\sum\limits_{n=1}^{N} F }{N}
 \end{equation}
 
-an example of such an average frame can be seen in figure \ref{fig:averageFrame}. This is then removed from the camera frame and the result can be seen in figure \ref{fig:fixedFrame}. After this we apply a smoothing function and Canny edge detection \cite{Canny} and then fill the resulting edge. 
+an example of such an average frame can be seen in figure \ref{fig:averageFrame}. This is then removed from the camera frame and the result can be seen in figure \ref{fig:fixedFrame}. After this we apply a smoothing function and Canny edge detection \cite{Canny} and then use the resulting edge. 
 
 \subsection{Contour detection and selection}
 
-Once an edge image has been generated, the OCV package has another useful function, \texttt{Contours} which returns a list of every contiguous group of edge pixels. If we have chosen the threshold values to the edge detection correctly, this should include the particle or a good approximation of it. 
+Once an edge image has been generated, we use the OpenCV command, \texttt{Contours} which returns a list of every contiguous group of edge pixels. If we have chosen the threshold values to the edge detection correctly, this should include the particle or a good approximation of it. 
 
 In order to find the correct contour  a few techniques are used.
 
@@ -44,14 +44,14 @@ Finally a 'thinness value' is calculated according to eq \ref{eq:thinness}
 \begin{equation}\label{eq:thinness}
 w_{thin}\left(\frac{ n}{d_{max}^2}\right)^2
 \end{equation}. 
-where $w_{thin}$ is a weighting constant, $n$ is the number of pixels in the contour and $d_{max}$ is the longest distance between two pixels in the 
+where $w_{thin}$ is a weighting constant, $n$ is the number of pixels in the contour and $d_{max}$ is the longest distance between two pixels in the contour.
 % Mostwhere I am not really sure I should do this now that I have so few particles, but I do it none the less!
 
 \subsection{Adjusting the Camera velocity}
 Once detected twice the particle will have some velocity relative to the camera $v_{rel}$ and a position $\mathbb{P}$. 
 If the velocity is larger than some threshold $v_{thresh}$ or the position is outside a center square in the image, $\mathbb{P} \not \in \mathbf{B}$ we want to adjust the velocity of the step engine. 
 
-We then simply do a straight correction but with a damping factor to prevent a feedback loop. So our resulting velocity change 
+We then simply do a straight correction but with a damping factor $\zeta$ to prevent a feedback loop. So our resulting velocity change $V_c$ is 
 
 \begin{equation}
 V_c = v_{rel}\cdot \zeta
@@ -60,6 +60,7 @@ V_c = v_{rel}\cdot \zeta
 \subsection{Time Considerations}\label{sec:time considerations}
 A higher frame rate will allow for greater predictive power and increase stability as the error between frames is reduces. So reducing computational time of each task is important for optimizing the tracking which also means knowing what tasks are the most demanding. A list of the different tasks and their average execution times can be seen in table \ref{tab:benchmarks}
 
+NOTE CURRENTLY NOT PUT IN ACTUAL DATA ONLY APPROXIMATE
 \begin{table}[H]
  \begin{tabular}{l | c | c } 
  Task  			&  Average time & Std deviation \\

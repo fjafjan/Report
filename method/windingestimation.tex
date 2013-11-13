@@ -1,0 +1,22 @@
+As discussed in section \ref{sec:winding}, estimating the winding number for different types of orbit for one particle 
+should allow for a rather accurate estimation of $\epsilon$. So in order estimate the winding number for a measured 
+particle we must identify where the $\theta_1$ maxima and minima from figure \ref{fig:windingDef} occur. The first step 
+to do this is to find the $\theta_2$ maxima which can be done quite easily by finding where $n_x = 0$. A plot of such 
+points can be seen in figure \ref{fig:nzNx0} where we match each $n_z$ peak with an index $i$. Unfortunately data is too noisy to allow for simple algorithmic approaches 
+to finding good local maxima. Instead we select a number of maxima $M_1, M_2 ... M_p$ with peak index $I^M_1, I^M_2, ..., I^M_p$  and minima $m_1, m_2, ..., m_q$ with peak index $I^m_1, I^m_2, ..., I^m_q$.
+
+We can estimate the winding number $\hat{w}$ as the average distance between the peak indices for the maxima and minima i.e. 
+
+\begin{align}
+\overline{d_M} &= \frac{1}{p-1} \sum\limits_{j=1}^{p} I^M_{j+1} - I^M_{j} \\
+\overline{d_m} &= \frac{1}{q-1} \sum\limits_{j=1}^{q} I^m_{j+1}- I^m_{j}\\
+\hat{w}   &= \frac{\overline{d_M} + \overline{d_m}}{2}
+\end{align}
+
+or in the case that we only have 1 maxima and minima we use instead
+
+\begin{equation}
+\hat{w} = \left| I^M_1 - I^m_1 \right| \cdot 2
+\end{equation}
+
+as the distance between maxima and minima should be half a period.

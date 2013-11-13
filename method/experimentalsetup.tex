@@ -1,25 +1,36 @@
 As the goal is to attempt to verify the Jeffrey equations in eq \ref{eq:jeffrey} we need an experimental setup with 
-particles and flow system that satisfy the conditions that the Jeffrey equations apply under. This means our particles 
-have to be buoyant, triaxially symmetric and small enough that inertial effects are negligible. The flow has to be a 
-linear creeping flow, in other words have a Reynolds number satisfying $Re << 1$ and have a high unidirectional shear 
-that allows one to detect the orbits in a relatively short distance.
+particles and flow system that satisfy the conditions during which the Jeffrey equations apply. This means our particles 
+have to be buoyant, triaxially symmetric and the flow has to be Stokes flow. 
 
 
-The particles used in previous measurements were made from apoxy mixed in a vortex\cite{JonasExperiment} which made 
-them buoyant and small enough to ignore inertial effects, but they were not symmetrical enough to produce reliable 
-periodic Jeffrey orbits. Thus two sets of glass particles from Nippon Glass, Japan\cite{Particles}, have been used. 
+
+Thus two sets of glass particles from Nippon Glass, Japan\cite{Particles}, have been used. 
 They are cylindrical with a consistent width of \unit[3]{$\mu$m} and \unit[5]{$\mu$m} and varying length. Images taken 
 with a STEM microscope can be seen in figure \ref{fig:particlepictures}. 
 
 
+%While these particles seemingly satisfy the symmetry conditions they are made glass with a density of approximately 
+%\unit[2.57]{g/cm$^3$} at \unit[20]{C$^\circ$} which is significantly higher than that of water with a density of 
+%\unit[1]{g/cm$^3$} at \unit[20]{C$^\circ$} and glycerol with a density of \unit[1.5]{g/cm$^3$}. Thus to correct for the 
+%density and limit sinking or floating the water soluble Sodium metatungstate which at \unit[20]{C$^\circ$} has maximum 
+%density of \unit[2.94]{g/cm$^3$}. To increase the viscosity of the liquid around 8\% glycerol is added, resulting in a 
+%measured dynamic viscosity of \unit[$24\cdot 10^{-3}$]{Pa s}
 
 
-While these particles seemingly satisfy the symmetry conditions they are made glass with a density of approximately \unit[2.57]{g/cm$^3$} at \unit[20]{C$^\circ$} which is significantly higher than that of water with a density of \unit[1]{g/cm$^3$} at \unit[20]{C$^\circ$} and glycerol with a density of \unit[1.5]{g/cm$^3$}. Thus to correct for the density and limit sinking or floating the water soluble Sodium metatungstate which at \unit[20]{C$^\circ$} has maximum density of \unit[2.94]{g/cm$^3$}. To increase the viscosity of the liquid around 8\% glycerol is added, resulting in a measured dynamic viscosity of \unit[$24\cdot 10^{-3}$]{Pa s}
 
 % PIcture of the channel meassurements here 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{figures/method/ChannelZoomed.jpg}
+\begin{subfigure}[b]{0.45\textwidth}
+\includegraphics[width=0.9\textwidth]{figures/method/channelDetail.pdf}
+\caption{Sketch of the channel}\label{fig:channelsketch}
+\end{subfigure}
+\begin{subfigure}[b]{0.45\textwidth}
+\includegraphics[width=0.9\textwidth]{figures/method/ChannelZoomed.jpg}
+\caption{Picture of the channel}\label{fig:channelpicture}
+\end{subfigure}
+\caption{}
+\label{fig:channel}
 \end{figure}
 
 
@@ -35,15 +46,16 @@ This liquid with suspended particles is flowed through a channel of Polydimethyl
 \begin{center}
 \includegraphics[width=0.7\textwidth]{figures/method/flowprofile.pdf}
 \end{center}
-\caption{}
+\caption{The theoretical estimation of the flow profile. Image used with permission from Johansson \cite{AntonThesis}}
 \label{fig:flowprofile}
 \end{figure}
 
-            
-To confirm that the flow is a creeping flow we can calculate the maximum Reynolds number using eq \ref{eq:reynolds} and our maximum flow speed 
+
+To confirm that the flow is a creeping flow we can calculate the maximum Reynolds number using eq \ref{eq:reynolds} and 
+our maximum flow speed 
 
 \begin{equation}
-Re = \frac{U L \rho}{\mu} 
+\operatorname{Re} = \frac{U L \rho}{\mu} 
 \leq \frac{6.66\cdot 10^{-3} \cdot 2.5 \cdot 10^{-3} 2.5 }{24 \cdot 10^{-3}} 
 \approx	 	1.6  \cdot 10^{-3} \ll 1
 \end{equation}
@@ -65,7 +77,7 @@ This should satisfy the conditions of the Jeffrey equations. To track the partic
 \end{figure}
 
 \subsection{List of equipment}
-
+The equipment used during the experiment is as follows
 \begin{itemize}
 \item Leica DFC350 FX digital camera 
 \item Nikon Eclipse TE 300 microscope

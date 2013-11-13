@@ -21,21 +21,24 @@ g_3 &= \frac{a_x^2 - a_y^2}{2(a_x^2 + a_y^2)}
 \end{align}
 \end{subequations}
 
-where the angles are defined as can be seen in figure \ref{fig:eulerangles}. We can make a few key observations 
+. The Euler angles $(\phi, \theta, \psi)$ are defined as can be seen in figure \ref{fig:eulerangles}. 
 
-Solutions to the equations of motions can be found with numerical methods as shown by CITE SOME DUDE but one has to be careful to convert to the right coordinates. 
+Solutions to the equations of motions can be found with numerical methods as shown by \cite{Yarin} but one has to be careful to convert to the right coordinates. 
 
-The orbits for different initial conditions can be plotted in a Poincaré map, also known as a Surface of Section (S.O.S) \cite{poincare} for $\phi = 0$. A few such maps can be seen in figure \ref{fig:poincaremaps}. A simplified explanation of the Poincare map is that a particle starting on some point on a line in the map will follow along that line the next time it intersects with the section, in our case when the particle has $\phi=0$. 
+The time evolution of $\theta$ and $\psi$ for different initial conditions can be plotted in a Poincaré map, also known 
+as a Surface of Section (S.O.S) \cite{poincare} for $\phi = 0$. The points for every initial condition is bound to a certain region of such a map called the orbit. A few such maps can be seen in figure \ref{fig:orbitmaps}
 
-For a particle with a small asymmetry there are essentially three classes of orbits.
+For a particle with a small $\epsilon \in \left[0.01-0.05\right]$there are essentially three classes of orbits.
 
 \begin{enumerate}
-\item Periodic. For larger $\left|\theta\right|$ there is little variation and the particle is largely periodic with fluctuations too small to measure.
-\item Quasi-periodic bent: For intermediate $\left|\theta\right|$ the amplitude of $\cos(\theta)$ changes noticeably but does not change sign.
-\item Quasi-periodic circular: For small $\left|\theta\right|$ the amplitude of $\cos(\theta)$ will change noticeably and change sign from positive to negative.
+\item \textbf{Periodic}: For larger $\left|\theta\right|$ there is little variation and the particle is largely periodic with fluctuations too small to measure.
+\item \textbf{Quasi-periodic bent}: For intermediate $\left|\theta\right|$ the amplitude of $\cos(\theta)$ changes noticeably but does not change sign.
+\item \textbf{Quasi-periodic circular}: For small $\left|\theta\right|$ the amplitude of $\cos(\theta)$ will change noticeably and change sign from positive to negative.
 \end{enumerate}
 
-These three different types of orbits are illustrated in \ref{fig:orbittypes} and also shows .
+For larger asymmetries $\epsilon < 0.05]$ there will also be chaotic orbits that will appear as areas with dots. Such orbits can been seen in figure \ref{fig:orbitmap4}.
+
+These three different types of orbits are illustrated in figure \ref{fig:orbittypes} both on the S.O.S. as well as the components of $\mathbf{n}$. We can see that while $n_x$ and $n_y$ are periodic but with different amplitudes the behaviour for $n_z$ is significantly different. For th large $n_z$ orbit shown in green there is very little variation over time, only a slight modulation. For the bent quasi periodic orbit in red there is a far more significant modulation with a fixed period and for the circular quasi periodic orbit in blue $n_z$ changes sign.
 
 \begin{figure}[H]
 \centering
@@ -47,12 +50,35 @@ These three different types of orbits are illustrated in \ref{fig:orbittypes} an
 \includegraphics[width=\textwidth]{figures/theory/orbit.pdf}
 \caption{The time series for the components \\ of the unit vector.}\label{fig:orbitparams}
 \end{subfigure}
-\caption{A poincare map and three orbits for the Jeffery orbits of a particle with $\lambda=7$ and $\epsilon=0.05$. The three orbits highlight the three different kinds of orbit, the quasi periodic circular orbit in blue, the quasi-periodic bent orbit in red and the periodic in green. We see that while $n_x$ and $n_y$}
+\caption{A poincare map and three orbits for the Jeffery orbits of a particle with $\lambda=7$ and $\epsilon=0.05$. The three orbits highlight the three different kinds of orbit, the quasi periodic circular orbit in blue, the quasi-periodic bent orbit in red and the periodic in green. We see that while $n_x$ and $n_y$ look qualitatively similar but differ in amplitude for the different orbits $n_z$ shows three different types of behaviour}
 \label{fig:orbittypes}
 \end{figure}
 
-\subsection{Winding Number}
-The quasi-periodic orbits are also referred to as double-periodic. This is referring to the fact that the variations that are seen in figure \ref{fig:orbitparams} are periodic as well. The ratio between the two periods is referred to as the winding number $\omega$, or simply
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[3a]{0.40\textwidth}
+\includegraphics[width=\textwidth]{figures/theory/7-1-1.pdf}
+\caption{The poincare map for $\lambda = 7, \epsilon = 0$}\label{fig:orbitmap1}
+\end{subfigure}\hspace{1em}%
+\begin{subfigure}[3b]{0.40\textwidth}
+\includegraphics[width=\textwidth]{figures/theory/7-1o01-1.pdf}
+\caption{Poincare map for $\lambda = 7, \epsilon = 0.01$.}\label{fig:orbitmap2}
+\end{subfigure} \\
+\begin{subfigure}[3a]{0.40\textwidth}
+\includegraphics[width=\textwidth]{figures/theory/7-1o05-1.pdf}
+\caption{A poincare map for $\lambda = 7, \epsilon = 0.05$}\label{fig:orbitmap3}
+\end{subfigure}\hspace{1em}%
+\begin{subfigure}[3b]{0.40\textwidth}
+\includegraphics[width=\textwidth]{figures/theory/7-1o2-1.pdf}
+\caption{Poincare map for $\lambda = 7, \epsilon = 0.2$.}\label{fig:orbitmap4}
+\end{subfigure} 
+\caption{Four Poincare maps for different $\epsilon$. Already at $\epsilon = 0.01$ there are noticeably quasi-periodic orbits around the center but it is also sigificantly larger for $\epsilon = 0.05$. For $\epsilon == 0.2$ we can see chaotic orbits around the center orbits that appear as a 'sea' of dots.}\label{fig:orbitmaps}
+\end{figure}
+
+\subsection{Winding Number} \label{sec:winding}
+The quasi-periodic orbits are also referred to as double-periodic in, for example in Yarin \cite{Yarin}. This is referring to the fact that the variations that are seen in figure \ref{fig:orbitparams} are periodic as well. The ratio between the two periods is referred to as the winding number $\omega$, or simply
 \begin{equation}\label{eq:winding}
 \omega = \frac{\theta_1}{\theta_2}.
 \end{equation}
@@ -70,12 +96,12 @@ which is illustrated in figure \ref{fig:windingDef}.
 This can also be thought of as the number of steps travelled on the poincare map before coming back to where it 
 started, divided by the number of laps it takes. This number is the same for any point along a given orbit on the 
 poincare map but varies greatly for different orbits as well as for different asymmetries. The winding numbers for
- orbits a slice along $\psi=0$ for $\epsilon=\{0.01, 0.05, 0.10\}$ can be seen in figure \ref{fig:windingdifferent}
+ orbits a slice along $\psi=0$ for $\epsilon=\{0.01, 0.05, 0.10\}$ can be seen in figure \ref{fig:windingdifferent} which means that if we can measure the winding number we should be able to approximate the asymmetry of the particle fairly well, especially if we can see the gap between a quasi periodic bent orbit and a circular orbit.
  
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{figures/theory/WindingTrend.png}
 \end{center}
-\caption{The winding number as a function of $\cos(\theta)$ for three different asymmetries. The sharp edge that occurs centered around zero is when the circular orbits break into bent orbits as mentioned previously. We see that a lower asymmetry leads to a sharper difference between the circular and the bent orbits.}
+\caption{The winding number as a function of $\cos(\theta)$ for three different asymmetries. The sharp edge that occurs centered around zero is where the circular orbits change into bent orbits. We see that a lower asymmetry leads to a sharper difference between the circular and the bent orbits.}
 \label{fig:windingdifferent}
 \end{figure}

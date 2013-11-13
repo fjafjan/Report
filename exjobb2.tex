@@ -15,6 +15,9 @@
 % Titlepage
 \input{titlepage.tex}
 
+% % TEMPORARY DOUBLE SPACIN % %
+\doublespacing
+
 % Abstract
 \input{abstract.tex}
 
@@ -47,13 +50,8 @@
 
 \section{Jeffery Orbits}
 \input{theory/JeffreyOrbits.tex}
-% Not quite sure how far in depth I should go here
-%\section{Kalman filter}
-% Should I even have this section?
 
-% Part 1: Improvements and automated tracking
 \chapter{Method}
-
 \part{Improvements of Experimental Setup}
 \input{improvements/problems.tex}
 \section{Improvements}
@@ -81,20 +79,11 @@
 %TAKE AN IMAGE OF THE STATIC NOISE REDUCTION (DOES IT ACTUALLY WORK?!)
 %GET AN IMAGE OF BEFORE AND AFTER SMOOTHING, PREFERABLY INCLUDE A CANNY EDGE DETECTION OF BOTH 
 %WRITE ABOUT THE TIME IT TAKES TO DO VARIOUS STUFFS (IS THIS NEEDED?)
-%GET MORE SOURCES IN THE THEORY SECTION
-%IN PARTICULAR:
-%Looking up reynolds number sources, "creeping motion" might be a relevant term
-%Add our measured visc and add it to citations, maybe add Dag how to cite that?
-%
-%EULERANGLE STUFF:
-%Find, add and cite a nice definition of the Euler Angles (that I think agree with our definition)
-%
+%%
 %JEFFREY ORBIT STUFF:
-%Make a picture illustrating the various angles
 %mention the aspect ratio and the importance is has on the period time
 %
 %DATA ANALYSIS STUFF:
-%Add citation for Canny edge detection
 %Add citation for ellipse fit
 %Make graph of mode of lengths?
 %Add cite to anton for a bunch of stuff since i am stealing. 
@@ -123,6 +112,7 @@
 \input{method/brushing.tex}
 
 \subsection{Winding number estimation}
+\input{method/windingestimation.tex}
 % next little note thing
 
 \subsection{Matching to theoretical orbit}

@@ -374,7 +374,7 @@
      inkscape:snap-to-guides="true"
      inkscape:zoom="0.0625"
      inkscape:cx="-3550.8212"
-     inkscape:cy="-1220.3266"
+     inkscape:cy="84.330291"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -383,13 +383,6 @@
        type="xygrid"
        id="grid9138" />
   </sodipodi:namedview>
-  <rect
-     style="fill:#ffffff;fill-opacity:1;stroke-width:20;stroke-miterlimit:4;stroke-dasharray:none"
-     id="rect10949"
-     width="7840"
-     height="5280"
-     x="-7680"
-     y="-1517" />
   <rect
      style="fill:#a5cede;fill-opacity:1"
      id="rect3045"
@@ -607,7 +600,7 @@
          height="5200"
          x="-8288"
          y="-1757" /></flowRegion><flowPara
-       id="flowPara9323"></flowPara></flowRoot>  <flowRoot
+       id="flowPara9323" /></flowRoot>  <flowRoot
      xml:space="preserve"
      id="flowRoot9325"
      style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Times New Roman;font-style:normal;font-weight:normal;font-size:250px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:Times New Roman"><flowRegion
@@ -617,7 +610,7 @@
          height="272"
          x="-4208"
          y="99" /></flowRegion><flowPara
-       id="flowPara9331"></flowPara></flowRoot>  <rect
+       id="flowPara9331" /></flowRoot>  <rect
      style="fill:#000000;fill-opacity:1;stroke-width:30;stroke-miterlimit:4;stroke-dasharray:none"
      id="rect9677"
      width="4850"
