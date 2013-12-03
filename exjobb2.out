@@ -3,37 +3,50 @@
 \BOOKMARK [2][-]{subsection.1.1.1}{Background}{section.1.1}% 3
 \BOOKMARK [0][-]{chapter.2}{Theory}{}% 4
 \BOOKMARK [1][-]{section.2.1}{Fluid Dynamics}{chapter.2}% 5
-\BOOKMARK [2][-]{subsection.2.1.1}{Navier Stokes}{section.2.1}% 6
-\BOOKMARK [2][-]{subsection.2.1.2}{Reynold's Number}{section.2.1}% 7
-\BOOKMARK [2][-]{subsection.2.1.3}{Stokes Drag and Stokes's law}{section.2.1}% 8
-\BOOKMARK [1][-]{section.2.2}{Euler Angles and our Coordinate System}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.2.1}{Triaxial particles}{section.2.2}% 10
-\BOOKMARK [1][-]{section.2.3}{Jeffery Orbits}{chapter.2}% 11
-\BOOKMARK [2][-]{subsection.2.3.1}{Winding Number}{section.2.3}% 12
-\BOOKMARK [0][-]{chapter.3}{Method}{}% 13
-\BOOKMARK [-1][-]{part.1}{I Improvements of Experimental Setup}{}% 14
-\BOOKMARK [0][-]{section.3.1}{Experimental Setup}{part.1}% 15
-\BOOKMARK [1][-]{subsection.3.1.1}{List of equipment}{section.3.1}% 16
-\BOOKMARK [1][-]{section.3.2}{Improvements}{section.3.1}% 17
-\BOOKMARK [2][-]{subsection.3.2.1}{Particles and Channel}{section.3.2}% 18
-\BOOKMARK [2][-]{subsection.3.2.2}{Automated Tracking}{section.3.2}% 19
-\BOOKMARK [2][-]{subsection.3.2.3}{Aquiring the image}{section.3.2}% 20
-\BOOKMARK [2][-]{subsection.3.2.4}{Removing noise}{section.3.2}% 21
-\BOOKMARK [2][-]{subsection.3.2.5}{Contour detection and selection}{section.3.2}% 22
-\BOOKMARK [2][-]{subsection.3.2.6}{Adjusting the Camera velocity}{section.3.2}% 23
-\BOOKMARK [2][-]{subsection.3.2.7}{Time Considerations}{section.3.2}% 24
-\BOOKMARK [-1][-]{part.2}{II Measurements and Analysis}{}% 25
-\BOOKMARK [0][-]{section.3.3}{Data Analysis}{part.2}% 26
-\BOOKMARK [1][-]{subsection.3.3.1}{Particle identification}{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.2}{Estimation of orientation}{subsection.3.3.1}% 28
-\BOOKMARK [2][-]{subsection.3.3.3}{Width compensation}{subsection.3.3.1}% 29
-\BOOKMARK [2][-]{subsection.3.3.4}{brushing}{subsection.3.3.1}% 30
-\BOOKMARK [2][-]{subsection.3.3.5}{Winding number estimation}{subsection.3.3.1}% 31
-\BOOKMARK [2][-]{subsection.3.3.6}{Matching to theoretical orbit}{subsection.3.3.1}% 32
-\BOOKMARK [0][-]{chapter.4}{Results}{part.2}% 33
-\BOOKMARK [1][-]{section.4.1}{Particle A}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.2}{Particle B}{chapter.4}% 35
-\BOOKMARK [2][-]{subsection.4.2.1}{Run 1}{section.4.2}% 36
-\BOOKMARK [2][-]{subsection.4.2.2}{Run 2}{section.4.2}% 37
-\BOOKMARK [0][-]{chapter.5}{Discussion}{part.2}% 38
-\BOOKMARK [0][-]{appendix.A}{Raw data}{part.2}% 39
+\BOOKMARK [2][-]{subsection.2.1.1}{Reynold's Number}{section.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.1.2}{Stokes Drag and Stokes's law}{section.2.1}% 7
+\BOOKMARK [1][-]{section.2.2}{Euler Angles and our Coordinate System}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.1}{Triaxial particles}{section.2.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Jeffery Orbits}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.3.1}{Winding Number}{section.2.3}% 11
+\BOOKMARK [0][-]{chapter.3}{Method}{}% 12
+\BOOKMARK [-1][-]{part.1}{I Improvements of Experimental Setup}{}% 13
+\BOOKMARK [0][-]{section.3.1}{Experimental Setup}{part.1}% 14
+\BOOKMARK [1][-]{subsection.3.1.1}{List of equipment}{section.3.1}% 15
+\BOOKMARK [1][-]{section.3.2}{Improvements}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.2.1}{Particles and Channel}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.2}{Automated Tracking}{section.3.2}% 18
+\BOOKMARK [2][-]{subsection.3.2.3}{Acquiring the image}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.4}{Reducing noise}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.5}{Contour detection and selection}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.6}{Adjusting the Camera velocity}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.7}{Time Considerations}{section.3.2}% 23
+\BOOKMARK [-1][-]{part.2}{II Data Analysis and Results}{}% 24
+\BOOKMARK [0][-]{chapter.4}{Data Analysis}{part.2}% 25
+\BOOKMARK [1][-]{subsection.4.0.8}{Particle identification}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.0.9}{Estimation of orientation}{subsection.4.0.8}% 27
+\BOOKMARK [2][-]{subsection.4.0.10}{Width compensation}{subsection.4.0.8}% 28
+\BOOKMARK [1][-]{section.4.1}{brushing}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{Winding number estimation}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.3}{Matching to theoretical orbit}{chapter.4}% 31
+\BOOKMARK [0][-]{chapter.5}{Results}{part.2}% 32
+\BOOKMARK [1][-]{section.5.1}{Particle A}{chapter.5}% 33
+\BOOKMARK [2][-]{subsection.5.1.1}{Measurement 1}{section.5.1}% 34
+\BOOKMARK [2][-]{subsection.5.1.2}{Measurement 2}{section.5.1}% 35
+\BOOKMARK [2][-]{subsection.5.1.3}{Measurement 3}{section.5.1}% 36
+\BOOKMARK [2][-]{subsection.5.1.4}{Measurement 4}{section.5.1}% 37
+\BOOKMARK [2][-]{subsection.5.1.5}{Measurement 5}{section.5.1}% 38
+\BOOKMARK [1][-]{section.5.2}{Particle B}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.2.1}{Measurement 1}{section.5.2}% 40
+\BOOKMARK [2][-]{subsection.5.2.2}{Run 1}{section.5.2}% 41
+\BOOKMARK [2][-]{subsection.5.2.3}{Measurement 2}{section.5.2}% 42
+\BOOKMARK [2][-]{subsection.5.2.4}{Measurement 3}{section.5.2}% 43
+\BOOKMARK [2][-]{subsection.5.2.5}{Measurement 4}{section.5.2}% 44
+\BOOKMARK [0][-]{chapter.6}{Discussion}{part.2}% 45
+\BOOKMARK [1][-]{section.6.1}{Sinking}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.2}{Reversals}{chapter.6}% 47
+\BOOKMARK [2][-]{subsection.6.2.1}{Velocity behaviour}{section.6.2}% 48
+\BOOKMARK [1][-]{section.6.3}{Winding number matching}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.4}{Unexplained behaviours}{chapter.6}% 50
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{part.2}% 51
+\BOOKMARK [0][-]{appendix.A}{Raw data}{part.2}% 52

@@ -10,40 +10,40 @@
 %
 %1) Why we want tracking
 
-One of the most time consuming aspects as well as mentally draining is manually tracking a particle. Depending on the flow rate and the number of stretches and runs desired for a particle it can take several hours. Thus one of the primary targets for improvement as discussed by Johansson \cite{AntonThesis} was to try and make the camera tracking automatic. This would enable faster measurements as well as more measurements since it would reduce fatigue. 
+One of the most time consuming aspects as well as mentally draining is manually tracking a particle. Depending on the flow rate and the number of stretches and runs desired for a particle it can take several hours. Thus one of the primary targets for improvement as discussed by Johansson \cite{AntonThesis} was to make the camera tracking automatic. This would enable faster measurements as well as more measurements since it would reduce fatigue. 
 
-Such a tracking was implemented using Python and the external packages \texttt{OPENCV}, \texttt{NumPy}, \texttt{SciPy}, \texttt{ImageMagick} and \texttt{ctypes}. The goal of the tracking is relatively similar to the tracking described in \ref{sec:particleTracking} and more in detail in Johansson \cite{AntonThesis} however there are a few very important differences that produce unique problems. 
+Such a tracking was implemented using Python and the external packages \texttt{OPENCV}, \texttt{NumPy}, \texttt{SciPy}, \texttt{ImageMagick} and \texttt{ctypes}. The goal of the tracking is relatively similar to the tracking described in \ref{sec:particleidentification} and more in detail in Johansson \cite{AntonThesis}. There are however a few very important differences that produce unique problems outlined below. 
 
-\subsection{Aquiring the image}
-The first step in this is to acquire the image from the micrscope in order to identify (and track) the particle. However the Leica DFC350 FX camera only works with the proprietary Leica software which means there is no easy way to get this image straight from the camera in real time. This meant we were forced to use the \texttt{ImageGrabber} package in \texttt{Python} and then isolate the camera image from the screen. This quite easy to do but takes ca 50ms per frame which would be unnecessary for an open source camera software. 
+\subsection{Acquiring the image}
+The first step in this is to acquire the image from the microscope in order to identify (and track) the particle. However the Leica DFC350 FX camera only works with the proprietary Leica software which means there is no easy way to get this image straight from the camera in real time. This meant we were forced to use the \texttt{ImageGrabber} package in \texttt{Python} and then isolate the camera image from the screen. This quite easy to do but takes ca \unit[50]{ms} per frame which would be unnecessary for an open source camera software. 
 
-\subsection{Removing noise}
-The first step is to reduce the static noise from the movie caused by dirt, scratches and other defects in the microscope and on the camera lens as can be seen in figure \ref{fig:origFrame}. As the noise is static and everything else changes this is a simple matter of computing an average frame
+\subsection{Reducing noise}
+The first step to reducing noise is to reduce the static noise from the movie caused by dirt, scratches and other defects in the microscope and on the camera lens, as shown in figure \ref{fig:origFrame}. As the noise is static and everything else changes this is a simple matter of computing an average frame $\bar{F}$. We have $N$ frames $F_i$ and then 
 
 \begin{equation}\label{eq:averageFrame}
-\bar{F} = \frac{\sum\limits_{n=1}^{N} F }{N}
+\bar{F} = \frac{\sum\limits_{i=1}^{N} F_i}{N}.
 \end{equation}
 
-an example of such an average frame can be seen in figure \ref{fig:averageFrame}. This is then removed from the camera frame and the result can be seen in figure \ref{fig:fixedFrame}. After this we apply a smoothing function and Canny edge detection \cite{Canny} and then use the resulting edge. 
+An example of such an average frame can be seen in figure \ref{fig:averageFrame}. This is then removed from each of the camera frames $\bar{F_i}$ and the result can be seen in figure \ref{fig:fixedFrame}. After this we apply a smoothing function and Canny edge detection \cite{Canny} and then use the resulting edge image. 
 
 \subsection{Contour detection and selection}
 
 Once an edge image has been generated, we use the OpenCV command, \texttt{Contours} which returns a list of every contiguous group of edge pixels. If we have chosen the threshold values to the edge detection correctly, this should include the particle or a good approximation of it. 
-
 In order to find the correct contour  a few techniques are used.
 
-First contours whose total size is less than some minimum value, $ n_{min}$ or larger than some maximum value $n_{max}$ are ignored. Then the position $P_i$ of each contour $C_i={p_1,p_2...p_n}$ is calculated as the average pixel position
+First, contours whose total size is less than some minimum value, $ n_{min}$ or larger than some maximum value $n_{max}$ are ignored. Then the position $P_i$ of each contour $C_i={p_1,p_2...p_n}$ is calculated as the average pixel position
 
 \[
 P_i = \sum_{j}^n p_j/n
 \]
 This position is compared to the expected position of the particle , which the very first frame is the middle position and thereafter is assumed to have constant speed. 
 
-Finally a 'thinness value' is calculated according to eq \ref{eq:thinness}
+Finally a 'thinness value' is calculated using
 
 \begin{equation}\label{eq:thinness}
-w_{thin}\left(\frac{ n}{d_{max}^2}\right)^2
+w_{thin}\left(\frac{ n}{d_{max}^2}\right)^2,
 \end{equation}. 
+
 where $w_{thin}$ is a weighting constant, $n$ is the number of pixels in the contour and $d_{max}$ is the longest distance between two pixels in the contour.
 % Mostwhere I am not really sure I should do this now that I have so few particles, but I do it none the less!
 
@@ -54,11 +54,14 @@ If the velocity is larger than some threshold $v_{thresh}$ or the position is ou
 We then simply do a straight correction but with a damping factor $\zeta$ to prevent a feedback loop. So our resulting velocity change $V_c$ is 
 
 \begin{equation}
-V_c = v_{rel}\cdot \zeta
+V_c = v_{rel}\cdot \zeta.
 \end{equation}
 
 \subsection{Time Considerations}\label{sec:time considerations}
-A higher frame rate will allow for greater predictive power and increase stability as the error between frames is reduces. So reducing computational time of each task is important for optimizing the tracking which also means knowing what tasks are the most demanding. A list of the different tasks and their average execution times can be seen in table \ref{tab:benchmarks}
+A higher frame rate will allow for greater predictive power and increase stability as the error between frames is 
+reduces. Reducing computational time of each task is important for optimizing the tracking which also means knowing 
+what tasks are the most demanding. A list of the different tasks and their average execution times can be seen in table 
+\ref{tab:benchmarks}
 
 NOTE CURRENTLY NOT PUT IN ACTUAL DATA ONLY APPROXIMATE
 \begin{table}[H]

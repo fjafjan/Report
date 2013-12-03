@@ -1,4 +1,6 @@
-In order to study the motion of the particles a liquid containing particles i pumped through a microfluidic channel. The channel is placed on a moveable stage on top of a microscope so that the particle can be tracked by moving the stage and thus the channel in order to keep the particle stationary above the microscope. A sketch of this setup can be seen in figure \ref{fig:channelsketch} and a photograph of the actual setup in figure \ref{fig:setuppicture}. 
+The motion of particles in a liquid was studied was investigated by pumping a liquid through a microfluidic channel. The channel is placed on a moveable stage on top of a microscope. A particle can be tracked by moving the stage to match the velocity of the particle in the channel and thus keep the particle stationary in the field of view of the microscope. Connected to the microscope is a CCD camera recording the images and these movies are saved on a computer. As the particle gets within \unit[1]{cm} of the inlets on the channel the flow is reversed. We will refer to the data of a particle along one such length of the channel a \textbf{stretch} and a series of stretches for a single particle a \textbf{measurement}. A sketch of this setup can be seen in figure \ref{fig:channelsketch} and a photograph of the actual setup in figure \ref{fig:setuppicture}.
+
+Between measurements, optical tweezers (for details on how it works see \cite{OpticalTweezer}) constructed by A. Laas  \cite{alexanderThesis} was used to change the initial condition of the particle. 
 
 
 \begin{figure}[H]
@@ -7,10 +9,11 @@ In order to study the motion of the particles a liquid containing particles i pu
 \caption{Sketch of the set up}\label{fig:setupsketch}
 \end{figure}
 
+% Have both this zoomed out and the zoomed in view I think
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/method/ExperimentalOverview.jpg}
-\caption{Overview of the set up}\label{fig:setuppicture}
+\caption{Overview of the set up. The microscope to the left and the syringe pump to the right. The CCD camera is mounted on the left side of the microscope and cannot be seen in this picture.}\label{fig:setuppicture}
 \end{figure}
 
 
@@ -26,7 +29,7 @@ The microfluidic channel is \unit[40]{mm} long, \unit[2.5]{mm} wide and ca unit[
 \includegraphics[width=0.9\textwidth]{figures/method/ChannelZoomed.jpg}
 \caption{Picture of the channel}\label{fig:channelpicture}
 \end{subfigure}
-\caption{}
+\caption{A sketch of the channel as well as a picture of the channel as it is set up during a measurement. The channel is only 150 $\mu$m deep, but the PDMS surrounding it is around 15 mm to try and prevent the channel from expanding and contracting too much.}
 \label{fig:channel}
 \end{figure}
 
@@ -69,7 +72,7 @@ DO THIS SOME TIME SOON OKAY?
 
 
 To confirm that the flow is a creeping flow we can calculate the maximum Reynolds number using eq \ref{eq:reynolds} and 
-our maximum flow speed. The ma
+our maximum flow speed. 
 
 \begin{equation}
 \operatorname{Re} = \frac{U L \rho}{\mu} 
@@ -89,6 +92,7 @@ This should satisfy the conditions of the Jeffrey equations. To track the partic
 \item Nikon 60x water immersion objective
 \item Märzhäuser Wetzlar 'LStep-eco' step engine
 \item CMA 4004 syringe pump
+\item Laser 
 \end{itemize}
 
 %
