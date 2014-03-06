@@ -1,4 +1,4 @@
-The Jeffery Orbits describe the motion of an ellipsoidal particle in stokes shear flow as a function of time. The inital orbits found by Jeffery were for axis-symmetrical ellipsoidal particles, but was generalized by Yarin \emph{et al} \cite{Yarin} to triaxial particles. The Jeffery orbits are sometimes refered to the symmetric orbits but I will in this thesis refer to the generalized orbits as the Jeffrey Orbits. The generalized equations of motion found by Yarin \emph{et al} was
+The Jeffery Orbits describe the motion of an ellipsoidal particle in Stokes shear flow as a function of time. The  orbits for axisymmetric ($a_x = a_z \ne a_y$) ellipsoidal particles was found by Jeffery and was generalized by Yarin \emph{et al}~\cite{Yarin} to triaxial particles. The generalized equations of motion for a triaxial particle found by Yarin \emph{et al} is
 
 \begin{subequations}\label{eq:jeffrey}
 \begin{align}
@@ -21,9 +21,18 @@ g_3 &= \frac{a_x^2 - a_y^2}{2(a_x^2 + a_y^2)}
 \end{align}
 \end{subequations}
 
-The definition of the Euler angles $(\phi, \theta, \psi)$ is seen in figure figure \ref{fig:eulerangles}. 
-Solutions to the equations of motions can be found with numerical methods as shown by \cite{Yarin} but one has to be careful to convert to the right coordinates. 
-The time evolution of $\theta$ and $\psi$ for different initial conditions can be plotted in a Poincaré map, also known 
+where $(\phi, \theta, \psi)$ are the Euler angles seen in figure \ref{fig:eulerangles} and . 
+
+Looking at figure \ref{fig:orbitparams} we see that $n_x$ and $n_y$ periodically change sign, we call each one of these period changes a flip, and the period of flipping $T$ is for an axisymmetric 
+
+\begin{equation}\label{eq:flipRate}
+T = 2\pi \left( \lambda + \frac{1}{\lambda} \right)\frac{1}{\kappa}
+\end{equation}
+
+, where $\kappa$ is the shear rate. 
+
+Solutions to the equations of motions can be found with numerical methods as shown by Yarin \cite{Yarin} but when comparing the results in this thesis with that of Yarin one has to be careful to convert to the right coordinates. The time evolution of 
+$\theta$ and $\psi$ for different initial conditions can be plotted in a Poincaré map, also known 
 as a Surface of Section (S.O.S.) \cite{poincare} for $\phi = 0$. The points for every initial condition is bound to a certain region of such a map called the orbit. A few such maps can be seen in figure \ref{fig:orbitmaps}
 
 For a particle with an $\epsilon \in \left[0.01-0.05\right]$ there are essentially three classes of orbits.
@@ -34,13 +43,11 @@ For a particle with an $\epsilon \in \left[0.01-0.05\right]$ there are essential
 \item \textbf{Quasi-periodic circular}: For small $\left|\theta\right|$ the amplitude of $\cos(\theta)$ will change noticeably and change in sign from positive to negative.
 \end{enumerate}
 
-For larger asymmetries $\epsilon > 0.05]$ there will also be chaotic orbits that will appear as areas with dots. Such orbits can been seen in figure \ref{fig:orbitmap4}.
+For larger asymmetries $\epsilon > 0.05$ there will also be chaotic orbits that will appear as areas with dots. Chaotic orbits can been seen around the quasi-periodic circular orbits in figure \ref{fig:orbitmap4} where they appear as a 'sea' of dots.
 
 These three different types of orbits are illustrated in figure \ref{fig:orbittypes} both on the S.O.S. as well as the 
-components of $\mathbf{n}$. We can see that while $n_x$ and $n_y$ are periodic but with different amplitudes the 
-behaviour for $n_z$ is significantly different. For the large $n_z$ orbit shown in green there is very little variation 
-over time, only a slight modulation. For the bent quasi periodic orbit in red there is a far more significant 
-modulation with a fixed period. For the circular quasi periodic orbit in blue $n_z$ changes sign, again with a fixed 
+components of $\mathbf{n}$. We can see that while $n_x$ and $n_y$ are periodic, but with different amplitudes, the 
+behaviour for $n_z$ is significantly different. For the $n_z \approx 1$  orbit shown in green it is constant on the S.O.S and is simply periodic over time. For the bent quasi-periodic orbit in red it is bent on the S.O.S and we can see in the time series that it is doubly periodic as it peaks with a fixed period but the amplitude of the peaks vary periodically themselves. For the circular quasi-periodic orbit in blue $n_z$ changes sign, again with a fixed 
 period.
 
 
@@ -69,7 +76,7 @@ period.
 \includegraphics[width=\textwidth]{figures/theory/orbit.pdf}
 \caption{The time series for the components \\ of the unit vector.}\label{fig:orbitparams}
 \end{subfigure}
-\caption{A poincare map and three orbits for the Jeffery orbits of a particle with $\lambda=7$ and $\epsilon=0.05$. The three orbits highlight the three different kinds of orbit, the quasi periodic circular orbit in blue, the quasi-periodic bent orbit in red and the periodic in green. We see that while $n_x$ and $n_y$ look qualitatively similar but differ in amplitude for the different orbits $n_z$ shows three different types of behaviour}
+\caption{A poincare map and three different orbits for a particle with $\lambda=7$ and $\epsilon=0.05$. The three orbits highlight the three different kinds of orbit, the quasi-periodic circular orbit in blue, the quasi-periodic bent orbit in red and the periodic orbit in green. We see that while $n_x$ and $n_y$ look qualitatively similar but differ in amplitude for the different orbits, $n_z$ shows three different types of behaviour}
 \label{fig:orbittypes}
 \end{figure}
 
@@ -89,12 +96,12 @@ period.
 \includegraphics[width=\textwidth]{figures/theory/7-1o05-1.pdf}
 \caption{A poincare map for $\lambda = 7, \epsilon = 0.05$}\label{fig:orbitmap3}
 \end{subfigure}\hspace{1em}%
-\begin{subfigure}[3b]{0.40\textwidth}
-\includegraphics[width=\textwidth]{figures/theory/7-1o2-1.pdf}
-\caption{Poincare map for $\lambda = 7, \epsilon = 0.2$.}\label{fig:orbitmap4}
+	\begin{subfigure}[3b]{0.40\textwidth}
+\includegraphics[width=\textwidth]{figures/theory/7-1o25-1.pdf}
+\caption{Poincare map for $\lambda = 7, \epsilon = 0.25$.}\label{fig:orbitmap4}
 \end{subfigure} 
 \caption{Four Poincare maps for different $\epsilon$. Already at $\epsilon = 0.01$ there are noticeably quasi-periodic 
-orbits around the centre at $\cos(\theta) \approx \psi \approx 0$ but it is also a significantly larger region for $\epsilon = 0.05$. For $\epsilon = 0.2$ we can see chaotic orbits surrounding the circular orbits in the centre that appear as a 'sea' of dots.}\label{fig:orbitmaps}
+orbits around the centre at $\cos(\theta) \approx \psi \approx 0$ but it is also a significantly larger region for $\epsilon = 0.05$. For $\epsilon = 0.25$ we can see chaotic orbits surrounding the circular orbits in the centre that appear as a 'sea' of dots. Note that some wavelike pattern can appear to exist in the figure \ref{fig:orbitmap2} and  \ref{fig:orbitmap2}, this is caused by aliasing/compression issues with printing several curved lines close together.}\label{fig:orbitmaps}
 \end{figure}
 
 \subsection{Winding Number} \label{sec:winding}
@@ -110,14 +117,13 @@ This is illustrated in figure \ref{fig:windingDef}.
 \begin{center}
 \includegraphics[width=0.7\textwidth]{figures/theory/WindingNrFixed.pdf}
 \end{center}
-\caption{The $n_z$ plot bent quasi periodic orbit from figure \ref{fig:orbitparams} highlighting the short period $\theta_2$ which is simply the period of $\phi$ and the longer period $\theta_1$. The winding number is defined as the ratio between the longer and shorter periods.}
+\caption{The $n_z$ plot bent quasi-periodic orbit from figure \ref{fig:orbitparams} highlighting the short period $\theta_2$ which is simply the period of $\phi$ and the longer period $\theta_1$. The winding number is defined as the ratio between the longer and shorter periods.}
 \label{fig:windingDef}
 \end{figure}
 
-This can also be thought of as the number of steps travelled on the poincare map before coming back to where it 
-started, divided by the number of laps it takes. This number is the same for any point along a given orbit on the 
+This can also be thought of as the number of intersections on the surface of section before coming back to the initial condition, divided by the number of laps. A lap for a circular orbit is a rotation around the center whereas for a flat orbit it is moving along length of the orbit. asdasd, see figure MAKE A FIGURE. This number is the same for any point along a given orbit on the 
 poincare map but varies greatly for different orbits as well as for different asymmetries. The winding numbers for
- orbits along $\psi=0$ for $\epsilon=\{0.01, 0.05, 0.10\}$ can be seen in figure \ref{fig:windingdifferent}. This shows us that that if we can measure the winding number we should be able to approximate the asymmetry of the particle fairly well, especially if we can see the gap between a quasi periodic bent orbit and a circular orbit.
+ orbits along $\psi=0$ for $\epsilon=\{0.01, 0.05, 0.10\}$ can be seen in figure \ref{fig:windingdifferent}. This shows us that if we can measure the winding number we should be able to approximate the asymmetry of the particle.  This is done by looking at the difference in winding number between a quasi-periodic bent orbit and a circular orbit. This is useful in order to differentiate between particles of different asymmetry, because they can have similar orbits but very distinct winding number. 
  
 \begin{figure}[H]
 \begin{center}

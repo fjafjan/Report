@@ -15,7 +15,7 @@ One of the most time consuming aspects as well as mentally draining is manually 
 Such a tracking was implemented using Python and the external packages \texttt{OPENCV}, \texttt{NumPy}, \texttt{SciPy}, \texttt{ImageMagick} and \texttt{ctypes}. The goal of the tracking is relatively similar to the tracking described in \ref{sec:particleidentification} and more in detail in Johansson \cite{AntonThesis}. There are however a few very important differences that produce unique problems outlined below. 
 
 \subsection{Acquiring the image}
-The first step in this is to acquire the image from the microscope in order to identify (and track) the particle. However the Leica DFC350 FX camera only works with the proprietary Leica software which means there is no easy way to get this image straight from the camera in real time. This meant we were forced to use the \texttt{ImageGrabber} package in \texttt{Python} and then isolate the camera image from the screen. This quite easy to do but takes ca \unit[50]{ms} per frame which would be unnecessary for an open source camera software. 
+The first step in this is to acquire the image from the microscope in order to identify (and track) the particle. However the Leica DFC350 FX camera only works with the proprietary Leica software which means there is no easy way to get this image straight from the camera in real time. This meant we were forced to use the \texttt{ImageGrabber} package in \texttt{Python} and then isolate the camera image from the screen. This quite is easy to do but takes ca \unit[50]{ms} per frame which would be unnecessary for an open source camera software. 
 
 \subsection{Reducing noise}
 The first step to reducing noise is to reduce the static noise from the movie caused by dirt, scratches and other defects in the microscope and on the camera lens, as shown in figure \ref{fig:origFrame}. As the noise is static and everything else changes this is a simple matter of computing an average frame $\bar{F}$. We have $N$ frames $F_i$ and then 
@@ -59,17 +59,17 @@ V_c = v_{rel}\cdot \zeta.
 
 \subsection{Time Considerations}\label{sec:time considerations}
 A higher frame rate will allow for greater predictive power and increase stability as the error between frames is 
-reduces. Reducing computational time of each task is important for optimizing the tracking which also means knowing 
+reduced. Reducing computational time of each task is important for optimizing the tracking, which also means knowing 
 what tasks are the most demanding. A list of the different tasks and their average execution times can be seen in table 
 \ref{tab:benchmarks}
 
-NOTE CURRENTLY NOT PUT IN ACTUAL DATA ONLY APPROXIMATE
+
 \begin{table}[H]
  \begin{tabular}{l | c | c } 
  Task  			&  Average time & Std deviation \\
- Capture screen & 1000 			& 200 \\
- Find edges 	& 200			& 20 \\
- Change velocity& 400			& 50 \\
+ Capture screen & 41 			& 14 \\
+ Find edges 	& 78			& 23 \\
+ Change velocity& 230			& 62 \\
  \end{tabular}
  \caption{}
  \label{tab:benchmarks}

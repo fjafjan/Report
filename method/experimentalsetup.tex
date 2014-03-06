@@ -1,4 +1,4 @@
-The motion of particles in a liquid was studied was investigated by pumping a liquid through a microfluidic channel. The channel is placed on a moveable stage on top of a microscope. A particle can be tracked by moving the stage to match the velocity of the particle in the channel and thus keep the particle stationary in the field of view of the microscope. Connected to the microscope is a CCD camera recording the images and these movies are saved on a computer. As the particle gets within \unit[1]{cm} of the inlets on the channel the flow is reversed. We will refer to the data of a particle along one such length of the channel a \textbf{stretch} and a series of stretches for a single particle a \textbf{measurement}. A sketch of this setup can be seen in figure \ref{fig:channelsketch} and a photograph of the actual setup in figure \ref{fig:setuppicture}.
+The motion of particles in a liquid was investigated by pumping a liquid through a microfluidic channel using a syringe pump. The channel is placed on a moveable stage on top of a microscope. A particle is tracked by moving the stage to match the velocity of the particle in the channel and thus keep the particle stationary in the field of view of the microscope. Connected to the microscope is a CCD camera recording the images and these movies are saved on a computer. When the tracked particle gets within \unit[1]{cm} of the inlets on the channel the flow is reversed. We will refer to the data of a particle along one such length of the channel a \textbf{stretch} and a series of stretches for a single particle a \textbf{measurement}. A sketch of this setup can be seen in figure \ref{fig:setupsketch} and a photograph of the actual setup in figure \ref{fig:setuppicture}. 
 
 Between measurements, optical tweezers (for details on how it works see \cite{OpticalTweezer}) constructed by A. Laas  \cite{alexanderThesis} was used to change the initial condition of the particle. 
 
@@ -6,18 +6,18 @@ Between measurements, optical tweezers (for details on how it works see \cite{Op
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/method/setupsketch.png}
-\caption{Sketch of the set up}\label{fig:setupsketch}
+\caption{Sketch of the set up. The computer controlled stage moves over the microscope. The pump reverses when the tracked particle gets close to the inlets of the channel.}\label{fig:setupsketch}
 \end{figure}
 
 % Have both this zoomed out and the zoomed in view I think
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/method/ExperimentalOverview.jpg}
-\caption{Overview of the set up. The microscope to the left and the syringe pump to the right. The CCD camera is mounted on the left side of the microscope and cannot be seen in this picture.}\label{fig:setuppicture}
+\caption{Overview of the set up. The microscope to the left and the syringe pump to the right. In the center is the channel and the outlet container is seen behind it. The CCD camera is mounted on the left side of the microscope and cannot be seen in this picture.}\label{fig:setuppicture}
 \end{figure}
 
 
-The microfluidic channel is \unit[40]{mm} long, \unit[2.5]{mm} wide and ca unit[150]{$\mu$m} deep. The channel is made from Polydimethylsiloxane (PDMS) and plasma bonded to a microscope slide, a more detailed description of the process can be found from the Caroline Workshop \cite{PDMS}. This material and procedure is chosen so that a particle that gets filled with dirt or breaks can cheaply and easily be replaced and because it's non reactive and highly transparent. A sketch of the channel can be seen in figure \ref{fig:channelsketch} and a photograph of an actual channel can be seen in figure \ref{fig:channelpicture}. 
+The microfluidic channel is \unit[40]{mm} long, \unit[2.5]{mm} wide and approximately \unit[150]{$\mu$m} deep. The channel is made from Polydimethylsiloxane (PDMS) and plasma bonded to a microscope slide. A more detailed description of the process can be found from the Caroline Workshop \cite{PDMS}. This material and procedure is chosen so that a channel that gets filled with dirt or breaks can cheaply and easily be replaced. PDMS is also non-reactive and highly transparent. A sketch of the channel can be seen in figure \ref{fig:channelsketch} and a photograph of an actual channel in figure \ref{fig:channelpicture}. 
 
 \begin{figure}[H]
 \centering
@@ -29,36 +29,18 @@ The microfluidic channel is \unit[40]{mm} long, \unit[2.5]{mm} wide and ca unit[
 \includegraphics[width=0.9\textwidth]{figures/method/ChannelZoomed.jpg}
 \caption{Picture of the channel}\label{fig:channelpicture}
 \end{subfigure}
-\caption{A sketch of the channel as well as a picture of the channel as it is set up during a measurement. The channel is only 150 $\mu$m deep, but the PDMS surrounding it is around 15 mm to try and prevent the channel from expanding and contracting too much.}
+\caption{A sketch of the channel as well as a picture of the channel as it is set up during a measurement. The channel is only \unit[150]{$\mu$m} deep, but the PDMS surrounding it is around 15 mm to try and prevent the channel from expanding and contracting too much.}
 \label{fig:channel}
 \end{figure}
 
+% rewrite
+In order to find the maximum flow speed of the channel we need to know the flow profile and using the software used in Johansson \cite{AntonThesis} we get the flow profile that can be seen in figure \ref{fig:flowprofile}. Integrating 
+the flow profile over the entire surface will give us an effective flow area. We then multiply the flow profile with 
+the maximum flow rate to get the flow velocity at each point. 
 
-To find the maximum flow speed of the channel we need to know the flow profile and using the software used in Johansson \cite{AntonThesis} we get the flow profile that can be seen in figure \ref{fig:flowprofile}. Integrating the flow profile over the entire surface will give us an effective flow area. To find the maximum flow speed we can simply divide the flow rate by the effective flow radius.
-
-DO THIS SOME TIME SOON OKAY?
-
-
-
-
-
-%Thus two sets of glass particles from Nippon Glass, Japan\cite{Particles}, have been used. 
-%They are cylindrical with a consistent width of \unit[3]{$\mu$m} and \unit[5]{$\mu$m} and varying length. Images taken 
-%with a STEM microscope can be seen in figure \ref{fig:particlepictures}. 
-
-
-%While these particles seemingly satisfy the symmetry conditions they are made glass with a density of approximately 
-%\unit[2.57]{g/cm$^3$} at \unit[20]{C$^\circ$} which is significantly higher than that of water with a density of 
-%\unit[1]{g/cm$^3$} at \unit[20]{C$^\circ$} and glycerol with a density of \unit[1.5]{g/cm$^3$}. Thus to correct for the 
-%density and limit sinking or floating the water soluble Sodium metatungstate which at \unit[20]{C$^\circ$} has maximum 
-%density of \unit[2.94]{g/cm$^3$}. To increase the viscosity of the liquid around 8\% glycerol is added, resulting in a 
-%measured dynamic viscosity of \unit[$24\cdot 10^{-3}$]{Pa s}
-
-
+Using the flow profile from figure \ref{fig:flowprofile} we find that the effective flow area is $\unit[0.19]{mm^2}$. With a pump rate of \unit[7.5]{$\mu$l/minute} we get a maximum velocity of \unit[0.66]{mm/s}.
 
 % PIcture of the channel meassurements here 
-
-
 
 
 % Picture of channel flow profile
@@ -66,21 +48,20 @@ DO THIS SOME TIME SOON OKAY?
 \begin{center}
 \includegraphics[width=0.7\textwidth]{figures/method/flowprofile.pdf}
 \end{center}
-\caption{The theoretical estimation of the flow profile. Image used with permission from Johansson \cite{AntonThesis}}
+\caption{The theoretical estimation of the flow profile. Image generated with software from Johansson \cite{AntonThesis}, used with permission.}
 \label{fig:flowprofile}
 \end{figure}
 
 
-To confirm that the flow is a creeping flow we can calculate the maximum Reynolds number using eq \ref{eq:reynolds} and 
-our maximum flow speed. 
+We need to confirm that the flow is a creeping flow. We can calculate the maximum Reynolds number using eq \ref{eq:reynolds}, the \unit[3]{$\mu$m} length rods, and our maximum flow speed.
 
 \begin{equation}
 \operatorname{Re} = \frac{U L \rho}{\mu} 
-\leq \frac{6.66\cdot 10^{-3} \cdot 2.5 \cdot 10^{-3} 2.5 }{24 \cdot 10^{-3}} 
-\approx	 	1.6  \cdot 10^{-3} \ll 1
+\leq \frac{6.6\cdot 10^{-4} \cdot 3 \cdot 10^{-3} 2.5 }{24 \cdot 10^{-3}} 
+\approx	 	2.05  \cdot 10^{-6} \ll 1
 \end{equation}
 
-This should satisfy the conditions of the Jeffrey equations. To track the particles the channel is put in a moveable stage on a confocal microscope. The entire setup can be seen in figure 
+This should satisfy the conditions of the Jeffrey equations. To track the particles the channel is put in a moveable stage on a confocal microscope. The entire setup can be seen in figure \ref{fig:setuppicture}
 
 
 
@@ -92,7 +73,7 @@ This should satisfy the conditions of the Jeffrey equations. To track the partic
 \item Nikon 60x water immersion objective
 \item Märzhäuser Wetzlar 'LStep-eco' step engine
 \item CMA 4004 syringe pump
-\item Laser 
+\item Ytterbium fiber laser  % What laser?
 \end{itemize}
 
 %
@@ -106,3 +87,4 @@ This should satisfy the conditions of the Jeffrey equations. To track the partic
 %V_{mix} = \frac{ V_{b}(\rho_{b} - \rho_{a})}{\rho_{a} - \rho_{mix}} 
 %\end{equation}
 %
+	
