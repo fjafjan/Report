@@ -1,34 +1,30 @@
-\label{sec:windingEstimation}
-As discussed in section \ref{sec:winding}, estimating the winding number for different types of orbit for one particle 
-should allow for a rather accurate estimation of $\epsilon$. So in order estimate the winding number for a measured 
-particle we must identify where the $\theta_1$ maxima and minima from figure \ref{fig:windingDef} occur. First, the 
-$\theta_2$ maxima is located by where $n_x = 0$. A plot of such 
-points can be seen in figure \ref{fig:nzNx0} where we match each $n_z$ peak with an index $i$. Unfortunately data is 
-too noisy to allow for simple algorithmic approaches 
-to finding good local maxima. Instead we select a number of maxima $M_1, M_2 ... M_p$ with peak index $I^M_1, I^M_2, 
-..., I^M_p$  and minima $m_1, m_2, ..., m_q$ with peak index $I^m_1, I^m_2, ..., I^m_q$.
+	\label{sec:windingEstimation}
+As discussed in section \ref{sec:winding}, estimating the winding number for different types of orientational orbit for one particle allows for an estimation of $\epsilon$. In order estimate the winding number for a measured 
+particle we must identify the two periods $\theta_1$ and $\theta_2$ from figure \ref{fig:windingDef}. 
+
 
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{figures/method/nzNx0.pdf}
-\caption{The stars are plotted at the same distances in the $n_x$ and $n_z$ plots. This shows that zeros of $n_x$ and maxes of $n_z$ occur almost exactly at the same points.}
+\caption{The stars are plotted at the same distances in the $n_x$ and $n_z$ plots. This shows that zeros of $n_x$ and maxima of $n_z$ occur almost exactly at the same points.}
 \label{fig:nzNx0}
 \end{figure}
 
-We can estimate the winding number $\hat{w}$ as the average distance between the peak indices for the maxima and minima 
-i.e. 
+The maxima with the shorter period $\theta_2$ are located where $n_x = 0$ as is seen in figure \ref{fig:nzNx0}. We denote the set of these points $\omega$. The longer period $\theta_1$ is the periodicity of the red points in Figure\ref{fig:nzNx0}. To do this we want to locate the maxima $M$ and minima $m$ in $\omega$ that occur with period $\theta_1$ in the same way we do to find $\theta_2$ in $n_z$. Unfortunately the exact height of peaks is noisy and there are few data points for each measurement as the channel is of finite length only allowing a few dozen flips.
+This means we have no algorithmic means to find $\theta_1$. 
+
+Instead we select from $\omega$ a number of maxima $M_1, M_2 ... M_p$ and minima $m_1, m_2, ..., m_q$. We denote their index in $n_z$ as $I^M_1, I^M_2, 
+..., I^M_p$ for the maxima and $I^m_1, I^m_2, ..., I^m_q$ for the minima. We can then find $\theta_1$ as the mean distance between successive maxima $\overline{d_M}$ and successive minima $\overline{d_m}$, 
 
 \begin{align}
 \overline{d_M} &= \frac{1}{p-1} \sum\limits_{j=1}^{p} I^M_{j+1} - I^M_{j} \\
 \overline{d_m} &= \frac{1}{q-1} \sum\limits_{j=1}^{q} I^m_{j+1}- I^m_{j}\\
-\hat{w}   &= \frac{\overline{d_M} + \overline{d_m}}{2}.
+\hat{\theta_1}   &= \frac{\overline{d_M} + \overline{d_m}}{2}.
 \label{eq:winding2}
 \end{align}
 
-
-In the case that we only have 1 maxima and minima we use instead that the distance between maxima and minima should be 
-half a period, i.e.
+In the case that we only have 1 maxima and minima eq. \ref{eq:winding2} can't be calculated so we assume that the distance between a maxima and minima is half a period, i.e.
 
 \begin{equation}
-\hat{w} = \left| I^M_1 - I^m_1 \right| \cdot 2
+\hat{\theta_1} = 2\left| I^M_1 - I^m_1 \right|
 \end{equation}

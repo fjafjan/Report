@@ -1,5 +1,7 @@
 \label{sec:matchorbit}
-To find the best matching orbit from a Poincaré map we again utilize the $n_z$ peaks where $\phi = 0$ which we call $\mathbf{P_z}$ from figure \ref{fig:nzNx0}. $\mathbf{P_z}$ still is $N$ long but now we are concerned with simply matching them with the peaks from theoretical orbits as opposed to estimating a winding number.
+To verify that the theoretical Jeffery orbits from \ref{sec:jeffery} are present we want to match the measurements to theoretical orbits.
+
+To find the best matching orbit from a Poincaré map for a measurement we again utilize $\omega$, the points where $n_z$ peaks and $n_x=0$. $\mathbf{P_z}$ still is $N$ long but now we are concerned with simply matching them with the peaks from theoretical orbits as opposed to estimating a winding number.
 
 %To find the best matching theoretical orbit we calculate the least square distance of $\mathbf{P_z}$ against the theoretical peaks for $\epsilon \in [0.01, 0.02, ..., 0.1]$ and for $\cos(\theta) \in [-1,1]$ 
 %and for $\psi \in [-\frac{pi}{2},\frac{pi}{2}]$. 
@@ -10,8 +12,7 @@ To find the best matching theoretical orbit we computed the least square distanc
 S(\mathbf{P}, \theta, \epsilon) = \left| \mathbf{P_z} - \mathbf{Q_z(\theta, \epsilon)} \right|^2
 \end{equation}
 
-However matching against different $\theta$ and $\epsilon$ is not enough to get small mean square distance as the phase 
-of the time series might be different. It can be assumed that $P_z$ will be at least half a period of the quasi period 
+However matching against different $\theta$ and $\epsilon$ is not enough to get small mean square distance as the phase of the time series might be different. It can be assumed that $P_z$ will be at least half a period of the quasi period 
 $\theta_2$ since otherwise we would have no reason to think there is quasi-periodic behaviour and trying to match an 
 orbit would be fairly pointless. If $Q_z^{(i)}$ denotes the series of peaks starting at i and  $P_z$ is at 
 least half a period we can calculate the score for starting at a certain starting index $S(\theta, \epsilon, i)$
@@ -29,5 +30,15 @@ and find the best $\epsilon$ using
 \begin{eqnarray}
 \epsilon_{best} = \min(\sum\limits_{j=1}^{r} \hat{S}(\mathbf{P}_j, \epsilon)^2).
 \end{eqnarray}
+
+FIT THIS IN HERE I THINK 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/results/particleB/October_1_Particle_4_run_4match.pdf}
+\caption{The upper figure shows the experimental $n_z$ peaks versus the theoretical ones for the best matching orbit. The lower plot shows where what section of the theoretical time series was used for matching, ie what $i$ from section \ref{sec:matchorbit} was chosen.}
+\label{fig:particleB2match}
+\end{figure}
+
 
 % Refer to some matched plots once I have added those. I THINK basically everythig should already be in the saved plots and data folder. 
