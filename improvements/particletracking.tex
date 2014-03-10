@@ -24,9 +24,13 @@ In order to reduce noise from the image we first reduce the static noise caused 
 \bar{\mathbf{F}} = \frac{1}{N}\sum\limits_{i=1}^{N} \mathbf{F}_i.
 \end{equation}
 
-An example of such an average image can be seen in figure \ref{fig:averageFrame}. 
+An example of such an average image can be seen in figure \ref{fig:averageFrame}. The static noise is then removed from each frame using eq 3.1 from Johansson \cite{AntonThesis}.
 
-To remove the static noise the average image is This is then removed from each of the camera frames $\bar{F_i}$ and the result can be seen in figure \ref{fig:fixedFrame}. 
+\begin{equation}
+\widetilde{\mathbf{F}_{i}} = \mathbf{F}_i - \bar{\mathbf{F}} + (F_i^*\mathbf{I})
+\end{equation}
+
+\noindent where $\F_i^*$ is the average brightness of the frame $\mathbf{F}_i$, $\widetilde{\mathbf{F}_{i}}$ is the corrected frame and $\mathbf{I}$ is a matrix of ones. The result can be seen in figure \ref{fig:fixedFrame}. 
 
 
 

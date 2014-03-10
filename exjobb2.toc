@@ -6,55 +6,55 @@
 \contentsline {section}{\numberline {2.1}Fluid dynamics}{4}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Reynolds Number}{4}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Stokes drag and Stokes' law}{6}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Euler angles and coordinate system}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Triaxial particles}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.2}Euler angles and coordinate system}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Triaxial particles}{9}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}Jeffery orbits}{9}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Winding number}{12}{subsection.2.3.1}
-\contentsline {chapter}{\numberline {3}Method}{15}{chapter.3}
-\contentsline {part}{I\hspace {1em}Improvements of Experimental Setup}{16}{part.1}
-\contentsline {section}{\numberline {3.1}Experimental Setup}{17}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}List of equipment}{21}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}Problems and Improvements}{21}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Particles and channel}{22}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Automated tracking}{25}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Acquiring the image}{25}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Reducing noise}{25}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Contour detection and selection}{26}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Adjusting the camera velocity}{27}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Time Considerations}{28}{subsection.3.3.5}
-\contentsline {section}{\numberline {3.4}Summary of improvements}{28}{section.3.4}
-\contentsline {part}{II\hspace {1em}Data analysis and results}{30}{part.2}
-\contentsline {chapter}{\numberline {4}Data Analysis}{31}{chapter.4}
-\contentsline {section}{\numberline {4.1}Particle identification}{31}{section.4.1}
-\contentsline {section}{\numberline {4.2}Estimation of orientation}{32}{section.4.2}
-\contentsline {section}{\numberline {4.3}Width compensation}{33}{section.4.3}
-\contentsline {section}{\numberline {4.4}Removing tracking errors}{34}{section.4.4}
-\contentsline {section}{\numberline {4.5}Estimating the winding numbers}{35}{section.4.5}
-\contentsline {section}{\numberline {4.6}Matching data to theoretical orbits}{37}{section.4.6}
-\contentsline {chapter}{\numberline {5}Results}{39}{chapter.5}
-\contentsline {section}{\numberline {5.1}Measurements}{41}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Measurements of Particle A}{41}{subsection.5.1.1}
-\contentsline {subsubsection}{Measurement 1}{41}{section*.24}
-\contentsline {subsubsection}{Measurement 2}{42}{section*.26}
-\contentsline {subsubsection}{Measurement 3}{42}{section*.28}
-\contentsline {subsubsection}{Measurement 4}{43}{section*.30}
-\contentsline {subsubsection}{Measurement 5}{44}{section*.32}
-\contentsline {subsection}{\numberline {5.1.2}Measurements of Particle B}{44}{subsection.5.1.2}
-\contentsline {subsubsection}{Measurement 1}{45}{section*.34}
-\contentsline {subsubsection}{Measurement 2}{46}{section*.36}
-\contentsline {subsubsection}{Measurement 3}{46}{section*.38}
-\contentsline {subsubsection}{Measurement 4}{47}{section*.40}
-\contentsline {section}{\numberline {5.2}Diagnostic plots}{47}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Reversals}{50}{subsection.5.2.1}
-\contentsline {section}{\numberline {5.3}Match to theoretical orbits}{52}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Particle A}{52}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Particle B}{53}{subsection.5.3.2}
-\contentsline {chapter}{\numberline {6}Discussion}{56}{chapter.6}
-\contentsline {section}{\numberline {6.1}Sinking}{57}{section.6.1}
-\contentsline {section}{\numberline {6.2}Reversals}{57}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}The speed of the particle}{57}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Winding number matching}{58}{section.6.3}
-\contentsline {section}{\numberline {6.4}Unexplained behaviours}{59}{section.6.4}
-\contentsline {section}{\numberline {6.5}Goodness of fit}{59}{section.6.5}
-\contentsline {chapter}{\numberline {7}Conclusion}{63}{chapter.7}
-\contentsline {chapter}{\numberline {A}Raw data}{65}{appendix.A}
+\contentsline {subsection}{\numberline {2.3.1}Winding number}{13}{subsection.2.3.1}
+\contentsline {chapter}{\numberline {3}Method}{16}{chapter.3}
+\contentsline {part}{I\hspace {1em}Improvements of Experimental Setup}{17}{part.1}
+\contentsline {section}{\numberline {3.1}Experimental Setup}{18}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}List of equipment}{22}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Problems and Improvements}{22}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Particles and channel}{23}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Automated tracking}{26}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Acquiring the image}{26}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Reducing noise}{26}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Contour detection and selection}{27}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Adjusting the camera velocity}{28}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Time Considerations}{29}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Summary of improvements}{29}{section.3.4}
+\contentsline {part}{II\hspace {1em}Data analysis and results}{31}{part.2}
+\contentsline {chapter}{\numberline {4}Data Analysis}{32}{chapter.4}
+\contentsline {section}{\numberline {4.1}Particle identification}{32}{section.4.1}
+\contentsline {section}{\numberline {4.2}Estimation of orientation}{33}{section.4.2}
+\contentsline {section}{\numberline {4.3}Width compensation}{34}{section.4.3}
+\contentsline {section}{\numberline {4.4}Removing tracking errors}{35}{section.4.4}
+\contentsline {section}{\numberline {4.5}Estimating the winding numbers}{36}{section.4.5}
+\contentsline {section}{\numberline {4.6}Matching data to theoretical orbits}{38}{section.4.6}
+\contentsline {chapter}{\numberline {5}Results}{40}{chapter.5}
+\contentsline {section}{\numberline {5.1}Measurements}{42}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Measurements of Particle A}{42}{subsection.5.1.1}
+\contentsline {subsubsection}{Measurement 1}{42}{section*.24}
+\contentsline {subsubsection}{Measurement 2}{43}{section*.26}
+\contentsline {subsubsection}{Measurement 3}{43}{section*.28}
+\contentsline {subsubsection}{Measurement 4}{44}{section*.30}
+\contentsline {subsubsection}{Measurement 5}{45}{section*.32}
+\contentsline {subsection}{\numberline {5.1.2}Measurements of Particle B}{45}{subsection.5.1.2}
+\contentsline {subsubsection}{Measurement 1}{46}{section*.34}
+\contentsline {subsubsection}{Measurement 2}{47}{section*.36}
+\contentsline {subsubsection}{Measurement 3}{47}{section*.38}
+\contentsline {subsubsection}{Measurement 4}{48}{section*.40}
+\contentsline {section}{\numberline {5.2}Diagnostic plots}{48}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Reversals}{51}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Match to theoretical orbits}{53}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Particle A}{53}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Particle B}{54}{subsection.5.3.2}
+\contentsline {chapter}{\numberline {6}Discussion}{57}{chapter.6}
+\contentsline {section}{\numberline {6.1}Sinking}{58}{section.6.1}
+\contentsline {section}{\numberline {6.2}Reversals}{58}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}The speed of the particle}{58}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Winding number matching}{59}{section.6.3}
+\contentsline {section}{\numberline {6.4}Unexplained behaviours}{60}{section.6.4}
+\contentsline {section}{\numberline {6.5}Goodness of fit}{60}{section.6.5}
+\contentsline {chapter}{\numberline {7}Conclusion}{64}{chapter.7}
+\contentsline {chapter}{\numberline {A}Raw data}{66}{appendix.A}

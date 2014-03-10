@@ -4,7 +4,7 @@ Once a measurement has been made and a movie recorded the orientational dynamics
 
 The first step of the data analysis is to reduce the static noise from the movie caused by dirt, scratches and other defects in the microscope and on the camera lens as can be seen in figure \ref{fig:origFrame}. As the noise is static and the actual contents of the image changes the noise is isolated by computing an average frame of all frames in a movie using equation \ref{eq:averageFrame}
 
-An example of such an average frame can be seen in figure \ref{fig:averageFrame}. The average frame is removed from the camera frame and the result can be seen in figure \ref{fig:fixedFrame}. After this we apply a gaussian smoothing function and Canny edge detection \cite{Canny} and fill the resulting edge located closest to the previous particle location. The resulting pixels are then fit to an ellipse as described in \cite{AntonThesis, EllipseFit}, the ellipse is defined by a length $l_e$, width $d_e$ and an angle $\phi_p$ from the $x$-axis. The filled contour and the fit ellipse can be seen in figure 
+An example of such an average frame can be seen in figure \ref{fig:averageFrame}. The average frame is removed from the camera frame and the result can be seen in figure \ref{fig:fixedFrame}. After this we apply a gaussian smoothing function and Canny edge detection \cite{Canny} and fill the resulting edge located closest to the previous particle location. The resulting pixels are then fit to an ellipse as described in \cite{AntonThesis, EllipseFit}, the ellipse is defined by a length $l_e$, width $w_e$ and an angle $\phi_p$ from the $x$-axis. The filled contour and the fit ellipse can be seen in figure 
 \ref{fig:edgeFrame}.
 
 \begin{figure}[H]
@@ -36,7 +36,7 @@ An example of such an average frame can be seen in figure \ref{fig:averageFrame}
 The ellipsoid given by the fitting is then our best approximation of the projection in the $x$-$z$ plane. The $x$ and $z$ projections of the particle are found by
 \begin{align} \label{eq:project}
 p_x  &= l_e \sin(\phi_p) \\
-p_z  &= l_e \cos(\psi_p) 
+p_z  &= l_e \cos(\phi_p) 
 \end{align}
 
 with $x$ and $z$ projection $p_x$ and $p_z$. 
@@ -54,7 +54,7 @@ n_y		&= \sqrt{1 - n_x^2 - n_z^2}.
 which are the unit vector components used in section \ref{sec:jeffery} allowing us to make comparisons between theory and measurement. Until this point the data analysis is the same as that in Johansson \cite{AntonThesis}.
 
 \section{Width compensation}\label{sec:width_compensation}
-We have assumed that the particle is a \emph{thin} rod so that the projection $\mathbf{p}$ onto the $x$ and $z$-axes give us an accurate estimate of $\mathbf{n}$. However, when we consider that our particle is 'thick' with length $l_e$ as well as width $d_e$ the actual unit vector we will using the above algorithms is $\mathbf{n}'$. The width of the particle will appear as an ellipse even when the particle is aligned completely with the $y$-axis. Looking at points when $\phi = 0$, which are the point plotted on the surfaces of section and thus of the most interest, we find
+We have assumed that the particle is a \emph{thin} rod so that the projection $\mathbf{p}$ onto the $x$ and $z$-axes give us an accurate estimate of $\mathbf{n}$. However, when we consider that our particle is 'thick' with length $l_e$ as well as width $w_e$ the actual unit vector we will be using in the above algorithms is $\mathbf{n}'$. The width of the particle will appear as an ellipse even when the particle is aligned completely with the $y$-axis. Looking at the points when $\phi = 0$, which are the points plotted on the surfaces of section and thus of the most 	interest, we find
 
 \begin{equation}
 \mathbf{n}' = \frac{p_z'}{L} = \frac{p_z\cos(\theta)  + D\sin(\theta)}{L} 
@@ -66,14 +66,14 @@ In order to compensate for the width of the particle we modify our projection eq
 
 \begin{align}\label{eq:widthCompensation}
 p_x  &= (l_e - w_e)\cdot \sin(\phi_p) \\
-p_z  &= (l_e - w_e)\cdot \cos(\psi_p) 
+p_z  &= (l_e - w_e)\cdot \cos(\phi_p) 
 \end{align}
 
 
 This reduces the particles estimated length by $w_e$
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{figures/method/LengthError.pdf}
-\caption{Shows the unit vector $\mathbf{n}'$ we obtain from incorrectly assuming the particle is 'thin' in eq. \ref{eq:project}. Shows four different $\theta$ angles at $\phi=0$.}\label{fig:lengtherror}
+\includegraphics[width=0.6\textwidth]{figures/method/LengthError2.pdf}
+\caption{Shows the incorrect projection vector $\mathbf{p}'$ we obtain from incorrectly assuming the particle is 'thin' in eq. \ref{eq:project}. The correct projection vector is highlighted in red. Shows four different $\theta$ angles at $\phi=0$.}\label{fig:lengtherror}
 \end{figure} 
 

@@ -1,5 +1,5 @@
 \label{sec:jeffery}
-The Jeffery orbits describe the motion of an ellipsoidal particle in Stokes shear flow as a function of time. The  orbits for axisymmetric ($a_x = a_z \ne a_y$) ellipsoidal particles were found by Jeffery and reformulated by Yarin \emph{et al}~\cite{Yarin} who computed orbits for asymmetric particles. The equations of motion for a triaxial particle in the form of Yarin \emph{et al} is
+The Jeffery orbits describe the motion of an ellipsoidal particle in Stokes flow. The orbits for axisymmetric ($a_x = a_z \ne a_y$) ellipsoidal particles were found by Jeffery and reformulated by Yarin \emph{et al}~\cite{Yarin} who computed orbits for asymmetric particles. The equations of motion for a triaxial particle in the form of Yarin \emph{et al} is
 
 \begin{subequations}\label{eq:jeffrey}
 \begin{align}
@@ -46,8 +46,7 @@ For a particle with an $\epsilon \in \left[0.01-0.05\right]$ there are essential
 For larger asymmetries $\epsilon > 0.05$ there are chaotic orbits that appear as areas with dots. Chaotic orbits can been seen around the quasi-periodic circular orbits in figure \ref{fig:orbitmap4} where they appear as a 'sea' of dots.
 
 Simulations of these three different types of orbits are illustrated in figure \ref{fig:orbittypes} both on the S.O.S. as well as the in components of $\mathbf{n}$ as a function of time. We can see that while $n_x$ and $n_y$ are periodic, albeit with different amplitudes, the 
-behaviour of $n_z$ is significantly different. For the $n_z \approx 1$  orbit shown in green it is constant on the S.O.S and is simply periodic over time. For the bent quasi-periodic orbit in red it is bent on the S.O.S and we can see in the time series that it is doubly periodic as it peaks with a fixed period but the amplitude of the peaks vary periodically themselves. For the circular quasi-periodic orbit in blue $n_z$ changes sign, again with a fixed 
-period.
+behaviour of $n_z$ is significantly different. For the $n_z \approx 1$  orbit shown in green it is constant on the S.O.S and is simply periodic over time. For the sign presercing quasi-periodic orbit in red it is bent on the S.O.S and we can see in the time series that it is doubly periodic as it peaks with a fixed period but the amplitude of the peaks vary periodically themselves. For the sign changing quasi-periodic orbit in blue $n_z$ changes sign, again with a fixed period.
 
 
 %\begin{figure}[H]
@@ -104,24 +103,24 @@ orbits around the centre at $\cos(\theta) \approx \psi \approx 0$ but it is also
 \end{figure}
 
 \subsection{Winding number} \label{sec:winding}
-The quasi-periodic orbits are also referred to as double-periodic~\cite{Yarin}. This emphasizes the fact that the variation of peak amplitude for the red and blue orbits in Figure \ref{fig:orbitparams} are periodic with period $\theta_1$. The peaks themselves are periodic with a shorter period $\theta_2$. The ratio between the two periods is referred to as the winding number $\omega$
+The quasi-periodic orbits are also referred to as double-periodic~\cite{Yarin}. This to emphasize the fact that the amplitude of the short period $\theta_2$ also varies periodically with period $\theta_1$. The ratio between the two periods is referred to as the winding number $\omega$
 
 \begin{equation}\label{eq:winding}
 \omega = \frac{\theta_1}{\theta_2}.
 \end{equation}
 
-\noindent The winding number of a quasi periodic orbit is illustrated in Figure \ref{fig:windingDef}.
+\noindent The winding number of the quasi-periodic sign preserving orbit from figure \ref{fig:orbittypes} is illustrated in Figure \ref{fig:windingDef}.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{figures/theory/WindingNrFixed2.pdf}
 \end{center}
-\caption{The $n_z$ sign preserving quasi-periodic orbit from figure \ref{fig:orbitparams} highlighting the short period $\theta_2$ which is simply the period of $\phi$ and the longer period $\theta_1$. The winding number is defined as the ratio between the longer and shorter periods.}
+\caption{The $n_z$ sign preserving quasi-periodic orbit from figure \ref{fig:orbitparams} over a longer time, highlighting the short period $\theta_2$ which is simply the period of $\phi$ and the longer period $\theta_1$. The winding number is defined as the ratio between the longer and shorter periods.}
 \label{fig:windingDef}
 \end{figure}
 
 %This can also be thought of as the number of intersections on the surface of section before coming back to the initial condition, divided by the number of laps. A lap for a circular orbit is a rotation around the center whereas for a flat orbit it is moving along length of the orbit. asdasd, see figure MAKE A FIGURE. 
-This number is the same for any point along a given orbit on the poincare map but varies greatly for different orbits as well as for different asymmetries. The winding numbers for orbits along $\psi=0$ for $\epsilon=\{0.01, 0.05, 0.10\}$ can be seen in figure \ref{fig:windingdifferent}. This shows us that if we can measure the winding number it allows us to approximate the asymmetry of the particle.  This is done by looking at the difference in winding number between a quasi-periodic sign preserving orbit and a sign changing orbit. This is useful in order to differentiate between particles of different asymmetry, because they can have similar orbits but very distinct winding number. 
+This number is the same for any point along a given orbit on a poincare map but changes for different orbits as well as for different asymmetries. The winding numbers for orbits along $\psi=0$ for $\epsilon=\{0.01, 0.05, 0.10\}$ can be seen in figure \ref{fig:windingdifferent}. This shows us that if we can measure the winding number it allows us to approximate the asymmetry of the particle.  This is done by looking at the difference in winding number between a quasi-periodic sign preserving orbit and a sign changing orbit. This is useful in order to differentiate between particles of different asymmetry, because they can have similar orbits but very distinct winding number. 
  
 \begin{figure}[H]
 \begin{center}

@@ -1,44 +1,40 @@
 \label{sec:matchorbit}
 To verify that the theoretical Jeffery orbits from \ref{sec:jeffery} are present we want to match the measurements to theoretical orbits.
 
-To find the best matching orbit from a Poincaré map for a measurement we again utilize $\omega$, the points where $n_z$ peaks and $n_x=0$. $\mathbf{P_z}$ still is $N$ long but now we are concerned with simply matching them with the peaks from theoretical orbits as opposed to estimating a winding number.
+To find the best matching orbit from a Poincaré map for a measurement we again utilize $P_z$, the points where $n_z$ peaks and $n_x=0$. We denote the length o f$\mathbf{P_z}$ as $N$. We are concerned with matching them with the peaks from theoretical orbits.
 
 %To find the best matching theoretical orbit we calculate the least square distance of $\mathbf{P_z}$ against the theoretical peaks for $\epsilon \in [0.01, 0.02, ..., 0.1]$ and for $\cos(\theta) \in [-1,1]$ 
 %and for $\psi \in [-\frac{pi}{2},\frac{pi}{2}]$. 
 
-To find the best matching theoretical orbit we computed the least square distance for all orbits on all phase maps with $\epsilon \in [0.01, 0.02, ..., 0.1]$. If we for each orbit denote our theoretical series of $n_z$ peaks $\mathbf{Q_z}(\theta, \epsilon)$ of length $M >> N$ we can assign a score function $S(\theta, \epsilon)$ as
+To find the best matching theoretical orbit for a measurement we compute the least square between $P_z$ and all orbits on all phase maps with $\epsilon \in [0.01, 0.02, ..., 0.1]$ for 200 consecutive different initial $\psi$ (the $x$-axis on the Poincare map). If we for each orbit denote the theoretical series of $n_z$ peaks as $\mathbf{Q_z}(\theta, \epsilon)$. We let $\mathbf{Q_z}(\theta, \epsilon)$ be of length $M > 2*N$ and define $\mathbf{Q_z}(\theta, \epsilon, i)$ to be the $n_z$ series $\mathbf{Q_z}(\theta, \epsilon)$ starting at index $i$. We assign a score function $S(\theta, \epsilon, i)$ as
 
 \begin{equation}
-S(\mathbf{P}, \theta, \epsilon) = \left| \mathbf{P_z} - \mathbf{Q_z(\theta, \epsilon)} \right|^2
+S(\mathbf{P}, \theta, \epsilon, i) = \frac{1}{N}\left| \mathbf{P_z} - \mathbf{Q_z}^{(i)}(\theta, \epsilon) \right|^2.
 \end{equation}
 
-However matching against different $\theta$ and $\epsilon$ is not enough to get small mean square distance as the phase of the time series might be different. It can be assumed that $P_z$ will be at least half a period of the quasi period 
-$\theta_2$ since otherwise we would have no reason to think there is quasi-periodic behaviour and trying to match an 
-orbit would be fairly pointless. If $Q_z^{(i)}$ denotes the series of peaks starting at i and  $P_z$ is at 
-least half a period we can calculate the score for starting at a certain starting index $S(\theta, \epsilon, i)$
+\noindent An example experimental $P_z$ series matched to theoretical data is seen in Figure \ref{fig:particleB2match}.
 
-\begin{equation}
-S(\mathbf{P}, \theta, \epsilon, i) = \left| \mathbf{P_z} - \mathbf{Q_z^{(i)}} \right|^2.
-\end{equation}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/results/particleB/October_1_Particle_4_run_4match.pdf}
+\caption{The upper figure shows the experimental $n_z$ peaks $\mathbf{P_z}$ versus the theoretical $Q_z$ for the best matching orbit. The lower plot shows where what section of the theoretical time series was used for matching, ie what $i$ from section \ref{sec:matchorbit} was chosen.}
+\label{fig:particleB2match}
+\end{figure}
 
-$\epsilon$ will not actually change for a single particle over $r$ different measurements $P_1, P_2, ..., P_r$, whereas $\theta$ and $i$ (the phase) will. We find the best $\theta$ and $i$ as
+
+
+\noindent As $\epsilon$ will not actually change for a single particle over $r$ different measurements $P_z^{(1)}1, P_z^{(1)}, ..., P_z^{(1)}$, $\theta$ and $i$ (the phase) will. So for each $\epsilon$ we find the best $\theta$ and $i$ using $\hat{S}(\mathbf{P}_j, \epsilon)$ 
 \begin{equation}
 \hat{S}(\mathbf{P}_j, \epsilon) =  \min(S(\mathbf{P}_j, \theta, \epsilon, i))
 \end{equation}
-and find the best $\epsilon$ using
+
+and then find the best $\epsilon$ using
 
 \begin{eqnarray}
 \epsilon_{best} = \min(\sum\limits_{j=1}^{r} \hat{S}(\mathbf{P}_j, \epsilon)^2).
 \end{eqnarray}
 
-FIT THIS IN HERE I THINK 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{figures/results/particleB/October_1_Particle_4_run_4match.pdf}
-\caption{The upper figure shows the experimental $n_z$ peaks versus the theoretical ones for the best matching orbit. The lower plot shows where what section of the theoretical time series was used for matching, ie what $i$ from section \ref{sec:matchorbit} was chosen.}
-\label{fig:particleB2match}
-\end{figure}
-
+It is important to note that this matching has a theoretical limitation. The asymmetry of our cylindrical particles is different from the asymmetry in the triaxial particles used in the theoretical models. The triaxial particles still have a rotational symetry for rotations of $\pi$ around any of the major/minor axes. This is not the case with the asymmetric cylindrical particles, which have no rotational symmetry. We therefore have to make the assumption that the difference between these two types of asymmetry is not significant and further theoretical work might reject this assumption.
 
 % Refer to some matched plots once I have added those. I THINK basically everythig should already be in the saved plots and data folder. 
