@@ -52,9 +52,9 @@
 \contentsline {chapter}{\numberline {6}Discussion}{57}{chapter.6}
 \contentsline {section}{\numberline {6.1}Sinking}{58}{section.6.1}
 \contentsline {section}{\numberline {6.2}Reversals}{58}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}The speed of the particle}{58}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Winding number matching}{59}{section.6.3}
+\contentsline {subsection}{\numberline {6.2.1}The speed of the particle}{59}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Winding number matching}{60}{section.6.3}
 \contentsline {section}{\numberline {6.4}Unexplained behaviours}{60}{section.6.4}
-\contentsline {section}{\numberline {6.5}Goodness of fit}{60}{section.6.5}
-\contentsline {chapter}{\numberline {7}Conclusion}{64}{chapter.7}
-\contentsline {chapter}{\numberline {A}Raw data}{66}{appendix.A}
+\contentsline {section}{\numberline {6.5}Width compensation}{61}{section.6.5}
+\contentsline {section}{\numberline {6.6}Goodness of fit}{61}{section.6.6}
+\contentsline {chapter}{\numberline {7}Conclusion}{65}{chapter.7}

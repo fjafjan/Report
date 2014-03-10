@@ -6,7 +6,7 @@ To find the best matching orbit from a Poincaré map for a measurement we again 
 %To find the best matching theoretical orbit we calculate the least square distance of $\mathbf{P_z}$ against the theoretical peaks for $\epsilon \in [0.01, 0.02, ..., 0.1]$ and for $\cos(\theta) \in [-1,1]$ 
 %and for $\psi \in [-\frac{pi}{2},\frac{pi}{2}]$. 
 
-To find the best matching theoretical orbit for a measurement we compute the least square between $P_z$ and all orbits on all phase maps with $\epsilon \in [0.01, 0.02, ..., 0.1]$ for 200 consecutive different initial $\psi$ (the $x$-axis on the Poincare map). If we for each orbit denote the theoretical series of $n_z$ peaks as $\mathbf{Q_z}(\theta, \epsilon)$. We let $\mathbf{Q_z}(\theta, \epsilon)$ be of length $M > 2*N$ and define $\mathbf{Q_z}(\theta, \epsilon, i)$ to be the $n_z$ series $\mathbf{Q_z}(\theta, \epsilon)$ starting at index $i$. We assign a score function $S(\theta, \epsilon, i)$ as
+To find the best matching theoretical orbit for a measurement we compute the least square between $P_z$ and all orbits on all phase maps with $\epsilon \in [0.01, 0.02, ..., 0.1]$ for 200 consecutive different initial $\psi$ (the $x$-axis on the Poincare map). If we for each orbit denote the theoretical series of $n_z$ peaks as $\mathbf{Q_z}(\theta, \epsilon)$. We let $\mathbf{Q_z}(\theta, \epsilon)$ be of length $M > 2N$ and define $\mathbf{Q_z}(\theta, \epsilon, i)$ to be the $n_z$ series $\mathbf{Q_z}(\theta, \epsilon)$ starting at index $i$. We assign a score function $S(\theta, \epsilon, i)$ as
 
 \begin{equation}
 S(\mathbf{P}, \theta, \epsilon, i) = \frac{1}{N}\left| \mathbf{P_z} - \mathbf{Q_z}^{(i)}(\theta, \epsilon) \right|^2.
