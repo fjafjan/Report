@@ -1,11 +1,11 @@
 \label{sec:exp_setup}
-The orientational motion of $\mu$m sized particles suspended in a liquid was investigated by pumping the liquid through a microfluidic channel using a syringe pump. The channel is placed on a moveable stage on top of a microscope. A particle is tracked by moving the stage to match the center of mass velocity of the particle in the channel and thus keep the particle stationary in the field of view of the microscope. Connected to the microscope is a CCD camera recording the images and these movies are saved on a computer. 
+The orientational motion of $\mu$m-sized particles suspended in a liquid was investigated by pumping the liquid through a microfluidic channel using a syringe pump. The channel is placed on a moveable stage on top of a microscope. A particle is tracked by moving the stage to match the center of mass velocity of the particle in the channel and thus keep the particle stationary in the field of view of the microscope. Connected to the microscope is a CCD camera recording the images and these movies are saved on a computer. 
 
-When the tracked particle gets within \unit[1]{cm} of the inlets on the channel the flow is reversed. In order to reduce the sudden impact of the pressure difference the reversals are incremental. At the start of a reversal the infusion/withdrawal rate is reduced by 50\% for 10 seconds, then stopped completely for 10 seconds. After this the flow is reverted at 50\% of the normal flow rate for another 10 seconds before resuming at full speed. 
+When the tracked particle gets within \unit[10]{mm} of the inlets on the channel the flow is reversed. If the particle retraces its motion when the flow is reversed we know that we have no noise and that the flow is Stokes flow, as discussed in section \ref{sec:fluid}. In order to reduce the sudden impact of the pressure difference caused by the flow reversal, the reversals are performed in several steps. At the start of a reversal the infusion/withdrawal rate is reduced by 50\% for 10 seconds, then stopped completely for 10 seconds. After this the pump resumes in the reverse direction at 50\% of the normal flow rate for another 10 seconds before resuming at full speed. 
 
-We refer to the data of a particle along one length of the channel a \textbf{stretch} and a series of stretches for a single particle a \textbf{measurement}. A sketch of the experimental setup can be seen in figure \ref{fig:setupsketch}, and a photograph of the actual setup in figure \ref{fig:setuppicture}. 
+The movies are analyzed as described in Section \ref{sec:dataanalysis}. We refer to the trajectory of $\mathbf{n}$ for a particle along one length of the channel a \textbf{stretch} and a series of stretches for a single particle a \textbf{measurement}. A sketch of the experimental setup can be seen in figure \ref{fig:setupsketch}, and a photograph of the actual setup in figure \ref{fig:setuppicture}. 
 
-Between measurements, optical tweezers constructed by A. Laas were used to change the orientation of the particle. For details on optical tweezers function see the introductory guide from Stanford \cite{OpticalTweezer} or Laas thesis \cite{alexanderThesis}. 
+Between measurements, optical tweezers constructed by A. Laas were used to change the orientation of the particle. For details on optical tweezers see the introductory guide from Stanford, \cite{OpticalTweezer} or Laas thesis \cite{alexanderThesis}. 
 
 
 \begin{figure}[H]
@@ -22,7 +22,7 @@ Between measurements, optical tweezers constructed by A. Laas were used to chang
 \end{figure}
 
 
-The microfluidic channel is \unit[40]{mm} long, \unit[2.5]{mm} wide and approximately \unit[150]{$\mu$m} deep. The channel is made from Polydimethylsiloxane (PDMS) and plasma bonded to a microscope slide. A more detailed description of the process can be found from the Center for Computer Integrated Systems for Microscopy and Manipulation~\cite{PDMS}. This material and procedure is chosen so that a channel that gets filled with dirt or breaks can cheaply and easily be replaced. PDMS is also non-reactive and highly transparent. A sketch of the channel can be seen in figure \ref{fig:channelsketch}, and a photograph of an actual channel in figure \ref{fig:channelpicture}. 
+The microfluidic channel is \unit[40]{mm} long, \unit[2.5]{mm} wide and approximately \unit[150]{$\mu$m} deep. That the channel is much wider than it is deep means that the shear near the center of the channel will be almost entirely in the field of view. The channel is made from Polydimethylsiloxane (PDMS) and plasma bonded to a microscope slide. A more detailed description of the process can be found from the Center for Computer Integrated Systems for Microscopy and Manipulation~\cite{PDMS}. This material and procedure is chosen so that a channel that gets filled with dirt or breaks can cheaply and easily be replaced. Dirt in this case refers primarily to bubbles and to particles that stick to the glass or the PDMS. PDMS is also non-reactive which means surface effects and other interactions with the particles are not a concern. PDMS is also highly transparent which means the light from the microscope illuminator won't be blocked or distorted before hitting the particles. A sketch of the channel can be seen in figure \ref{fig:channelsketch}, and a photograph of an actual channel in figure \ref{fig:channelpicture}. 
 
 \begin{figure}[H]
 \centering
@@ -39,7 +39,7 @@ The microfluidic channel is \unit[40]{mm} long, \unit[2.5]{mm} wide and approxim
 \end{figure}
 
 % rewrite
-In order to find the maximum flow speed of the channel we need to know the flow profile. Using the software employed by Johansson \cite{AntonThesis} we obtain the flow profile that can be seen in figure \ref{fig:flowprofile}. Integrating 
+In order to find the maximum flow speed of the channel we need to know the flow profile. Using the software employed by Johansson \cite{AntonThesis} we solve the Poisson equation in a rectangular channel to obtain the flow profile. The solution for our channel measurements can be seen in figure \ref{fig:flowprofile}. Integrating 
 the flow profile over the entire surface will give us an effective flow area, essentially how large the channel 'actually' is. 
 Using the flow profile from figure \ref{fig:flowprofile} we find that the effective flow area is $\unit[0.14]{mm^2}$. With a pump rate of \unit[7.5]{$\mu$l/minute} we get a maximum velocity of \unit[0.90]{mm/s} for the liquid.
 

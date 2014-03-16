@@ -1,25 +1,29 @@
-In order to understand the motivations for, as well as the limitations, and behaviour of the experiment we need to know about a few key concepts in fluid dynamics.
+\label{sec:fluid}
+In order to understand the motivations for, as well as the limitations and the behaviour of the experiment we need to know about a few key concepts in fluid mechanics.
 
-\subsection{Reynolds Number}
-The Reynolds number ($\operatorname{Re}$) is a dimensionless number describing the ratio of inertial forces to viscous forces in a flow. Roughly speaking one can think of viscous forces as acting to keep adjacent fluid elements moving in the same direction whereas inertial forces act to prevent any change in the motion of a fluid element. For a flow it defined as \cite{introfluid}
+\subsection{Reynolds number}
+The Reynolds number ($\operatorname{Re}$) is a dimensionless number describing the ratio of inertial forces to viscous forces in a flow. Roughly speaking one can think of viscous forces as acting to keep adjacent fluid elements moving in the same direction whereas inertial forces act to prevent any change in the motion of a fluid element. For a flow it is defined as \cite{introfluid}
 
 \begin{equation}\label{eq:reynolds}
-\operatorname{Re} = \frac{U L \rho}{\mu}
+\operatorname{Re} = \frac{U W \rho}{\mu}
 \end{equation}
-where $U$ is the characteristic velocity of the flow, $L$ is the characteristic length, $\rho$ is the density of the fluid and $\mu$ is its dynamic viscosity. This is used to estimate the 'regime' of the flow, of which there are two primary types. 
+where $U$ is the characteristic velocity of the flow, $W$ is its characteristic length scale, $\rho$ is the density of the fluid, and $\mu$ is its dynamic viscosity. The Reynolds number is used to characterize the regime of the flow. There are two primary regimes
 \begin{enumerate}
-\item The laminar regime, where viscous forces dominate over inertial forces
-\item The turbulent regime where inertial forces dominate.
+\item Laminar regime, where viscous forces dominate over inertial forces.
+\item Turbulent regime where inertial forces dominate.
 \end{enumerate}
 
 A simple visual characterization of the flow types can be seen in figure \ref{fig:laminar_flow}. 
 
- Flow with $\operatorname{Re}\ll 1$ is referred to as \emph{Stokes flow}. In this regime we can ignore inertial forces completely. This has has the implication that not only is the flow guaranteed to be laminar, but it is time reversible.  If there are particles in the flow they will also revert perfectly as long as they too have a Reynolds number that is much smaller than 1~\cite{introfluid3}. The Reynolds number of a particle is referred to as the particle Reynolds number and is defined as \cite{JonasLic}
+Flow with $\operatorname{Re}\ll 1$ is referred to as \emph{Stokes flow}. In this regime we can ignore inertial forces completely. The flow is guaranteed to be laminar, but it is also time reversible. This means any dynamics of the fluid will be retraced if the flow is reversed, as if time was reversed. ~\cite{introfluid3}
+ 
+Particles in Stokes flow are also time reversible if they have a particle Reynolds number $Re_p << 1$. The particle Reynolds number is defined as \cite{JonasLic}
 
 \begin{equation}\label{eq:reynoldsparticle}
 \operatorname{Re_p} = \frac{u_p L \rho}{\mu}
 \end{equation}
-where $u_p$ is the typical flow speed relative to the particle surface, L is the characteristic size of the particle, $\rho$ is the density of the fluid and $\mu$ is the dynamic viscosity of the fluid. 
+
+where $u_p$ is the typical flow speed relative to the particle surface, $L$ is the characteristic size of the particle, $\rho$ is the density of the fluid and $\mu$ is the dynamic viscosity of the fluid. 
 
 \begin{figure}[H]
 \centering
@@ -29,13 +33,13 @@ where $u_p$ is the typical flow speed relative to the particle surface, L is the
 \end{figure}
 
 \subsection{Stokes drag and Stokes' law}
-The drag force $F_D$ exerted by a fluid on a spherical particle for $\operatorname{Re} \ll 1$ is found using  Stokes's law \cite{introfluid2}
+The drag force $F_D$ exerted by a fluid on a spherical particle for $\operatorname{Re} = 0$ is found using  Stokes's law \cite{introfluid2}
 
 \begin{equation}\label{eq:stokes_law}
-F_D = 6\pi \mu R v,
+F_D = 6\pi \mu R v.
 \end{equation}
 
-\noindent where $v$ is the velocity of the sphere relative to the fluid, $\mu$ is the dynamic viscosity and $R$ is the radius of the sphere. This can be used to find the terminal velocity of a sphere sinking in a liquid by equating the gravitational force $F_G$ acting on the sphere with the drag force from eq \ref{eq:stokes_law}. $F_G$ is calculated as
+\noindent Here $v$ is the velocity of the sphere relative to the fluid, $\mu$ is the dynamic viscosity, and $R$ is the radius of the sphere. This can be used to find the terminal velocity of a sphere sinking in a liquid by equating the gravitational force $F_G$ acting on the sphere with the drag force from eq \ref{eq:stokes_law}. $F_G$ is calculated as
 
 \begin{equation}
 F_G = \Delta \rho g\cdot \frac{4\pi R^3}{3},
@@ -46,3 +50,5 @@ F_G = \Delta \rho g\cdot \frac{4\pi R^3}{3},
 \begin{equation}\label{eq:fallingSphere}
 v_s = \frac{2}{9} \frac{\Delta \rho}{\mu} g R^2.
 \end{equation}
+
+\noindent This is not immediately applicable to cylindrical particles but serves as a first order approximation.

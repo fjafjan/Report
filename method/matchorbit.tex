@@ -23,12 +23,12 @@ S(\mathbf{P}, \theta, \epsilon, i) = \frac{1}{N}\left| \mathbf{P_z} - \mathbf{Q_
 
 
 
-\noindent As $\epsilon$ will not actually change for a single particle over $r$ different measurements $P_z^{(1)}1, P_z^{(1)}, ..., P_z^{(1)}$, $\theta$ and $i$ (the phase) will. So for each $\epsilon$ we find the best $\theta$ and $i$ using $\hat{S}(\mathbf{P}_j, \epsilon)$ 
+\noindent As $\epsilon$ will not actually change for a single particle over $r$ different measurements $P_z^{(1)}, P_z^{(2)}, ..., P_z^{(r)}$, however the initial conditions $\theta$ and $i$ (the phase) will. So for each $\epsilon$ we find the best $\theta$ and $i$ using $\hat{S}(\mathbf{P}_j, \epsilon)$ 
 \begin{equation}
 \hat{S}(\mathbf{P}_j, \epsilon) =  \min(S(\mathbf{P}_j, \theta, \epsilon, i))
 \end{equation}
 
-and then find the best $\epsilon$ using
+\noindent and  then find the best $\epsilon$ using
 
 \begin{eqnarray}
 \epsilon_{best} = \min(\sum\limits_{j=1}^{r} \hat{S}(\mathbf{P}_j, \epsilon)^2).

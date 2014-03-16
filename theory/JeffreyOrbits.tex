@@ -1,68 +1,31 @@
 \label{sec:jeffery}
-The Jeffery orbits describe the motion of an ellipsoidal particle in Stokes flow. The orbits for axisymmetric ($a_x = a_z \ne a_y$) ellipsoidal particles were found by Jeffery and reformulated by Yarin \emph{et al}~\cite{Yarin} who computed orbits for asymmetric particles. The equations of motion for a triaxial particle in the form of Yarin \emph{et al} is
+The Jeffery orbits describe the orientational motion of an ellipsoidal particle in Stokes flow. The general equations of motion for any ellipsoid in shear flow were found by Jeffery\cite{Jeffery} who also solved these equations of motion for axisymmetric ($a_x = a_z \ne a_y$) ellipsoidal particles. Solutions for asymmetric particles were found numerically by Yarin\emph{et al}~\cite{Yarin} who also rewrote in a different but equivalent form. The equations of motion for a triaxial particle in the form of Yarin \emph{et al} is
 
 \begin{subequations}\label{eq:jeffrey}
 \begin{align}
 \frac{d\theta}{dt} 	&= (g_2 \sin \psi + g_3 \cos \psi ) \sin \theta, \\
 \frac{d\phi}{dt} 	&= \tfrac{1}{2} + g_3\sin \psi - g_2 \cos \psi,\\
-\frac{d\psi}{dt}	&= g_1 + (g_2\cos \psi - g_3\sin \psi) \cos \theta \\
+\frac{d\psi}{dt}	&= g_1 + (g_2\cos \psi - g_3\sin \psi) \cos \theta. \\
 \end{align}
 \end{subequations}
 
-where the functions  $g_i$ are defined as
+\noindent The functions  $g_i$ are defined as
 
 \begin{subequations}
 \begin{align}
-g_1 &= \frac{a_y^2 - a_z^2}{2(a_y^2 + a_z^2)} 
+g_1 &= \frac{a_2^2 - a_3^2}{2(a_2^2 + a_3^2)} 
 		\left(-\tfrac{1}{2}(\cos^2 \theta + 1 )\sin 2\phi \sin 2\psi + \cos\theta \cos 2\phi \cos 2\psi \right), \\
-g_2 &= \frac{a_z^2 - a_x^2}{2(a_x^2 + a_z^2)}
+g_2 &= \frac{a_3^2 - a_1^2}{2(a_1^2 + a_3^2)}
 		\left( -\cos\theta \sin 2\phi \sin\psi  +  \cos 2\phi \cos\psi \right), \\
-g_3 &= \frac{a_x^2 - a_y^2}{2(a_x^2 + a_y^2)}
+g_3 &= \frac{a_1^2 - a_2^2}{2(a_1^2 + a_2^2)}
 		\left( \cos\theta \sin 2\phi \cos\psi + \cos 2\phi \sin\psi \right).
 \end{align}
 \end{subequations}
 
-where $(\phi, \theta, \psi)$ are the Euler angles seen in figure \ref{fig:eulerangles} and . 
+Here $(\phi, \theta, \psi)$ are the Euler angles seen in Figure \ref{fig:eulerangles}. 
+%Note that Yarin uses $a_x, a_y, a_z$ in place of $a_1, a_2, a_3$.
 
-Looking at figure \ref{fig:orbitparams} we see that $n_x$ and $n_y$ have periodic orbits, we call each one of these periodic changes a flip. The period of flipping $T$ is for an axisymmetric particle \cite{Jeffery}
-
-\begin{equation}\label{eq:flipRate}
-T = 2\pi \left( \lambda + \frac{1}{\lambda} \right)\frac{1}{\kappa},
-\end{equation}
-
-\noindent where $\kappa$ is the shear rate. 
-
-Solutions to the equations of motions can be found with numerical methods as shown by Yarin \cite{Yarin}. Note that the eq. \ref{eq:jeffrey} uses the coordinates from Yarin which differ from the ones used in this thesis in the same way as is discusse in Johansson \cite{AntonThesis}. The time evolution of $\theta$ and $\psi$ for different initial conditions can be plotted in a Poincaré map, also known 
-as a Surface-of-Section (S.O.S.) \cite{poincare}. This plots the $\psi$ and $\theta$ coordinates each time $\phi = 0$. The points for every initial condition is bound to a certain region of such a map called the orbit. A few such maps are shown in Figure \ref{fig:orbitmaps}
-
-For a particle with an $\epsilon \in \left[0.01-0.05\right]$ there are essentially three classes of orbits based on the initial condition $\theta_0$.
-
-\begin{enumerate}
-\item \textbf{Periodic}: $\left|\theta_0\right| \approx 1$ in which there is little variation and the particle is largely periodic with fluctuations too small to measure.
-\item \textbf{Quasi-periodic sign preserving}: For $\left|\theta_0\right|> \theta_b$ the amplitude of $\cos(\theta)$ changes noticeably but does not change sign. $\theta_b$ is some breaking point that changes for different $\epsilon$
-\item \textbf{Quasi-periodic sign changing}: For small $\left|\theta_0\right|$ the amplitude of $\cos(\theta)$ will change noticeably and change in sign from positive to negative.
-\end{enumerate}
-
-For larger asymmetries $\epsilon > 0.05$ there are chaotic orbits that appear as areas with dots. Chaotic orbits can been seen around the quasi-periodic circular orbits in figure \ref{fig:orbitmap4} where they appear as a 'sea' of dots.
-
-Simulations of these three different types of orbits are illustrated in figure \ref{fig:orbittypes} both on the S.O.S. as well as the in components of $\mathbf{n}$ as a function of time. We can see that while $n_x$ and $n_y$ are periodic, albeit with different amplitudes, the 
-behaviour of $n_z$ is significantly different. For the $n_z \approx 1$  orbit shown in green it is constant on the S.O.S and is simply periodic over time. For the sign presercing quasi-periodic orbit in red it is bent on the S.O.S and we can see in the time series that it is doubly periodic as it peaks with a fixed period but the amplitude of the peaks vary periodically themselves. For the sign changing quasi-periodic orbit in blue $n_z$ changes sign, again with a fixed period.
-
-
-%\begin{figure}[H]
-%\centering
-%\begin{subfigure}[b]{0.45\textwidth}
-%\includegraphics[width=0.9\textwidth]{figures/method/channelDetail.pdf}
-%\caption{Sketch of the channel}\label{fig:channelsketch}
-%\end{subfigure}
-%\begin{subfigure}[b]{0.45\textwidth}
-%\includegraphics[width=0.9\textwidth]{figures/method/ChannelZoomed.jpg}
-%\caption{Picture of the channel}\label{fig:channelpicture}
-%\end{subfigure}
-%\caption{A sketch of the channel as well as a picture of the channel as it is set up during a measurement. The channel is only 150 $\mu$m deep, but the PDMS surrounding it is around 15 mm to try and prevent the channel from expanding and contracting too much.}
-%\label{fig:channel}
-%\end{figure}
-
+Note that the eq. (\ref{eq:jeffrey}) uses the coordinates from Yarin \emph{et al.}\cite{Yarin} which differ from the ones used in this thesis, details are discussed in Johansson \cite{AntonThesis}. Numerical solutions for three different initial conditions for an asymmetric particle are shown in Figure \ref{fig:orbitparams}.
 
 \begin{figure}[H]
 \centering
@@ -80,6 +43,31 @@ behaviour of $n_z$ is significantly different. For the $n_z \approx 1$  orbit sh
 
 
 
+Looking at Figure \ref{fig:orbitparams} we see that $n_x$ and $n_y$ are periodic, corresponding to periodic rotation around the $y$-axis. We refer to these rotations as flips. The period $\eta$ of $n_x$ and $n_y$ is for an axisymmetric particle \cite{Jeffery}
+
+\begin{equation}\label{eq:flipRate}
+\eta = 2\pi \left( \lambda + \frac{1}{\lambda} \right)\frac{1}{\kappa},
+\end{equation}
+
+\noindent where $\kappa$ is the shear rate. 
+
+The time evolution of $\theta$ and $\psi$ for different initial conditions can be plotted in a Poincaré map, also known as a Surface-of-Section (S.O.S.)~\cite{poincare}. This plots the $\psi$ and $\theta$ coordinates each time $\phi = 0$. The successive points on the Poincaré map for each initial condition will move and explore certain regions of the surface of section. This region is referred to as the \emph{orbit}. 
+
+For a particle with an asymmetry $\epsilon$ in the range $\left[0.01-0.05\right]$ there are three classes of orbits, depending on the initial condition $\theta_0$.
+
+\begin{enumerate}
+\item \textbf{Periodic}: $\left|\theta_0\right| \approx 1$ in which there is little variation and the particle is largely periodic with fluctuations too small to measure.
+\item \textbf{Quasi-periodic sign preserving}: For $\left|\theta_0\right|> \theta_b$ the amplitude of $\cos(\theta)$ changes noticeably but does not change sign. Here $\theta_b$ is a breaking point that changes for different $\epsilon$.
+\item \textbf{Quasi-periodic sign changing}: For small $\left|\theta_0\right| < \theta_b$ the amplitude of $\cos(\theta)$ changes noticeably and changes sign. 
+\end{enumerate}
+
+Simulations of these three different types of orbits are illustrated in Figure \ref{fig:orbittypes} on the S.O.S. as well as in the components of $\mathbf{n}$ as a function of time. We can see that while $n_x$ and $n_y$ are periodic, albeit with different amplitudes, the  behaviour of $n_z$ is significantly different. For the $n_z \approx 1$  orbit shown in green it is constant on the S.O.S and is simply periodic over time. For the sign presercing quasi-periodic orbit in red it is bent on the S.O.S and we can see in the time series that it is doubly periodic as it peaks with a fixed period but the amplitude of the peaks vary periodically themselves. For the sign changing quasi-periodic orbit in blue $n_z$ changes sign, again with a fixed period.
+
+
+For larger asymmetries $\epsilon > 0.05$ there are chaotic orbits that explore a larger region of the S.O.S. The simulations used do not have long enough time evolutions for the chaotic orbits to fill the regions in the way that quasi-periodic or periodic orbits fill their two dimensional regions, the chaotic orbits appear as a 'sea' of dots. Chaotic orbits can been seen around the quasi-periodic sign changing orbits in figure \ref{fig:orbitmap4}.
+%
+%
+%
 \begin{figure}[H]
 \centering
 \begin{subfigure}[3a]{0.40\textwidth}
@@ -99,23 +87,41 @@ behaviour of $n_z$ is significantly different. For the $n_z \approx 1$  orbit sh
 \caption{Poincare map for $\lambda = 7, \epsilon = 0.25$.}\label{fig:orbitmap4}
 \end{subfigure} 
 \caption{Four Poincare maps for different $\epsilon$. Already at $\epsilon = 0.01$ there are noticeably quasi-periodic 
-orbits around the centre at $\cos(\theta) \approx \psi \approx 0$ but it is also a significantly larger region for $\epsilon = 0.05$. For $\epsilon = 0.25$ we can see chaotic orbits surrounding the circular orbits in the centre that appear as a 'sea' of dots. Note that some wavelike pattern can appear to exist in the figure \ref{fig:orbitmap2} and  \ref{fig:orbitmap2}, this is caused by aliasing/compression issues with printing several curved lines close together.}\label{fig:orbitmaps}
+orbits around the centre at $\cos(\theta) \approx \psi \approx 0$ but it is also a significantly larger region for $\epsilon = 0.05$. For $\epsilon = 0.25$ we can see chaotic orbits surrounding the circular orbits in the centre that appear as a 'sea' of dots.} %q Note that some wavelike pattern can appear to exist in the figure \ref{fig:orbitmap2} and  \ref{fig:orbitmap2}, this is caused by aliasing/compression issues with printing several curved lines close together.}\label{fig:orbitmaps}
 \end{figure}
 
 \subsection{Winding number} \label{sec:winding}
-The quasi-periodic orbits are also referred to as double-periodic~\cite{Yarin}. This to emphasize the fact that the amplitude of the short period $\theta_2$ also varies periodically with period $\theta_1$. The ratio between the two periods is referred to as the winding number $\omega$
+The quasi-periodic orbits are also referred to as doubly-periodic~\cite{Yarin}. It is called doubly-periodic to emphasize the fact that the amplitude of the short period $\theta_2$ also varies periodically with period $\theta_1$. The ratio between the two periods is referred to as the winding number $\omega$ referring to the winding around a unit torus. The shorter period $\theta_2$ corresponds to rotations around the small cross section and the longer period $\theta_1$ corresponds to rotations around the large circumference of the torus. The winding number is defined as \cite{introchaos}
+
+\begin{equation}
+\omega_{def}  = \lim\limits_{n \rightarrow \infty} \frac{f^n(\xi) - \xi_0}{n}.
+\end{equation}
+
+where $\xi$ is the angle around the large circumference of the torus and $f^n(\xi)$ is the shift caused in $n$ rotations around the smaller axis. 
+Applying this to our double-periodic the winding number would be the angle increment every flip in the function $g$ that is periodic with period 
+$\theta_1$. We can not measure that increment, so I consider it more comprehensible to consider the inverse: The number of flips it is necessary to 
+complete one period. This can be measured as is shown in Figure \ref{fig:windingDef}. If we measure over several $\theta_1$ peaks the average winding 
+number will approximate the real one. 
+
+
+$n$ as the number of flips of the particle which is $\frac{t}{\theta_1}$. $f^n(\xi) - \xi_0$ will converge to $\frac{n}{\theta_1}$ as the
+ $\frac{\xi_0}{n}$ term decreases. Inverting it so that $\omega >= 1$ we get
+
+\begin{equation}
+\frac{t}{\theta_1}	
+\end{equation}
 
 \begin{equation}\label{eq:winding}
 \omega = \frac{\theta_1}{\theta_2}.
 \end{equation}
-
+%
 \noindent The winding number of the quasi-periodic sign preserving orbit from figure \ref{fig:orbittypes} is illustrated in Figure \ref{fig:windingDef}.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{figures/theory/WindingNrFixed2.pdf}
 \end{center}
-\caption{The $n_z$ sign preserving quasi-periodic orbit from figure \ref{fig:orbitparams} over a longer time, highlighting the short period $\theta_2$ which is simply the period of $\phi$ and the longer period $\theta_1$. The winding number is defined as the ratio between the longer and shorter periods.}
+\caption{The quasi-periodic sign preserving orbit from figure \ref{fig:orbitparams} over a longer time, highlighting the short period $\theta_2$ which is simply the period of $\phi$ and the longer period $\theta_1$. The winding number is defined as the ratio between the longer and shorter periods.}
 \label{fig:windingDef}
 \end{figure}
 

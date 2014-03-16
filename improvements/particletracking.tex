@@ -47,7 +47,7 @@ In order to identify the particle contour  a few techniques are used. First, con
 which is used to find the distance $D_i$ between each position $\mathbf{P}_i$ and the expected position $\mathbf{E}$. The expected position is first frame the center of the image and thereafter we assumed the particle have assumed to have constant velocity. So we have 
 
 \[
-D_i = \left|\mathbf{P}_i - \mathbf{E}\right|
+D_i = \left|\left|\mathbf{P}_i - \mathbf{E}\right|\right|
 \]
 
 Finally a 'thinness value' for each contour $\zeta_i$ is calculated using
@@ -70,16 +70,16 @@ After two detections of the particle $\mathbf{P}(t_0)$ and $\mathbf{P}(t_1)$, th
 
 If the velocity is larger than some threshold $v_{thresh}$ the step engine velocity is changed by
 \[
-\mathbf{v}_{corr} = \mathbf{v}_{rel}\zeta
+\mathbf{v}_{corr} = \zeta\mathbf{v}_{rel}
 \]
 where $\zeta < 1$ is damping to prevent too sudden changes. If the position of the particle is too far from the center of the image the velocity of the step engine is changed by .
-\[|
+\[
 \mathbf{v}_{corr} = \frac{\mathbf{P}(t_1)}{\left|\mathbf{P}(t_1)\right|}v_{\epsilon}
 \] 
 where $v_{\epsilon}$ is a small incremental velocity.
 
 
-\subsection{Time Considerations}\label{sec:time considerations}
+\subsection{Time considerations}\label{sec:time considerations}
 A higher frame rate will allow for greater predictive power and increase stability as the error between frames is 
 reduced. Reducing computational time of each task is important for optimizing the tracking, which also means knowing 
 what tasks are the most demanding. A list of the different tasks and their average execution times can be seen in table 
@@ -93,7 +93,7 @@ what tasks are the most demanding. A list of the different tasks and their avera
  Find edges 	& 78			& 23 \\
  Change velocity& 230			& 62 \\
  \end{tabular}
- \caption{}
+ \caption{WRITE A CAPTION HERE SOON}
  \label{tab:benchmarks}
 \end{table}
 
