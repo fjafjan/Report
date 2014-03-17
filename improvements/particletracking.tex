@@ -10,63 +10,63 @@
 %
 %1) Why we want tracking
 
-One of the most time consuming aspects of making measurements is manually tracking a particle using the movable stage as described in section \ref{sec:exp_setup}. Depending on the flow rate and the number of stretches and measurements desired for a particle it can take up to several hours. Thus one of the primary targets for improvement as discussed by Johansson \cite{AntonThesis} was automate the camera tracking. This would speed up measurements and allow for a larger data set to be gathered. 
+Most of the time making measurements was spent manually tracking a particle using the movable stage as described in section \ref{sec:exp_setup}. Depending on the flow rate and the number of stretches desired for a particle it could take up to several hours to compile one measurement. Thus one important way to improve the setup from previous iteration is as discussed by Johansson \cite{AntonThesis} to automate the camera tracking. This would speed up measurements and allow for a larger data set to be gathered. 
 
-Such a tracking was implemented using Python and the external packages \texttt{OPENCV}, \texttt{NumPy}, \texttt{SciPy}, \texttt{ImageMagick} and \texttt{ctypes}. The goal of the tracking is relatively similar to the tracking described in \ref{sec:particleidentification} and more in detail in Johansson \cite{AntonThesis}. The main difference is that the tracking describe in this section moves the actual stage and control the pump in real time whereas Johansson tracking tracks the particle in the movie after manual measurements have been made. This produces some different problems which are detailed below. 
+A tracking algorithm was implemented using Python and the external packages \texttt{OPENCV}, \texttt{NumPy}, \texttt{SciPy}, \texttt{ImageMagick} and \texttt{ctypes}. The goal of the tracking was relatively similar to the tracking described in \ref{sec:particleidentification} and more in detail in Johansson \cite{AntonThesis}. The main difference is that the tracking described in this section moves the actual stage and control the pump in real time whereas Johansson tracking tracks the particle in the movie after manual measurements have been made. This produces some different problems which are detailed below. 
 
 \subsection{Acquiring the image}
-The first step in tracking a particle is to acquire the image from the microscope in order to identify (and track) the particle. However the Leica DFC350 FX camera only works with the proprietary Leica software which means there is no easy way to get the image straight from the camera in real time. To solve this we use the \texttt{ImageGrabber} package in \texttt{Python} to isolate the camera image from the screen by cropping the image aquired. While being a very short program it still takes ca \unit[50]{ms} per frame. Each frame is stored as a matrix $\mathbf{F}$ with brightness values ranging from 0 to 255.
+The first step in tracking a particle is to acquire the image from the microscope in order to identify (and track) the particle. However the Leica DFC350 FX camera only works with the proprietary Leica software which has no API. This means that there is no way to get the image straight from the camera in real time. To solve this the \texttt{ImageGrabber} package in \texttt{Python} is used to take screenshots as often as possible. The camera image is isolated from the full screenshot by cropping the image aquired. This in itself is a very short program however it still takes ca \unit[50]{ms} per frame on an Intel Core i5 processor. Each frame is stored as a matrix $\mathbf{F}$ with brightness values ranging from 0 to 255.
 
 \subsection{Reducing noise}
-In order to reduce noise from the image we first reduce the static noise caused by dirt, scratches and other defects in the microscope and on the camera lens, as shown in figure \ref{fig:origFrame}. As the noise is static it is the only thing that will remains if we compute an average image $\bar{\mathbf{F}}$. After taking $N$ images and denote them $\left\{\mathbf{F}_1,\mathbf{F}_2 ... \mathbf{F}_N \right\}$ the average images $\bar{\mathbf{F}}$ is given by 
+In order to reduce noise from the image we first reduce the static noise caused by dirt, scratches and other defects in the microscope and on the camera lens, as shown in Figure \ref{fig:origFrame}. As the noise is static it is the only thing that remains if we compute an average image $\bar{\mathbf{F}}$. After taking $N$ images and denote them $\left\{\mathbf{F}_1,\mathbf{F}_2 ... \mathbf{F}_N \right\}$ the average images $\bar{\mathbf{F}}$ is given by 
 
 \begin{equation}\label{eq:averageFrame}
 \bar{\mathbf{F}} = \frac{1}{N}\sum\limits_{i=1}^{N} \mathbf{F}_i.
 \end{equation}
 
-An example of such an average image can be seen in figure \ref{fig:averageFrame}. The static noise is then removed from each frame using eq 3.1 from Johansson \cite{AntonThesis}.
+An example of such an average image can be seen in Figure \ref{fig:averageFrame}. The static noise is then removed from each frame using eq (3.1) from Johansson \cite{AntonThesis}.
 
 \begin{equation}
 \widetilde{\mathbf{F}_{i}} = \mathbf{F}_i - \bar{\mathbf{F}} + (F_i^*\mathbf{I})
 \end{equation}
 
-\noindent where $\F_i^*$ is the average brightness of the frame $\mathbf{F}_i$, $\widetilde{\mathbf{F}_{i}}$ is the corrected frame and $\mathbf{I}$ is a matrix of ones. The result can be seen in figure \ref{fig:fixedFrame}. 
+\noindent where $\F_i^*$ is the average brightness of the frame $\mathbf{F}_i$, $\widetilde{\mathbf{F}_{i}}$ is the corrected frame and $\mathbf{I}$ is a matrix of ones. The result can be seen in Figure \ref{fig:fixedFrame}. 
 
 
 
 
 \subsection{Contour detection and selection}
-The edges of the captured image are detecting using the Canny edge detector from the OpenCV package. The canny edge detector takes two thresholds for finding edges, $\tau_1$ and $\tau_2$ with $\tau_1 > \tau_2$. $\tau_1$ is used for finding initial edges and $\tau_2$ is used on pixels adjacent to ones already found. For more details on how the Canny Edge detector works see the original paper by Canny from 1986\cite{Canny}. Once an edge image has been generated, we use the OpenCV command, \texttt{Contours} which returns a list of every contiguous group of edge pixels.  We denote these contours $\left\{C_1, C_2 \ldots C_M \right\}$ and each contour contains $M^c_i$ pixels, $C_i = \left\{p^i_1, p^i_2 \ldots p^i_{M^c_i}\right\} $. If the image is not too noisy and we have chosen the threshold values to the edge detection correctly, this should include the particle as a contour. 
+The edges of the captured image are detecting using the Canny edge detector from the OpenCV package. The canny edge detector uses two different threshold values for finding edges, $\tau_1$ and $\tau_2$ with $\tau_1 > \tau_2$. $\tau_1$ is used for finding initial edges and $\tau_2$ is used on pixels adjacent to ones already found. For more details on how the Canny Edge detector works see the original paper by Canny from 1986\cite{Canny}. Once an edge image has been generated, we use the OpenCV command, \texttt{Contours} which returns a list of every contiguous group of edge pixels.  We denote these contours $\left\{C_1, C_2 \ldots C_M \right\}$ and each contour contains $M^c_i$ pixels, $C_i = \left\{\mathbf{p}^i_1, \mathbf{p}^i_2 \ldots \mathbf{p}^i_{M^c_i}\right\} $. If the image is not too noisy and we have chosen the threshold values to the edge detection correctly, this should include the particle as a contour. 
 
 In order to identify the particle contour  a few techniques are used. First, contours whose total size $ M_c^i$ is less than some minimum value, $ n_{min}$ or larger than some maximum value $n_{max}$ are ignored. Then the average position $\mathbf{P}_i$ of each contour $C_i$ is calculated as the average pixel position
 
 \[
-\mathbf{P}_i = \sum_{j=1}^n p_j/n
+\mathbf{P}_i = \sum_{j=1}^n \mathbf{p}_j/n
 \]
 
-which is used to find the distance $D_i$ between each position $\mathbf{P}_i$ and the expected position $\mathbf{E}$. The expected position is first frame the center of the image and thereafter we assumed the particle have assumed to have constant velocity. So we have 
+\noindent which is used to find the distance $D_i$ between each position $\mathbf{P}_i$ and the expected position $\mathbf{E}$. The expected position is the center of the image in the first frame and thereafter we assumed the particle has the same velocity as it did the last frame. So we have 
 
 \[
 D_i = \left|\left|\mathbf{P}_i - \mathbf{E}\right|\right|
 \]
 
-Finally a 'thinness value' for each contour $\zeta_i$ is calculated using
+\noindent Finally a 'thinness value' for each contour $\zeta_i$ is calculated using
 
 \begin{equation}\label{eq:thinness}
 \zeta_i =  \left(\frac{d_{i, max}^2}{M_c^i}\right)^2,
 \end{equation}. 
 
-where $d_{i,max}$ is the longest distance between two pixels in the contour $C_i$.
+\noindent where $d_i^{(max)}$ is the longest distance between two pixels in the contour $C_i$.
 
 Finally a weighted score $S_i$ is assigned to each contour based on its position and thinness using
 
 \begin{equation}
 S_i = w_{thin}\zeta_i + \frac{w_{pos}}{D_i}
 \end{equation}
-\noindent where $w_{thin}$ is a weighting constant for the thinness and $w_{pos}$ is a weighting constant for the position. The contour with the highest score is chosen unless it is lower than some worst acceptable score $S_{min}$
+\noindent where $w_{thin}$ is a weighting constant for the thinness and $w_{pos}$ is a weighting constant for the position. The contour with the highest score is chosen unless it is lower than some worst acceptable score $S_{min}$. 
 
 \subsection{Adjusting the camera velocity}
-After two detections of the particle $\mathbf{P}(t_0)$ and $\mathbf{P}(t_1)$, there will have been some change in position which we will refer to as the relative velocity $\mathbf{v}_{rel}$ and the velocity of the step engine as $v_{step}$ and the correctional change in velocity of the step engine $\mathbf{v}_{corr}$.
+After the particle has been detected two times at positions $\mathbf{P}(t_0)$ and $\mathbf{P}(t_1)$, the change in position is the relative velocity $\mathbf{v}_{rel} = \mathbf{P}(t_1) - \mathbf{P}(t_0)$.  The velocity of the step engine as $\mathbf{v}_{step}$ and the correctional change in velocity of the step engine $\mathbf{v}_{corr}$.
 
 If the velocity is larger than some threshold $v_{thresh}$ the step engine velocity is changed by
 \[
@@ -80,7 +80,7 @@ where $v_{\epsilon}$ is a small incremental velocity.
 
 
 \subsection{Time considerations}\label{sec:time considerations}
-A higher frame rate will allow for greater predictive power and increase stability as the error between frames is 
+A higher frame rate allows for greater predictive power and increased stability as the error between frames is 
 reduced. Reducing computational time of each task is important for optimizing the tracking, which also means knowing 
 what tasks are the most demanding. A list of the different tasks and their average execution times can be seen in table 
 \ref{tab:benchmarks}

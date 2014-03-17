@@ -1,15 +1,19 @@
 \label{sec:matchorbit}
-To verify that the theoretical Jeffery orbits from \ref{sec:jeffery} are present we want to match the measurements to theoretical orbits.
+To verify that the theoretical orbits from Section \ref{sec:jeffery} have been measured we want to match the measurements to theoretical orbits.
 
-To find the best matching orbit from a Poincaré map for a measurement we again utilize $P_z$, the points where $n_z$ peaks and $n_x=0$. We denote the length o f$\mathbf{P_z}$ as $N$. We are concerned with matching them with the peaks from theoretical orbits.
+To find the best matching orbit from a Poincaré map for a measurement we again utilize $\mathbf{P}_z$, the points where $n_z$ peaks and $n_x=0$. We denote the length of $\mathbf{P}_z$ as $N$. We are concerned with matching them with the peaks from theoretical orbits.
 
 %To find the best matching theoretical orbit we calculate the least square distance of $\mathbf{P_z}$ against the theoretical peaks for $\epsilon \in [0.01, 0.02, ..., 0.1]$ and for $\cos(\theta) \in [-1,1]$ 
 %and for $\psi \in [-\frac{pi}{2},\frac{pi}{2}]$. 
 
-To find the best matching theoretical orbit for a measurement we compute the least square between $P_z$ and all orbits on all phase maps with $\epsilon \in [0.01, 0.02, ..., 0.1]$ for 200 consecutive different initial $\psi$ (the $x$-axis on the Poincare map). If we for each orbit denote the theoretical series of $n_z$ peaks as $\mathbf{Q_z}(\theta, \epsilon)$. We let $\mathbf{Q_z}(\theta, \epsilon)$ be of length $M > 2N$ and define $\mathbf{Q_z}(\theta, \epsilon, i)$ to be the $n_z$ series $\mathbf{Q_z}(\theta, \epsilon)$ starting at index $i$. We assign a score function $S(\theta, \epsilon, i)$ as
+To find the best matching theoretical orbit for a measurement we compute the least square distance between $\mathbf{P}_z$ and all orbits on all phase maps 
+with $\epsilon$ in the range $\left[0.01, 0.02, ..., 0.1\right]$ for 200 consecutive initial $\psi$ (the $x$-axis on the Poincaré map). If we for each orbit denote 
+the theoretical series of $n_z$ peaks as $\mathbf{Q}_z(\theta, \epsilon)$. We make sure that the length of $\mathbf{Q}_z(\theta, \epsilon)$ be twice that 
+of $\mathbf{P}_z$ which guarantees that we always find the correct phase. We define $\mathbf{Q}_z(\theta, \epsilon, i)$ to be the $n_z$ series 
+$\mathbf{Q}_z(\theta, \epsilon)$ starting at index $i$. We assign a score function $S(\theta, \epsilon, i)$ as
 
 \begin{equation}
-S(\mathbf{P}, \theta, \epsilon, i) = \frac{1}{N}\left| \mathbf{P_z} - \mathbf{Q_z}^{(i)}(\theta, \epsilon) \right|^2.
+S(\mathbf{P}_z, \theta, \epsilon, i) = \frac{1}{N}\left| \mathbf{P}_z - \mathbf{Q}_z^{(i)}(\theta, \epsilon) \right|^2.
 \end{equation}
 
 \noindent An example experimental $P_z$ series matched to theoretical data is seen in Figure \ref{fig:particleB2match}.
@@ -17,21 +21,21 @@ S(\mathbf{P}, \theta, \epsilon, i) = \frac{1}{N}\left| \mathbf{P_z} - \mathbf{Q_
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/results/particleB/October_1_Particle_4_run_4match.pdf}
-\caption{The upper figure shows the experimental $n_z$ peaks $\mathbf{P_z}$ versus the theoretical $Q_z$ for the best matching orbit. The lower plot shows where what section of the theoretical time series was used for matching, ie what $i$ from section \ref{sec:matchorbit} was chosen.}
+\caption{The upper figure shows the experimental $n_z$ peaks $\mathbf{P}_z$ and the theoretical peaks $\mathbf{Q}_z$ for the best matching orbit. The lower plot shows where what section of the theoretical time series was used for matching, ie what $i$ from section \ref{sec:matchorbit} was chosen.}
 \label{fig:particleB2match}
 \end{figure}
 
 
 
-\noindent As $\epsilon$ will not actually change for a single particle over $r$ different measurements $P_z^{(1)}, P_z^{(2)}, ..., P_z^{(r)}$, however the initial conditions $\theta$ and $i$ (the phase) will. So for each $\epsilon$ we find the best $\theta$ and $i$ using $\hat{S}(\mathbf{P}_j, \epsilon)$ 
+\noindent $\epsilon$ does not change for a particle over $r$ different measurements $\mathbf{P}_z^{(1)}, \mathbf{P}_z^{(2)}, ..., \mathbf{P}_z^{(r)}$, however the initial conditions $\theta$ and $i$ (the phase) do. So for each $\epsilon$ we find the best $\theta$ and $i$ using $\hat{S}(\mathbf{P}^{(j)}_z, \epsilon)$ 
 \begin{equation}
-\hat{S}(\mathbf{P}_j, \epsilon) =  \min(S(\mathbf{P}_j, \theta, \epsilon, i))
+\hat{S}(\mathbf{P}^{(j)}_z, \epsilon) =  \min(S(\mathbf{P}^{(j)}_z, \theta, \epsilon, i)) 
 \end{equation}
 
 \noindent and  then find the best $\epsilon$ using
 
 \begin{eqnarray}
-\epsilon_{best} = \min(\sum\limits_{j=1}^{r} \hat{S}(\mathbf{P}_j, \epsilon)^2).
+\epsilon_{best} = \min(\sum\limits_{j=1}^{r} \frac{\hat{S}(\mathbf{P}^{(j)}_z, \epsilon)^2).}{N^{(j)}}
 \end{eqnarray}
 
 
