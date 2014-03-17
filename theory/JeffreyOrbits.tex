@@ -1,5 +1,5 @@
 \label{sec:jeffery}
-The Jeffery orbits describe the orientational motion of an ellipsoidal particle in Stokes flow. The general equations of motion for any ellipsoid in shear flow were found by Jeffery\cite{Jeffery} who also solved these equations of motion for axisymmetric ($a_x = a_z \ne a_y$) ellipsoidal particles. Solutions for asymmetric particles were found numerically by Yarin\emph{et al}~\cite{Yarin} who also rewrote in a different but equivalent form. The equations of motion for a triaxial particle in the form of Yarin \emph{et al} is
+The Jeffery orbits describe the orientational motion of an ellipsoidal particle in Stokes flow. The general equations of motion for any ellipsoid in shear flow were found by Jeffery\cite{Jeffery} who also solved these equations of motion for axisymmetric ($a_1 \ne a_2 = a_3$) ellipsoidal particles. Solutions for asymmetric particles were found numerically by Yarin \emph{et al.}~\cite{Yarin} who also rewrote the equations in a different but equivalent form. The equations of rotational motion for a triaxial particle in shear flow are in the form of Yarin \emph{et al.}
 
 \begin{subequations}\label{eq:jeffrey}
 \begin{align}
@@ -22,10 +22,10 @@ g_3 &= \frac{a_1^2 - a_2^2}{2(a_1^2 + a_2^2)}
 \end{align}
 \end{subequations}
 
-Here $(\phi, \theta, \psi)$ are the Euler angles seen in Figure \ref{fig:eulerangles}. 
+\noindent Here $(\phi, \theta, \psi)$ are the Euler angles seen in Figure \ref{fig:eulerangles}. 
 %Note that Yarin uses $a_x, a_y, a_z$ in place of $a_1, a_2, a_3$.
 
-Note that the eq. (\ref{eq:jeffrey}) uses the coordinates from Yarin \emph{et al.}\cite{Yarin} which differ from the ones used in this thesis, details are discussed in Johansson \cite{AntonThesis}. Numerical solutions for three different initial conditions for an asymmetric particle are shown in Figure \ref{fig:orbitparams}.
+Note that the eq. (\ref{eq:jeffrey}) uses the coordinate system from Yarin \emph{et al.}\cite{Yarin} which differ from the one used in this thesis, details are discussed in Johansson \cite{AntonThesis}. Numerical solutions for three different initial conditions for an asymmetric particle are shown in Figure \ref{fig:orbitparams}.
 
 \begin{figure}[H]
 \centering
@@ -43,7 +43,7 @@ Note that the eq. (\ref{eq:jeffrey}) uses the coordinates from Yarin \emph{et al
 
 
 
-Looking at Figure \ref{fig:orbitparams} we see that $n_x$ and $n_y$ are periodic, corresponding to periodic rotation around the $y$-axis. We refer to these rotations as flips. The period $\eta$ of $n_x$ and $n_y$ is for an axisymmetric particle \cite{Jeffery}
+Looking at Figure \ref{fig:orbitparams} we see that $n_x$ and $n_y$ are periodic, corresponding to periodic rotation around the $z$-axis. We refer to these rotations as flips. The period $\eta$ of $n_x$ and $n_y$ is for an axisymmetric particle \cite{Jeffery}
 
 \begin{equation}\label{eq:flipRate}
 \eta = 2\pi \left( \lambda + \frac{1}{\lambda} \right)\frac{1}{\kappa},
@@ -61,7 +61,7 @@ For a particle with an asymmetry $\epsilon$ in the range $\left[0.01-0.05\right]
 \item \textbf{Quasi-periodic sign changing}: For small $\left|\theta_0\right| < \theta_b$ the amplitude of $\cos(\theta)$ changes noticeably and changes sign. 
 \end{enumerate}
 
-Simulations of these three different types of orbits are illustrated in Figure \ref{fig:orbittypes} on the S.O.S. as well as in the components of $\mathbf{n}$ as a function of time. We can see that while $n_x$ and $n_y$ are periodic, albeit with different amplitudes, the  behaviour of $n_z$ is significantly different. For the $n_z \approx 1$  orbit shown in green it is constant on the S.O.S and is simply periodic over time. For the sign presercing quasi-periodic orbit in red it is bent on the S.O.S and we can see in the time series that it is doubly periodic as it peaks with a fixed period but the amplitude of the peaks vary periodically themselves. For the sign changing quasi-periodic orbit in blue $n_z$ changes sign, again with a fixed period.
+Simulations of these three different types of orbits for a particle with $\lambda=7$ and $\epsilon=0.05$ are illustrated in Figure \ref{fig:orbittypes}. Figure \ref{fig:orbittypes} shows the orbits on the S.O.S. and Figure \ref{fig:orbitparams} show the components of $\mathbf{n}$ as a function of time. We can see that while $n_x$ and $n_y$ are periodic, albeit with different amplitudes, the  behaviour of $n_z$ is significantly different. The $n_z \approx 1$  orbit shown in green it is constant on the S.O.S and is simply periodic over time. For the sign presercing quasi-periodic orbit in red it is bent on the S.O.S and we can see in the time series that it is doubly periodic as it peaks with a fixed period but the amplitude of the peaks vary periodically themselves. For the sign changing quasi-periodic orbit in blue $n_z$ changes sign, again with a fixed period.
 
 
 For larger asymmetries $\epsilon > 0.05$ there are chaotic orbits that explore a larger region of the S.O.S. The simulations used do not have long enough time evolutions for the chaotic orbits to fill the regions in the way that quasi-periodic or periodic orbits fill their two dimensional regions, the chaotic orbits appear as a 'sea' of dots. Chaotic orbits can been seen around the quasi-periodic sign changing orbits in figure \ref{fig:orbitmap4}.
