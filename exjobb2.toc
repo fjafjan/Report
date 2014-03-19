@@ -32,18 +32,18 @@
 \contentsline {section}{\numberline {4.5}Estimating the winding numbers}{37}{section.4.5}
 \contentsline {section}{\numberline {4.6}Matching data to theoretical orbits}{39}{section.4.6}
 \contentsline {chapter}{\numberline {5}Results}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Measurements}{43}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Measurements of particle A}{43}{subsection.5.1.1}
-\contentsline {subsubsection}{Measurement 1}{43}{section*.24}
-\contentsline {subsubsection}{Measurement 2}{44}{section*.26}
-\contentsline {subsubsection}{Measurement 3}{44}{section*.28}
-\contentsline {subsubsection}{Measurement 4}{45}{section*.30}
-\contentsline {subsubsection}{Measurement 5}{46}{section*.32}
-\contentsline {subsection}{\numberline {5.1.2}Measurements of particle B}{46}{subsection.5.1.2}
-\contentsline {subsubsection}{Measurement 1}{47}{section*.34}
-\contentsline {subsubsection}{Measurement 2}{48}{section*.36}
+\contentsline {section}{\numberline {5.1}Measurements}{42}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Measurements of particle A}{42}{subsection.5.1.1}
+\contentsline {subsubsection}{Measurement 1}{42}{section*.24}
+\contentsline {subsubsection}{Measurement 2}{43}{section*.26}
+\contentsline {subsubsection}{Measurement 3}{43}{section*.28}
+\contentsline {subsubsection}{Measurement 4}{44}{section*.30}
+\contentsline {subsubsection}{Measurement 5}{45}{section*.32}
+\contentsline {subsection}{\numberline {5.1.2}Measurements of particle B}{45}{subsection.5.1.2}
+\contentsline {subsubsection}{Measurement 1}{46}{section*.34}
+\contentsline {subsubsection}{Measurement 2}{47}{section*.36}
 \contentsline {subsubsection}{Measurement 3}{48}{section*.38}
-\contentsline {subsubsection}{Measurement 4}{49}{section*.40}
+\contentsline {subsubsection}{Measurement 4}{48}{section*.40}
 \contentsline {section}{\numberline {5.2}Diagnostic plots}{49}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Reversals}{52}{subsection.5.2.1}
 \contentsline {section}{\numberline {5.3}Match to theoretical orbits}{54}{section.5.3}
@@ -54,7 +54,7 @@
 \contentsline {section}{\numberline {6.2}Reversals where the orbit changes}{59}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Possible expansion of the channel}{60}{subsection.6.2.1}
 \contentsline {section}{\numberline {6.3}Winding number matching}{61}{section.6.3}
-\contentsline {section}{\numberline {6.4}Unexplained behaviours}{61}{section.6.4}
+\contentsline {section}{\numberline {6.4}Unexplained behaviours}{62}{section.6.4}
 \contentsline {section}{\numberline {6.5}Width compensation}{62}{section.6.5}
 \contentsline {section}{\numberline {6.6}Goodness of fit}{62}{section.6.6}
 \contentsline {chapter}{\numberline {7}Conclusion}{66}{chapter.7}

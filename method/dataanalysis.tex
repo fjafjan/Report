@@ -55,10 +55,10 @@ n_y		&= \sqrt{1 - n_x^2 - n_z^2}.
 This allows us to make comparisons between theory and measurement. Until this point the data analysis is the same as that in Johansson \cite{AntonThesis}.
 
 \section{Width compensation}\label{sec:width_compensation}
-We have assumed that the particle is a \emph{thin} rod so that the projection $\mathbf{p}$ onto the $x$ and $z$-axes give us an accurate estimate of $\mathbf{n}$. However, when we consider that our particle is 'thick' with length $l_e$ as well as width $D$ the actual unit vector we use in the above algorithms is $\mathbf{n}'$. The width of the particle appears as an ellipse even when the major axis of the particle is aligned completely with the $y$-axis. Looking at the points when $\phi = 0$, which are the points plotted on the surfaces of section and thus of the most interest, we find
+We have assumed that the particle is a \emph{thin} rod so that the projection $\mathbf{p}$ onto the $x$ and $z$-axes give us an accurate estimate of $\mathbf{n}$. However, when we consider that our particle is 'thick' with length $l_e$ as well as width $D$, the actual unit vector we find using eq. (\ref{eq:normalize}) in the above algorithm is $\mathbf{n}'$. Because of the width of the particle, it appears as an ellipse even when $n_z = n_x = 0$ as shown in the lower right part of Figure \ref{fig:lengtherror}. Looking at the points where $\phi = 0$, which are the points plotted on the surfaces of section and thus of the most interest, we find
 
 \begin{equation}\label{eq:widthcomp}
-\left|left|\mathbf{n}'\right|\right| = \frac{p_z'}{L} = \frac{p_z\cos(\theta)  + D\sin(\theta)}{L}. 
+\left| \left|\mathbf{n}'\right|\right| = \frac{p_z'}{L} = \frac{p_z\cos(\theta)  + D\sin(\theta)}{L}. 
 \end{equation}
 
 \noindent Here $L$ is the particle length and $D$ is the particle width. The difference between the measured orientation vector $\mathbf{n}$' and the actual orientation vector $\mathbf{n}$ is illustrated in Figure \ref{fig:lengtherror} for 4 different values of $\theta$. 
