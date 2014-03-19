@@ -10,12 +10,12 @@
 %
 %1) Why we want tracking
 
-Most of the time making measurements was spent manually tracking a particle using the movable stage as described in section \ref{sec:exp_setup}. Depending on the flow rate and the number of stretches desired for a particle it could take up to several hours to compile one measurement. Thus one important way to improve the setup from previous iteration is as discussed by Johansson \cite{AntonThesis} to automate the camera tracking. This would speed up measurements and allow for a larger data set to be gathered. 
+Most of the time making measurements was spent manually tracking a particle using the movable stage as described in section \ref{sec:exp_setup}. Depending on the flow rate and the number of stretches desired for a particle, it could take up to several hours to compile one measurement. One important way to improve the setup from the previous iteration is as discussed by Johansson \cite{AntonThesis}, is to automate the camera tracking. This speeds up measurements and allow for a larger data set to be gathered.
 
-A tracking algorithm was implemented using Python and the external packages \texttt{OPENCV}, \texttt{NumPy}, \texttt{SciPy}, \texttt{ImageMagick} and \texttt{ctypes}. The goal of the tracking was relatively similar to the tracking described in \ref{sec:particleidentification} and more in detail in Johansson \cite{AntonThesis}. The main difference is that the tracking described in this section moves the actual stage and control the pump in real time whereas Johansson tracking tracks the particle in the movie after manual measurements have been made. This produces some different problems which are detailed below. 
+A tracking algorithm was implemented using Python and the external packages \texttt{OPENCV}, \texttt{NumPy}, \texttt{SciPy}, \texttt{ImageMagick} and \texttt{ctypes}. The goal of the tracking was relatively similar to the tracking described in \ref{sec:particleidentification} and more in detail in Johansson \cite{AntonThesis}. The main difference between the tracking in this section and the one in Johansson is that the tracking described in this section moves the actual stage, and control the pump in real time. Johansson's tracking tracks the particle in the movie after manual measurements have been made. These differences produces different problems and solutions which are detailed below. 
 
 \subsection{Acquiring the image}
-The first step in tracking a particle is to acquire the image from the microscope in order to identify (and track) the particle. However the Leica DFC350 FX camera only works with the proprietary Leica software which has no API. This means that there is no way to get the image straight from the camera in real time. To solve this the \texttt{ImageGrabber} package in \texttt{Python} is used to take screenshots as often as possible. The camera image is isolated from the full screenshot by cropping the image aquired. This in itself is a very short program however it still takes ca \unit[50]{ms} per frame on an Intel Core i5 processor. Each frame is stored as a matrix $\mathbf{F}$ with brightness values ranging from 0 to 255.
+The first step in tracking a particle is to acquire the image from the microscope in order to identify (and track) the particle. However the Leica DFC350 FX camera only works with the proprietary Leica software which has no API. This means that there is no way to get the image straight from the camera in real time. To solve this the \texttt{ImageGrabber} package in \texttt{Python} is used to take screenshots as often as possible. The camera image is isolated from the full screenshot by cropping the image from the proprietary software from the screenshot. This in itself is a very short program however it still takes ca \unit[50]{ms} per frame on an Intel Core i5 processor. Each frame is stored as a matrix $\mathbf{F}$ with brightness values ranging from 0 to 255.
 
 \subsection{Reducing noise}
 In order to reduce noise from the image we first reduce the static noise caused by dirt, scratches and other defects in the microscope and on the camera lens, as shown in Figure \ref{fig:origFrame}. As the noise is static it is the only thing that remains if we compute an average image $\bar{\mathbf{F}}$. After taking $N$ images and denote them $\left\{\mathbf{F}_1,\mathbf{F}_2 ... \mathbf{F}_N \right\}$ the average images $\bar{\mathbf{F}}$ is given by 
@@ -50,7 +50,7 @@ In order to identify the particle contour  a few techniques are used. First, con
 D_i = \left|\left|\mathbf{P}_i - \mathbf{E}\right|\right|
 \]
 
-\noindent Finally a 'thinness value' for each contour $\zeta_i$ is calculated using
+\noindent Next, a 'thinness value' for each contour $\zeta_i$ is calculated using
 
 \begin{equation}\label{eq:thinness}
 \zeta_i =  \left(\frac{d_{i, max}^2}{M_c^i}\right)^2,
@@ -88,12 +88,13 @@ what tasks are the most demanding. A list of the different tasks and their avera
 
 \begin{table}[H]
  \begin{tabular}{l | c | c } 
- Task  			&  Average time & Std deviation \\
+ Task  			&  Average time (ms) & Std deviation (ms)\\
  Capture screen & 41 			& 14 \\
  Find edges 	& 78			& 23 \\
  Change velocity& 230			& 62 \\
  \end{tabular}
- \caption{WRITE A CAPTION HERE SOON}
+ 
+ \caption{The average time taken for the major components of the tracking in ms. The largest fraction of time is spent in calls to the step engine using its API. This means in order to improve performance noticeably in order to double the framerate, a new way of communicating with the step engine must be deviced.}
  \label{tab:benchmarks}
 \end{table}
 

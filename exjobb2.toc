@@ -23,38 +23,38 @@
 \contentsline {subsection}{\numberline {3.3.4}Adjusting the camera velocity}{30}{subsection.3.3.4}
 \contentsline {subsection}{\numberline {3.3.5}Time considerations}{30}{subsection.3.3.5}
 \contentsline {section}{\numberline {3.4}Summary of improvements}{31}{section.3.4}
-\contentsline {part}{II\hspace {1em}Data analysis and results}{32}{part.2}
-\contentsline {chapter}{\numberline {4}Data analysis}{33}{chapter.4}
-\contentsline {section}{\numberline {4.1}Particle identification}{33}{section.4.1}
-\contentsline {section}{\numberline {4.2}Estimation of orientation}{34}{section.4.2}
-\contentsline {section}{\numberline {4.3}Width compensation}{35}{section.4.3}
-\contentsline {section}{\numberline {4.4}Removing tracking errors}{37}{section.4.4}
-\contentsline {section}{\numberline {4.5}Estimating the winding numbers}{37}{section.4.5}
-\contentsline {section}{\numberline {4.6}Matching data to theoretical orbits}{39}{section.4.6}
-\contentsline {chapter}{\numberline {5}Results}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Measurements}{42}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Measurements of particle A}{42}{subsection.5.1.1}
-\contentsline {subsubsection}{Measurement 1}{42}{section*.24}
-\contentsline {subsubsection}{Measurement 2}{43}{section*.26}
-\contentsline {subsubsection}{Measurement 3}{43}{section*.28}
-\contentsline {subsubsection}{Measurement 4}{44}{section*.30}
-\contentsline {subsubsection}{Measurement 5}{45}{section*.32}
-\contentsline {subsection}{\numberline {5.1.2}Measurements of particle B}{45}{subsection.5.1.2}
-\contentsline {subsubsection}{Measurement 1}{46}{section*.34}
-\contentsline {subsubsection}{Measurement 2}{47}{section*.36}
-\contentsline {subsubsection}{Measurement 3}{48}{section*.38}
-\contentsline {subsubsection}{Measurement 4}{48}{section*.40}
-\contentsline {section}{\numberline {5.2}Diagnostic plots}{49}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Reversals}{52}{subsection.5.2.1}
-\contentsline {section}{\numberline {5.3}Match to theoretical orbits}{54}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Particle A}{54}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Particle B}{55}{subsection.5.3.2}
-\contentsline {chapter}{\numberline {6}Discussion}{58}{chapter.6}
-\contentsline {section}{\numberline {6.1}Sinking}{59}{section.6.1}
-\contentsline {section}{\numberline {6.2}Reversals where the orbit changes}{59}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Possible expansion of the channel}{60}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Winding number matching}{61}{section.6.3}
-\contentsline {section}{\numberline {6.4}Unexplained behaviours}{62}{section.6.4}
-\contentsline {section}{\numberline {6.5}Width compensation}{62}{section.6.5}
-\contentsline {section}{\numberline {6.6}Goodness of fit}{62}{section.6.6}
-\contentsline {chapter}{\numberline {7}Conclusion}{66}{chapter.7}
+\contentsline {part}{II\hspace {1em}Data analysis and results}{33}{part.2}
+\contentsline {chapter}{\numberline {4}Data analysis}{34}{chapter.4}
+\contentsline {section}{\numberline {4.1}Particle identification}{34}{section.4.1}
+\contentsline {section}{\numberline {4.2}Estimation of orientation}{35}{section.4.2}
+\contentsline {section}{\numberline {4.3}Width compensation}{36}{section.4.3}
+\contentsline {section}{\numberline {4.4}Removing tracking errors}{38}{section.4.4}
+\contentsline {section}{\numberline {4.5}Estimating the winding numbers}{38}{section.4.5}
+\contentsline {section}{\numberline {4.6}Matching data to theoretical orbits}{40}{section.4.6}
+\contentsline {chapter}{\numberline {5}Results}{43}{chapter.5}
+\contentsline {section}{\numberline {5.1}Measurements}{44}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Measurements of particle A}{44}{subsection.5.1.1}
+\contentsline {subsubsection}{Measurement 1}{44}{section*.25}
+\contentsline {subsubsection}{Measurement 2}{45}{section*.27}
+\contentsline {subsubsection}{Measurement 3}{45}{section*.29}
+\contentsline {subsubsection}{Measurement 4}{46}{section*.31}
+\contentsline {subsubsection}{Measurement 5}{47}{section*.33}
+\contentsline {subsection}{\numberline {5.1.2}Measurements of particle B}{47}{subsection.5.1.2}
+\contentsline {subsubsection}{Measurement 1}{48}{section*.35}
+\contentsline {subsubsection}{Measurement 2}{49}{section*.37}
+\contentsline {subsubsection}{Measurement 3}{50}{section*.39}
+\contentsline {subsubsection}{Measurement 4}{50}{section*.41}
+\contentsline {section}{\numberline {5.2}Diagnostic plots}{51}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Reversals}{54}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Match to theoretical orbits}{56}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Particle A}{56}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Particle B}{57}{subsection.5.3.2}
+\contentsline {chapter}{\numberline {6}Discussion}{60}{chapter.6}
+\contentsline {section}{\numberline {6.1}Sinking}{61}{section.6.1}
+\contentsline {section}{\numberline {6.2}Reversals where the orbit changes}{61}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Possible expansion of the channel}{62}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Winding number matching}{63}{section.6.3}
+\contentsline {section}{\numberline {6.4}Unexplained behaviours}{64}{section.6.4}
+\contentsline {section}{\numberline {6.5}Width compensation}{64}{section.6.5}
+\contentsline {section}{\numberline {6.6}Goodness of fit}{64}{section.6.6}
+\contentsline {chapter}{\numberline {7}Conclusion}{68}{chapter.7}

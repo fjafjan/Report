@@ -89,7 +89,17 @@ orbits around the centre at $\cos(\theta) \approx \psi \approx 0$ but it is also
 \end{figure}
 
 \subsection{Winding number} \label{sec:winding}
-The quasi-periodic orbits are also referred to as doubly-periodic~\cite{Yarin}. It is called doubly-periodic to emphasize the fact that the amplitude of the short period $\theta_2$ also varies periodically with period $\theta_1$. The ratio between the two periods is referred to as the winding number $\omega$ referring to the winding around a unit torus. The shorter period $\theta_2$ corresponds to rotations around the small cross section and the longer period $\theta_1$ corresponds to rotations around the large circumference of the torus. The winding number is defined as \cite{introchaos}
+The quasi-periodic orbits are also referred to as doubly-periodic~\cite{Yarin}. They are called doubly-periodic to emphasize the fact that the amplitude of a short period $\theta_2$ also varies periodically with a longer period $\theta_1$. The ratio between the two periods is referred to as the winding number $\omega$ referring to the winding around a unit torus. The shorter period $\theta_2$ corresponds to rotations around the small cross section of the unit torus and the longer period $\theta_1$ corresponds to rotations around the large circumference of the torus. The winding number is the fraction of these periods, as is shown in Figure \ref{fig:torus}. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{figures/theory/torus.png}
+\end{center}
+\caption{Winding around a unit torus with period $\theta_1$ around the large circumference and $\theta_2$ around the small cross section. The offset after one rotation around the large circumference $\theta_1 / \theta_2$ is called the winding number. This figure idea was taken from Schuster \cite{introchaos}}
+\label{fig:torus}
+\end{figure}
+
+\noindent The winding number is defined as \cite{introchaos}
 
 \begin{equation}
 \omega_{def}  = \lim\limits_{n \rightarrow \infty} \frac{f^n(\xi) - \xi_0}{n}.

@@ -27,18 +27,18 @@ S(\mathbf{P}_z, \theta, \epsilon, i) = \frac{1}{N}\left| \mathbf{P}_z - \mathbf{
 
 
 
-\noindent $\epsilon$ does not change for a particle over $r$ different measurements $\mathbf{P}_z^{(1)}, \mathbf{P}_z^{(2)}, ..., \mathbf{P}_z^{(r)}$, however the initial conditions $\theta$ and $i$ (the phase) do. So for each $\epsilon$ we find the best $\theta$ and $i$ using $\hat{S}(\mathbf{P}^{(j)}_z, \epsilon)$ 
+\noindent Over $r$ different measurements $\mathbf{P}_z^{(1)}, \mathbf{P}_z^{(2)}, ..., \mathbf{P}_z^{(r)}$ we expect  the initial conditions $\theta$ and $i$ (the phase) to change. The asymmetry $\epsilon$ does not change between measurements. So for each $\epsilon$ we find the best $\theta$ and $i$ using the temporary score function $\hat{S}(\mathbf{P}^{(j)}_z, \epsilon)$ 
 \begin{equation}
 \hat{S}(\mathbf{P}^{(j)}_z, \epsilon) =  \min(S(\mathbf{P}^{(j)}_z, \theta, \epsilon, i)) 
 \end{equation}
 
-\noindent and  then find the best $\epsilon$ using
+\noindent and  then find the best $\epsilon$ for a particle using
 
 \begin{eqnarray}
-\epsilon_{best} = \min(\sum\limits_{j=1}^{r} \frac{\hat{S}(\mathbf{P}^{(j)}_z, \epsilon)^2).}{N^{(j)}}
+\epsilon_{best} = \min \left(\sum\limits_{j=1}^{r} \frac{\hat{S}(\mathbf{P}^{(j)}_z, \epsilon)^2)}{N^{(j)}} \right).	
 \end{eqnarray}
 
 
-It is important to note that this matching has a theoretical limitation. The asymmetry of our cylindrical particles is different from the asymmetry in the triaxial particles used in the theoretical models. The triaxial particles still have a rotational symetry for rotations of $\pi$ around any of the major/minor axes. This is not the case with the asymmetric cylindrical particles, which have no rotational symmetry. We therefore have to make the assumption that the difference between these two types of asymmetry is not significant and further theoretical work might reject this assumption.
+It is important to note that this matching has a theoretical limitation. The asymmetry of our cylindrical particles is different from the asymmetry in the triaxial particles used in the theoretical models. The triaxial particles still have a rotational symmetry for rotations of $\pi$ around any of the major/minor axes. This is not the case with the asymmetric cylindrical particles, which have no rotational symmetry. We therefore have to make the assumption that the difference between these two types of asymmetry is not significant and further theoretical work might reject this assumption.
 
 % Refer to some matched plots once I have added those. I THINK basically everythig should already be in the saved plots and data folder. 
