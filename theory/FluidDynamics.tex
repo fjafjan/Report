@@ -2,7 +2,7 @@
 In order to understand the motivations for, as well as the limitations and the behaviour of, the experiment we need to know about a few key concepts in fluid mechanics.
 
 \subsection{Reynolds number}
-The Reynolds number ($\operatorname{Re}$) is a dimensionless number describing the ratio of the strength of inertial forces to the strength viscous forces in a flow. Roughly speaking one can think of viscous forces as acting to keep adjacent fluid elements moving in the same direction whereas inertial forces act to prevent any change in the motion of a fluid element. For a flow it is defined as \cite{introfluid}
+The Reynolds number ($\operatorname{Re}$) is a dimensionless number describing the ratio of the strength of inertial forces to the strength viscous forces in a flow. Roughly speaking one can think of viscous forces as acting to keep adjacent fluid elements moving in the same direction whereas inertial forces act to prevent any change in the motion of a fluid element. For a flow the Reynolds number is defined as \cite{introfluid}
 
 \begin{equation}\label{eq:reynolds}
 \operatorname{Re} = \frac{U W \rho}{\mu}
@@ -17,7 +17,7 @@ where $U$ is the characteristic velocity of the flow, $W$ is its characteristic 
 
 Flow with $\operatorname{Re}\ll 1$ is referred to as \emph{Stokes flow}. In this regime we can ignore inertial forces completely. The flow is guaranteed to be laminar, and it is also time reversible. This means any dynamics of the fluid are retraced when the flow is reversed, as if time was reversed. ~\cite{introfluid3}
  
-Particles in Stokes flow are also time reversible if they have a particle Reynolds number $\Re << 1$. The particle Reynolds number is defined as \cite{JonasLic}
+Particles in Stokes flow are also time reversible if they have a particle Reynolds number $\operatorname{Re}_p << 1$. The particle Reynolds number is defined as \cite{JonasLic}
 
 \begin{equation}\label{eq:reynoldsparticle}
 \operatorname{Re_p} = \frac{u_p L \rho}{\mu}
