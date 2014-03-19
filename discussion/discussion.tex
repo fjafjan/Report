@@ -6,16 +6,16 @@ This is however the results from a few measurements of two particles, there are 
 
 \begin{enumerate}
 \item Sinking
-\item Bad reversals
+\item Change in orbit after a reversal
 \item Too few flips to clearly estimate winding number
-\item Unexplained changes in orbit
+\item Unexplained changes in orbit 
 \end{enumerate}
 
 \section{Sinking}
-One of the major problems with this setup compared to the previous setup used by Einarsson \emph{et al.} \cite{JonasExperiment} is matching the density of the fluid to that of the particles. Even small mismatch of $\unit[0.05]{g/ml}$ we find using eq. (\ref{eq:fallingSphere}) a sinking speed of $= \unit[4.9\cdot10^3 ]{\mu m/s}$. In earlier measurements the pump speed was $\unit[3]{\mu l/minute}$ and the particle were 60\% larger, which meant the sinking occurred more than twice as long and twice as fast which meant it was a larger problem. Even now though it can be noticeably as in longer measurements such as in Figures \ref{fig:particleB2} and \ref{fig:particleB2sinking}.
+One of the major problems with this setup compared to the previous setup used by Einarsson \emph{et al.} \cite{JonasExperiment} is matching the density of the fluid to that of the particles. Even with a small mismatch of $\unit[0.05]{g/ml}$ we find using eq. (\ref{eq:fallingSphere}) a sinking speed of $= \unit[4.9\cdot10^3 ]{\mu m/s}$. In earlier measurements the pump speed was $\unit[3]{\mu l/minute}$ and the particle were 60\% larger, which meant the sinking occurred more than twice as long and twice as fast which meant it was a larger problem. Even now though it can be noticeably as in longer measurements such as in Figures \ref{fig:particleB2} and \ref{fig:particleB2sinking}.
 
 \section{Reversals where the orbit changes}
-Almost every measurement with several stretches have a reversal where the particle noticeably changes orbit. This can been seen in Figures \ref{fig:particleA5}, \ref{fig:particleA4} and \ref{fig:particleB1}. We refer to such reversals as \emph{bad reversals} as they indicate that the preconditions for time reversibility are not met. While there is a trend that bad reversals occur at he end further from the pump, there are many exceptions to this. There are many cases where the orbit begins to change just as the flow is starting to reverse, such as in Figure \ref{fig:particleA4}. The particle Reynolds number depends on the velocity relative to the particle so a possible culprit would then be that reversals occur too rapidly and increase the $Re_p$ such that the $Re_p << 1$ condition from Jeffery \cite{Jeffery} does not hold. We have not been able to draw any clear conclusion and solving issues with reversals would be a tremendous improvement.
+Almost every measurement with several stretches have a reversal where the particle noticeably changes orbit. This can been seen in Figures \ref{fig:particleA5}, \ref{fig:particleA4} and \ref{fig:particleB1}. We refer to such reversals as \emph{bad reversals} as they indicate that the preconditions for time reversibility are not met. While there is a trend that bad reversals occur at he end further from the pump, there are many exceptions to this. There are many cases where the orbit begins to change just as the flow is starting to reverse, such as in Figure \ref{fig:particleA4}. The particle Reynolds number depends on the velocity relative to the particle so a possible culprit could be that reversals occur too rapidly and increase the $Re_p$ such that the $Re_p << 1$ condition from Jeffery \cite{Jeffery} does not hold. We have not been able to draw any clear conclusion and solving issues with reversals would be a tremendous improvement.
 
 
 \subsection{Possible expansion of the channel}
@@ -36,11 +36,10 @@ For reversals on the far end of the channel there is a second dip where the part
 
 An alternative theory for the delay in reversals would be an offset in the pump, a distance between the syringe handle and the pump holder which would need to be traversed before pumping actually begins, but this would occur at both ends of the channel equally. This does also not explain the very long acceleration of the particle when the injection rate is constant.
 
-How this impacts the dynamics is not known, however a majority of bad reversals occur at the end of the channel close to the pump, which suggests 
-that this extra elasticity in the system might in fact be positive. 
+How this impacts the dynamics is not known, however a majority of reversals where the particle does not retrace its orbit occur at the end of the channel close to the pump, which suggests that this extra elasticity in the system might in fact be positive. 
 
 \section{Winding number matching}
-Using the score function $\hat{S}$ as described in section \ref{sec:matchorbit} to find the closest matching orbit is useful, it only gives the best fit.  Instead we use the winding number to validate or dismiss a matched orbit and an estimated $\epsilon$. The winding number can only be used for the orbits where $n_z$ changes noticeably, i.e. the quasi-periodic orbits, but these are also the ones of primary interest. 
+Using the score function $\hat{S}$ as described in section \ref{sec:matchorbit} to find the closest matching orbit gives us an estimate of the asymmetry and the orbit of the particle. But it only gives the best fit from a number of different orbits and asymmetries it does not say .  Instead we use the winding number to validate or dismiss a matched orbit and an estimated $\epsilon$. The winding number can only be used for the orbits where $n_z$ changes noticeably, i.e. the quasi-periodic orbits, but these are also the ones of primary interest. 
 Figure \ref{fig:windingdifferent} shows that the difference in winding number for the 
 same $\theta$ is on the order of a factor 2 between $\epsilon = 0.01$ and $\epsilon = 0.05$ for circular orbits, and 
 still quite noticeably different between $\epsilon = 0.05$ and $\epsilon = 0.10$. However the largest difference is where the change from 
@@ -59,7 +58,7 @@ estimate the winding number especially well as we barely have a half period.
 
 
 \section{Unexplained behaviours}
-In a number of measurements there are changes in orbit for which we have no good explanation. For example in Figure \ref{fig:particleA5} the second reversal is completely sharp, the orbit virtually instantly changes, completely 'forgetting' the previous orbit. Why does this occur with the same particle, the same setup, that produce the excellent reversals in Figure \ref{fig:particleA1}. All conditions we can measure or control are the same and yet the outcome is very different. The only difference is the z coordinate, yet Figure \ref{fig:particleA3} was measured at a similar z and showed very few odd behaviours. 
+In a number of measurements there are changes in orbit for which we have no explanation. For example in Figure \ref{fig:particleA5} the second reversal is completely sharp, the orbit virtually instantly changes, completely 'forgetting' the previous orbit. Why does this occur with the same particle, the same setup, that produce the excellent reversals in Figure \ref{fig:particleA1}. All conditions we can measure or control are the same and yet the outcome is very different. The only difference is the z coordinate, yet Figure \ref{fig:particleA3} was measured at a similar z and showed very few odd behaviours. 
 
 \section{Width compensation}
 The width compensation discussed in Sectinon \ref{sec:width_compensation} does solve the issues the previous algorithm had with 'thick' particles for $n_z$ close to 0. It does still produce small errors for $n_z \neq 0$. However it was discovered that Eq \ref{eq:widthcomp} can be solved explicitly. Given the actual length L of the particle the Euler angle $\theta$ can be solved for at each point after a measurement is complete. This would improve the resolution of peaks and allow for more accurate results.
