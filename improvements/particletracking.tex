@@ -30,13 +30,13 @@ An example of such an average image can be seen in Figure \ref{fig:averageFrame}
 \widetilde{\mathbf{F}_{i}} = \mathbf{F}_i - \bar{\mathbf{F}} + (F_i^*\mathbf{I})
 \end{equation}
 
-\noindent where $\F_i^*$ is the average brightness of the frame $\mathbf{F}_i$, $\widetilde{\mathbf{F}_{i}}$ is the corrected frame and $\mathbf{I}$ is a matrix of ones. The result can be seen in Figure \ref{fig:fixedFrame}. 
+\noindent where $F_i^*$ is the average brightness of the frame $\mathbf{F}_i$, $\widetilde{\mathbf{F}_{i}}$ is the corrected frame and $\mathbf{I}$ is a matrix of ones. The result can be seen in Figure \ref{fig:fixedFrame}. 
 
 
 
 
 \subsection{Contour detection and selection}
-The edges of the captured image are detecting using the Canny edge detector from the OpenCV package. The canny edge detector uses two different threshold values for finding edges, $\tau_1$ and $\tau_2$ with $\tau_1 > \tau_2$. $\tau_1$ is used for finding initial edges and $\tau_2$ is used on pixels adjacent to ones already found. For more details on how the Canny Edge detector works see the original paper by Canny from 1986\cite{Canny}. Once an edge image has been generated, we use the OpenCV command, \texttt{Contours} which returns a list of every contiguous group of edge pixels.  We denote these contours $\left\{C_1, C_2 \ldots C_M \right\}$ and each contour contains $M^c_i$ pixels, $C_i = \left\{\mathbf{p}^i_1, \mathbf{p}^i_2 \ldots \mathbf{p}^i_{M^c_i}\right\} $. If the image is not too noisy and we have chosen the threshold values to the edge detection correctly, this should include the particle as a contour. 
+The edges of the captured image are detecting using the Canny edge detector from the OpenCV package. The canny edge detector uses two different threshold values for finding edges, $\tau_1$ and $\tau_2$ with $\tau_1 > \tau_2$. $\tau_1$ is used for finding initial edges and $\tau_2$ is used on pixels adjacent to ones already found. For more details on how the Canny Edge detector works see the original paper by Canny from 1986\cite{Canny}. Once an edge image has been generated, we use the OpenCV command, \texttt{Contours} which returns a list of every contiguous group of edge pixels.  We denote these contours $\left\{\mathbf{C}_1, \mathbf{C}_2 \ldots \mathbf{C}_M \right\}$ and each contour contains $M^c_i$ pixels, $\mathbf{C}_i = \left\{\mathbf{p}^i_1, \mathbf{p}^i_2 \ldots \mathbf{p}^i_{M^c_i}\right\} $. If the image is not too noisy and we have chosen the threshold values to the edge detection correctly, this should include the particle as a contour. 
 
 In order to identify the particle contour  a few techniques are used. First, contours whose total size $ M_c^i$ is less than some minimum value, $ n_{min}$ or larger than some maximum value $n_{max}$ are ignored. Then the average position $\mathbf{P}_i$ of each contour $C_i$ is calculated as the average pixel position
 
