@@ -10,7 +10,7 @@ particle we must identify the two periods $\theta_1$ and $\theta_2$ from Figure 
 \label{fig:nzNx0}
 \end{figure}
 
-The maxima with the shorter period $\theta_2$ are located where $n_x = 0$ as is seen in Figure \ref{fig:nzNx0}. We denote the set of these points $P_z$. The longer period $\theta_1$ is the periodicity of $P_z$, marked as red points in Figure\ref{fig:nzNx0}. To estimate the winding number we want to locate the maxima $M$ and minima $m$ in $P_z$ that occur with period $\theta_1$ in the same way we do to find $\theta_2$ in $n_z$. Unfortunately the height of peaks is noisy and there are few data points for each measurement as the channel is of finite length only allowing a few dozen flips. This means averaging cannot be used to reduce the noise.This means we have no algorithmic means to find $\theta_1$. 
+The maxima with the shorter period $\theta_2$ are located where $n_x = 0$ as is seen in Figure \ref{fig:nzNx0}. We denote the set of these points $P_z$. The longer period $\theta_1$ is the periodicity of $P_z$, marked as red points in Figure\ref{fig:nzNx0}. To estimate the winding number we want to locate the maxima $M$ and minima $m$ in $P_z$ that occur with period $\theta_1$ in the same way we do to find $\theta_2$ in $n_z$. Unfortunately the height of peaks are noisy and there are few data points for each measurement as the channel is of finite length only allowing a few dozen flips. This means averaging cannot be used to reduce the noise. This means we have no algorithmic means to find $\theta_1$. 
 
 Instead we select a number of maxima $M_1, M_2 ... M_p$ and minima $m_1, m_2, ..., m_q$ from $\mathbf{P}_z$ . We denote their index in $n_z$ as $I^M_1, I^M_2, 
 ..., I^M_p$ for the maxima and $I^m_1, I^m_2, ..., I^m_q$ for the minima. We then find $\theta_1$ as the mean distance between successive maxima $\overline{d_M}$ and successive minima $\overline{d_m}$, 
@@ -22,7 +22,7 @@ Instead we select a number of maxima $M_1, M_2 ... M_p$ and minima $m_1, m_2, ..
 \label{eq:winding2}
 \end{align}
 
-In the case that we only have 1 maxima and minima eq. \ref{eq:winding2} can't be calculated so we assume that the distance between a maxima and minima is half a period, i.e.
+\noindent In the case that we only have 1 maxima and minima eq. \ref{eq:winding2} can't be calculated so we assume that the distance between a maxima and minima is half a period, i.e.
 
 \begin{equation}
 \hat{\theta_1} = 2\left| I^M_1 - I^m_1 \right|

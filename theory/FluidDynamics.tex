@@ -20,10 +20,10 @@ Flow with $\operatorname{Re}\ll 1$ is referred to as \emph{Stokes flow}. In this
 Particles in Stokes flow are also time reversible if they have a particle Reynolds number $\operatorname{Re}_p << 1$. The particle Reynolds number is defined as \cite{JonasLic}
 
 \begin{equation}\label{eq:reynoldsparticle}
-\operatorname{Re_p} = \frac{u_p L \rho}{\mu}
+\operatorname{Re_p} = \frac{u_p L \rho}{\mu}.
 \end{equation}
 
-where $u_p$ is the typical flow speed relative to the particle surface, $L$ is the characteristic size of the particle, $\rho$ is the density of the fluid and $\mu$ is the dynamic viscosity of the fluid. 
+\noindent Here $u_p$ is the typical flow speed relative to the particle surface, $L$ is the characteristic size of the particle, $\rho$ is the density of the fluid and $\mu$ is the dynamic viscosity of the fluid. 
 
 \begin{figure}[H]
 \centering
@@ -41,11 +41,11 @@ F_D = 6\pi \mu R v.
 
 \noindent Here $v$ is the velocity of the sphere relative to the fluid, $\mu$ is the dynamic viscosity, and $R$ is the radius of the sphere. This can be used to find the terminal velocity of a sphere sinking in a liquid by equating the gravitational force $F_G$ acting on the sphere with the drag force from eq \ref{eq:stokes_law}. $F_G$ is calculated as
 
-\begin{equation}
+\begin{equation}\label{eq:sink}
 F_G = \Delta \rho g \frac{4\pi R^3}{3},
 \end{equation}
 
-\noindent where $\Delta \rho$ is the difference in density between the fluid and the sphere and $g$ is the specific gravity. We find that the terminal velocity of a sinking (or floating) sphere is
+\noindent where $\Delta \rho$ is the difference in density between the fluid and the sphere and $g$ is the specific gravity. By equation eq (\ref{eq:stokes_law}) and eq (\ref{eq:sink}) we find that the terminal velocity of a sinking (or floating) sphere is
 
 \begin{equation}\label{eq:fallingSphere}
 v_s = \frac{2}{9} \frac{\Delta \rho}{\mu} g R^2.

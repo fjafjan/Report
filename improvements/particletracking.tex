@@ -9,8 +9,8 @@
 %The limitations
 %
 %1) Why we want tracking
-
-Most of the time making measurements was spent manually tracking a particle using the movable stage as described in section \ref{sec:exp_setup}. Depending on the flow rate and the number of stretches desired for a particle, it could take up to several hours to compile one measurement. One important way to improve the setup from the previous iteration is as discussed by Johansson \cite{AntonThesis}, is to automate the camera tracking. This speeds up measurements and allow for a larger data set to be gathered.
+\label{sec:tracking}
+Most of the time making measurements was spent manually tracking a particle using the movable stage as described in section \ref{sec:exp_setup}. Depending on the flow rate and the number of stretches desired for a particle, it could take up to several hours to compile one measurement. One important way to improve the setup from the previous iteration is as discussed by Johansson \cite{AntonThesis}, to automate the camera tracking. This speeds up measurements and allow for a larger data set to be gathered.
 
 A tracking algorithm was implemented using Python and the external packages \texttt{OPENCV}, \texttt{NumPy}, \texttt{SciPy}, \texttt{ImageMagick} and \texttt{ctypes}. The goal of the tracking was relatively similar to the tracking described in \ref{sec:particleidentification} and more in detail in Johansson \cite{AntonThesis}. The main difference between the tracking in this section and the one in Johansson is that the tracking described in this section moves the actual stage, and control the pump in real time. Johansson's tracking tracks the particle in the movie after manual measurements have been made. These differences produces different problems and solutions which are detailed below. 
 
@@ -18,13 +18,13 @@ A tracking algorithm was implemented using Python and the external packages \tex
 The first step in tracking a particle is to acquire the image from the microscope in order to identify (and track) the particle. However the Leica DFC350 FX camera only works with the proprietary Leica software which has no API. This means that there is no way to get the image straight from the camera in real time. To solve this the \texttt{ImageGrabber} package in \texttt{Python} is used to take screenshots as often as possible. The camera image is isolated from the full screenshot by cropping the image from the proprietary software from the screenshot. This in itself is a very short program however it still takes ca \unit[50]{ms} per frame on an Intel Core i5 processor. Each frame is stored as a matrix $\mathbf{F}$ with brightness values ranging from 0 to 255.
 
 \subsection{Reducing noise}
-In order to reduce noise from the image we first reduce the static noise caused by dirt, scratches and other defects in the microscope and on the camera lens, as shown in Figure \ref{fig:origFrame}. As the noise is static it is the only thing that remains if we compute an average image $\bar{\mathbf{F}}$. After taking $N$ images and denote them $\left\{\mathbf{F}_1,\mathbf{F}_2 ... \mathbf{F}_N \right\}$ the average images $\bar{\mathbf{F}}$ is given by 
+In order to reduce noise from the image we first reduce the static noise caused by dirt, scratches and other defects in the microscope and on the camera lens, as shown in Figure \ref{fig:origFrame}. As the noise is static it is the only thing that remains if we compute an average image $\bar{\mathbf{F}}$. After taking $N$ images and denote them $\left\{\mathbf{F}_1,\mathbf{F}_2 ... \mathbf{F}_N \right\}$ the average image $\bar{\mathbf{F}}$ is given by 
 
 \begin{equation}\label{eq:averageFrame}
 \bar{\mathbf{F}} = \frac{1}{N}\sum\limits_{i=1}^{N} \mathbf{F}_i.
 \end{equation}
 
-An example of such an average image can be seen in Figure \ref{fig:averageFrame}. The static noise is then removed from each frame using eq (3.1) from Johansson \cite{AntonThesis}.
+\noindent An example of such an average image can be seen in Figure \ref{fig:averageFrame}. The static noise is then removed from each frame using eq (3.1) from Johansson \cite{AntonThesis}.
 
 \begin{equation}
 \widetilde{\mathbf{F}_{i}} = \mathbf{F}_i - \bar{\mathbf{F}} + (F_i^*\mathbf{I})
@@ -36,7 +36,9 @@ An example of such an average image can be seen in Figure \ref{fig:averageFrame}
 
 
 \subsection{Contour detection and selection}
-The edges of the captured image are detecting using the Canny edge detector from the OpenCV package. The canny edge detector uses two different threshold values for finding edges, $\tau_1$ and $\tau_2$ with $\tau_1 > \tau_2$. $\tau_1$ is used for finding initial edges and $\tau_2$ is used on pixels adjacent to ones already found. For more details on how the Canny Edge detector works see the original paper by Canny from 1986\cite{Canny}. Once an edge image has been generated, we use the OpenCV command, \texttt{Contours} which returns a list of every contiguous group of edge pixels.  We denote these contours $\left\{\mathbf{C}_1, \mathbf{C}_2 \ldots \mathbf{C}_M \right\}$ and each contour contains $M^c_i$ pixels, $\mathbf{C}_i = \left\{\mathbf{p}^i_1, \mathbf{p}^i_2 \ldots \mathbf{p}^i_{M^c_i}\right\} $. If the image is not too noisy and we have chosen the threshold values to the edge detection correctly, this should include the particle as a contour. 
+The edges of the captured image are detecting using the Canny edge detector from the OpenCV package. The canny edge detector uses two different threshold values for finding edges, $\tau_1$ and $\tau_2$ with $\tau_1 > \tau_2$. The larger threshold $\tau_1$ is used for finding initial edges and $\tau_2$ is used on pixels adjacent to ones already found. For more details on how the Canny Edge detector works see the original paper by Canny from 1986\cite{Canny}. 
+
+Once an edge image has been generated, we use the OpenCV command, \texttt{Contours} which returns a list of every contiguous group of edge pixels.  We denote these contours $\left\{\mathbf{C}_1, \mathbf{C}_2 \ldots \mathbf{C}_M \right\}$ and each contour contains $M^c_i$ pixels, $\mathbf{C}_i = \left\{\mathbf{p}^i_1, \mathbf{p}^i_2 \ldots \mathbf{p}^i_{M^c_i}\right\} $. If the image is not too noisy and we have chosen the threshold values to the edge detection correctly, this includes the particle as one of the contour. 
 
 In order to identify the particle contour  a few techniques are used. First, contours whose total size $ M_c^i$ is less than some minimum value, $ n_{min}$ or larger than some maximum value $n_{max}$ are ignored. Then the average position $\mathbf{P}_i$ of each contour $C_i$ is calculated as the average pixel position
 
